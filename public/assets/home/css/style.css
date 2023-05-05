@@ -3072,7 +3072,7 @@ select:visited {
 }
 
 .yl-popular-course-img-text {
-  padding: 25px;
+  padding: 15px;
   border-radius: 10px;
   margin-bottom: 40px;
   background-color: #fff;
@@ -3098,12 +3098,12 @@ select:visited {
 }
 .yl-popular-course-img-text .popular-course-fee span, .yl-popular-course-img-text .popular-course-fee del {
   color: #555555;
-  font-size: 18px;
+  font-size: 16px;
   margin-right: 12px;
 }
 .yl-popular-course-img-text .popular-course-fee strong {
   color: #000;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 700;
 }
 .yl-popular-course-img-text .popular-course-title {
@@ -3243,7 +3243,7 @@ select:visited {
 }
 
 .course-page-courses-item .yl-popular-course-img-text .yl-popular-course-text h3 {
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .yl-course-pagination {
@@ -7221,3 +7221,7 @@ select:visited {
   }
 }
 /*---------------------------------------------------- */
+
+.popular-course-rate.clearfix.ul-li {
+  display: none;
+}
