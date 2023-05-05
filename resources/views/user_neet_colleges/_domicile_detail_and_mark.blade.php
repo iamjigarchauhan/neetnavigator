@@ -246,13 +246,14 @@
             {{-- <div class="card-body border-top p-9"> --}}
                 <!--begin::Input group-->
                 <div class="row mb-6">
-                    <!--begin::Input group-->
-                    <div class="form-floating">
+                    <div class="col-lg-12 fv-row">
+                        <div class="form-floating">
                         <input name="marks" type="number" max="999" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="Enter Your Marks" value="{{ old('marks') }}" required />
                         <label for="floatingMarks">{{ __('Enter Your Marks') }}</label>
                         @if ($errors->has('marks'))
                         <span class="text-danger">{{ $errors->first('marks') }}</span>
                         @endif
+                    </div>
                     </div>
                     <!--end::Input group-->
                 </div>

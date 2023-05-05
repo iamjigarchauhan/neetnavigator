@@ -107,7 +107,11 @@ class UserNeetCollegesController extends Controller
     {
         if ($request->marks > 0) {
             session()->put('user_mark', $request->marks);
-            return redirect()->route('neet-college.mark-rank');
+            $this->markRank = NeetRangeRanking::getRankByMark($request->marks);
+            $this->marks = $request->marks;
+            $this->states = State::getCollegeCountByState();
+            return response()->json($this->data);
+            // return redirect()->route('neet-college.mark-rank');
         } else {
             return redirect()->back();
         }

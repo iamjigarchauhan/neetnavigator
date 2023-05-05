@@ -6,7 +6,7 @@
 							<div class="yl-footer-widget">
 									<div class="yl-footer-logo-widget yl-headline pera-content">
 										<div class="yl-footer-logo">
-												<a href="#"><img src="assets/img/logo/logo4.png" alt=""></a>
+												<a href="#"><img src="{{ asset('assets/img/logo.png')}}" alt=""></a>
 										</div>
 										<p>We work with a passion of taking challenges and creating new ones in advertising sector.</p>
 										<a class="footer-logo-btn text-center text-uppercase" href="#">About us</a>
@@ -64,12 +64,12 @@
 										<h3 class="widget-title">Instagram</h3>
 										<div class="insta-feed ul-li clearfix">
 												<ul>
-													<li><a href="!#"><img src="assets/img/instagram/ins1.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
-													<li><a href="!#"><img src="assets/img/instagram/ins2.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
-													<li><a href="!#"><img src="assets/img/instagram/ins3.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
-													<li><a href="!#"><img src="assets/img/instagram/ins4.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
-													<li><a href="!#"><img src="assets/img/instagram/ins5.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
-													<li><a href="!#"><img src="assets/img/instagram/ins6.jpg" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins1.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins2.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins3.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins4.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins5.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
+													<li><a href="!#"><img src="{{ asset('assets/home/img/instagram/ins6.jpg') }}" alt=""><i class="fab fa-instagram"></i></a></li>
 												</ul>
 										</div>
 									</div>

@@ -1,64 +1,70 @@
-@extends('layouts.wizard')
+@extends('layouts.app')
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<div class="wrapper">
-<div class="image-holder">
-  <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
-</div>
-<form class="form mx-auto" id="kt_stepper_example_basic_form" method="post"
-      action="{{route('neet-college.user.store')}}">
-      @csrf
-  @csrf
-  <div id="wizard">
-    @if(session()->has('error'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Oops!</strong> {{ session()->get('error') }}
-      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    @endif
-    <h4></h4>
-      <section>
-        <div class="form-row">
-          @include('user_neet_colleges._domicile', ['class'=>'','states' => $states])
-        </div>
-      </section>
-      <h4></h4>
-      <section>
-        <div class="form-row">
-          @include('user_neet_colleges._category', array('class' => ''))
-        </div>
-      </section>
-    </form>
-    <h4></h4>
-    <section>
-      <div class="form-row">
-        @include('user_neet_colleges._domicile_detail_and_mark', array('class' => ''))
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<section class="course-page-course-section">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-5">
+      <div class="image-holder">
+        <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
       </div>
-    </section>
-    <h4></h4>
-    <section>
-    </form>
-    <div class="form-row">
-      <form class="form mx-auto" id="kt_stepper_checkout_form" method="post"
-        action="{{route('neet-college.checkout')}}">
-        @csrf
-        
-          @include('user_neet_colleges._predicted_rank', array('class' => ''))
-          <!--end::Pridicted Rank-->
-          <!--begin::State wise colleges count-->
-          @include('user_neet_colleges._state_wise_college_count', array('class' => ''))
-          <!--end::State wise colleges count-->
-          <!--begin::Cart summary-->
-          @include('user_neet_colleges._cart_summary', array('class' => ''))
-        
-      </form>
+      </div>
+      <div class="col-md-7">
+        <form class="form mx-auto" id="kt_stepper_example_basic_form" method="post"
+          action="{{route('neet-college.user.store')}}">
+          @csrf
+          <div id="wizard">
+            @if(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Oops!</strong> {{ session()->get('error') }}
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            @endif
+            <h4></h4>
+              <section>
+                {{-- <div class="form-row"> --}}
+                  @include('user_neet_colleges._domicile', ['class'=>'','states' => $states])
+                {{-- </div> --}}
+              </section>
+              <h4></h4>
+              <section>
+                {{-- <div class="form-row"> --}}
+                  @include('user_neet_colleges._category', array('class' => ''))
+                {{-- </div> --}}
+              </section>
+            </form>
+            <h4></h4>
+            <section>
+              {{-- <div class="form-row"> --}}
+                @include('user_neet_colleges._domicile_detail_and_mark', array('class' => ''))
+              {{-- </div> --}}
+            </section>
+            <h4></h4>
+            <section>
+            </form>
+            {{-- <div class="form-row"> --}}
+              <form class="form mx-auto" id="kt_stepper_checkout_form" method="post"
+                action="{{route('neet-college.checkout')}}">
+                @csrf
+                  @include('user_neet_colleges._predicted_rank', array('class' => ''))
+                  <!--end::Pridicted Rank-->
+                  <!--begin::State wise colleges count-->
+                  @include('user_neet_colleges._state_wise_college_count', array('class' => ''))
+                  <!--end::State wise colleges count-->
+                  <!--begin::Cart summary-->
+                  @include('user_neet_colleges._cart_summary', array('class' => ''))
+                
+              </form>
+            {{-- </div> --}}
+            </section>
+          </div>
+        </form>
     </div>
-    </section>
-  </div>
-</form>
 </div>
+</section>
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -66,9 +72,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-6S5LYNn3ZJCIm0f9L6BCerqFlQ4f5MwNKq+EthDXabtaJvg3TuFLhpno9pcm+5Ynm6jdA9xfpQoMz2fcjVMk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 <script>
 $('.multiple').select2();
-
 var form = $("#kt_stepper_example_basic_form");
 form.validate({
     errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
@@ -99,7 +105,26 @@ onStepChanging:function(event,currentIndex,newIndex){
       }else{
         $('.steps ul').removeClass('step-3');
       }
-      if(newIndex===3){ 
+      if(newIndex===3){
+        //kt_account_profile_details_form
+        var url = $('#kt_account_profile_details_form').attr('action');
+        var method = $('#kt_account_profile_details_form').attr('method');
+        var formData = $('#kt_account_profile_details_form').serialize();
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: formData,
+        }).done(function (data) {
+           if(data.states.length >0 ){
+            table = $('table.statelist tbody');
+            html = '';
+            $.each(data.states,function(index, value){
+              html += '<td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td>'
+            })
+            table.html(html);
+           $('.predicted-marks').html(data.marks);
+          }
+        });
         $('.steps ul').addClass('step-4');
         $('.actions ul').addClass('step-last');
       } else { 

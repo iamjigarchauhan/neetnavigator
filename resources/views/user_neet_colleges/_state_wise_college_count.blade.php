@@ -1,5 +1,5 @@
 <div class="table-responsive" style="height: 250px !important;overflow: scroll; overflow-x:hidden; display: block;">
-	<table class="table table-hover table-rounded border border-0 gy-7 gs-7">
+	<table class="statelist table table-hover table-rounded border gy-7 gs-7">
 		<thead>
 			<tr>
 				<th>
