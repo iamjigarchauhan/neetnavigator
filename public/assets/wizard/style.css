@@ -27,3 +27,14 @@
 .form-floating>.form-select{
   padding-top: 0.625rem;
 }
+label.error {
+  display: contents !important;
+  color:red;
+}
+
+
+#wizard h2 {
+  font-size: 22px;
+  font-family: poppins-semibold;
+  color: #333;
+}

@@ -1,8 +1,48 @@
 @extends('layouts.app')
 @section('content')
+<section id="yl-popular-course" class="yl-popular-course-section">
+    <div class="container">
+    </div>
+</section>
+<section id="yl-popular-course" class="yl-popular-course-section">
+    <div class="container">
+        <div class="yl-login-head text-center pera-content">
+            <h2>Login</h2>
+        </div>
+        <div class="yl-login-content pera-content text-center pt-3">
+            @if(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Oops!</strong> {{ session()->get('error') }}.
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            <form method="POST" action="{{ route('login.custom') }}">
+                @csrf
+                <input type="text" name="email" placeholder="Email">
+                @if ($errors->has('email'))
+                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                @endif
+                <input type="text" name="password" placeholder="Password">
+                @if ($errors->has('password'))
+                <span class="text-danger">{{ $errors->first('password') }}</span>
+                @endif
+                <div class="yl-login-label clearfix">
+                    {{-- <span><input type="checkbox">Remember me</span> --}}
+                    {{-- <a href="{{ route('') }}">Forget Password?</a> --}}
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p>Don’t have any account? <a href="{{ route('register-user')}}">Signup</a></p>
+        </div>
+    </div>
+</section>
+@include('auth.terms_and_condition_modal')
+@endsection
 <!-- Page Content -->
 <!--begin::Card-->
-<div class="card">
+{{-- <div class="card">
     <!--begin::Card body-->
     <div class="card-body pt-6">
         <div class="row">
@@ -70,20 +110,17 @@
         </div>
         <!--emd::Card-->
 
-    </div>
+    </div> --}}
     <!-- /Page Content -->
-    @endsection
-
-    @include('auth.terms_and_condition_modal')
-    @section('scripts')
-    <script>
-        $(document).on('change', '#agree_checkbox_user', function() {
-            if ($(this).prop('checked') == true) {
-                $('#terms_and_condition').removeClass('d-none');
-                $('#terms_and_condition').modal('show');
-            } else {
-                $('#terms_and_condition').addClass('d-none');
-            }
-        })
-    </script>
-    @endsection
+@section('scripts')
+<script>
+    $(document).on('change', '#agree_checkbox_user', function() {
+        if ($(this).prop('checked') == true) {
+            $('#terms_and_condition').removeClass('d-none');
+            $('#terms_and_condition').modal('show');
+        } else {
+            $('#terms_and_condition').addClass('d-none');
+        }
+    })
+</script>
+@endsection

@@ -59,7 +59,7 @@
             <div class="row mb-6">
                 <!--begin::Input group-->
                 <div class="form-floating">
-                    <input name="pincode" type="number" min="5" max="8" class="form-control" id="floatingPincode" placeholder="Pincode Based on Aadhaar" value="{{ old('pincode') }}" required />
+                    <input name="pincode" type="number" maxlength="6" class="form-control" id="floatingPincode" placeholder="Pincode Based on Aadhaar" value="{{ old('pincode') }}" required />
                     <label for="floatingPincode">{{ __('Pincode Based on Aadhaar *') }}</label>
                     @if ($errors->has('pincode'))
                     <span class="text-danger">{{ $errors->first('pincode') }}</span>
@@ -92,7 +92,7 @@
                         <div class="col-lg-6 fv-row">
                             <!--begin::Input group-->
                             <div class="form-floating">
-                                <select name="city" class="form-select" id="floatingCity" aria-label="{{ __('City based on area pincode') }}" data-control="select2" data-placeholder="{{ __('City based on area pincode') }}">
+                                <select name="city" class="form-select" id="floatingCity" aria-label="{{ __('City based on area pincode') }}" data-control="select2" data-placeholder="{{ __('City based on area pincode') }}" required>
                                     <option value="0">{{ __('City') }}</option>
                                 </select>
                                 <label for="floatingCity">City *</label>

@@ -61,36 +61,26 @@
       </section>
     </div>
 </div>
-@endsection
 @include('auth.terms_and_condition_modal')
+@endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-    $(document).on('change', '#agree_checkbox_user', function() {
-        if ($(this).prop('checked') == true) {
-            $('#terms_and_condition').removeClass('d-none');
-            $('#terms_and_condition').modal('show');
-        } else {
-            $('#terms_and_condition').addClass('d-none');
-        }
-    })
-</script>
-<script>
-  $('.multiple').select2();
-  // $(function(){$("#wizard").steps({headerTag:"h4",bodyTag:"section",transitionEffect:"fade",enableAllSteps:true,transitionEffectSpeed:500,onStepChanging:function(event,currentIndex,newIndex){if(newIndex===1){$('.steps ul').addClass('step-2');}else{$('.steps ul').removeClass('step-2');}
-  // if(newIndex===2){$('.steps ul').addClass('step-3');}else{$('.steps ul').removeClass('step-3');}
-  // if(newIndex===3){$('.steps ul').addClass('step-4');$('.actions ul').addClass('step-4');}
-  // if(newIndex===4){$('.steps ul').removeClass('step-4').addClass('step-5');$('.actions ul').addClass('step-last');}else{$('.steps ul').removeClass('step-5');$('.actions ul').removeClass('step-last');}
-  // return true;},labels:{finish:"Save & Continue",next:"Next",previous:"Previous"}});$('.wizard > .steps li a').click(function(){$(this).parent().addClass('checked');$(this).parent().prevAll().addClass('checked');$(this).parent().nextAll().removeClass('checked');});$('.forward').click(function(){$("#wizard").steps('next');})
-  // $('.backward').click(function(){$("#wizard").steps('previous');})
-  // $('.checkbox-circle label').click(function(){$('.checkbox-circle label').removeClass('active');$(this).addClass('active');})})
-</script>
-<script>
-  $(document).on('click', '#kt_stepper_example_basic_form_submit', function() {
-      $('#kt_stepper_example_basic_form').submit();
-  })
+$(document).on('change', '#agree_checkbox_user', function() {
+    if ($(this).prop('checked') == true) {
+        $('#terms_and_condition').removeClass('d-none');
+        $('#terms_and_condition').modal('show');
+    } else {
+        $('#terms_and_condition').addClass('d-none');
+    }
+})
+$('.multiple').select2();
+$(document).on('click', '#kt_stepper_example_basic_form_submit', function() {
+    $('#kt_stepper_example_basic_form').submit();
+})
   $(document).on('blur', '#floatingPincode', function() {
       let pincode = $(this).val();
       if (pincode.length > 5) {

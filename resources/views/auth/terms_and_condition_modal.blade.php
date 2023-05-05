@@ -21,9 +21,9 @@
             <div class="modal-body pb-0">
                 <div class="form-content p-2">
                     <div class="modal-header border-0 ps-0 pt-0">
-                        <h4 class="modal-title border-bottom-3 border border-danger">Terms & Conditions</h4>
+                        <h4 class="modal-title border-bottom-3">Terms & Conditions</h4>
                     </div>
-                    <div class="card mb-0">
+                    <div class="card mb-0" style="max-height:50vh; overflow-y: scroll;overflow-x: hidden;">
                         <div class="card-body p-0">
                             <div class="row">
                                 <ul>

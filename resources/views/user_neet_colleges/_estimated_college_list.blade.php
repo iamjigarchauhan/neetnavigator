@@ -13,7 +13,6 @@
     <!--begin::Card body-->
     <div class="card-body p-9">
         {!! $dataTable->table(['class' => 'table table-hover border-0 w-100']) !!}
-        
     </div>
     <!--end::Card body-->
 </div>
