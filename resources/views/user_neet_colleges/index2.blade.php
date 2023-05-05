@@ -111,7 +111,7 @@ onStepChanging:function(event,currentIndex,newIndex){
 onFinished: function (event, currentIndex){
   $('#kt_stepper_checkout_form').submit();
 },
-labels:{finish:"Save & Continue",next:"Next",previous:"Previous"}});
+labels:{finish:"Save",next:"Next",previous:"Previous"}});
 $('.wizard > .steps li a').click(function(){$(this).parent().addClass('checked');$(this).parent().prevAll().addClass('checked');$(this).parent().nextAll().removeClass('checked');});$('.forward').click(function(){$("#wizard").steps('next');})
 $('.backward').click(function(){$("#wizard").steps('previous');})
 $('.checkbox-circle label').click(function(){$('.checkbox-circle label').removeClass('active');$(this).addClass('active');})
