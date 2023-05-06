@@ -119,7 +119,7 @@ onStepChanging:function(event,currentIndex,newIndex){
             table = $('table.statelist tbody');
             html = '';
             $.each(data.states,function(index, value){
-              html += '<td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td>'
+              html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
             })
             table.html(html);
            $('.predicted-marks').html(data.marks);
