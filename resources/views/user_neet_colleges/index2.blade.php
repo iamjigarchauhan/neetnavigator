@@ -196,8 +196,7 @@ $(document).on('change', '.cart-radio', function() {
 });
 
 function cartSummaryRadioDisableOrNot(selectedState) {
-    $(".cart-radio").prop('checked', false);
-  
+    $(".cart-radio").prop('checked', false).closest('tr').hide();
     if (selectedState == 1) {
         $(".cart-radio[data-state-attempt='1-1']").prop('disabled', false).closest('tr').show();
         $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true).closest('tr').hide();
