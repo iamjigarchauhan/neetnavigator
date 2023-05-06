@@ -45,8 +45,7 @@
                          </div>
                       </div>
                       <div class="popular-course-title yl-headline">
-                         <h3><a href="#">User Experience Research
-                            &amp; Design</a>
+                         <h3><a href="#">{{ $college->name}}</a>
                          </h3>
                          <div class="yl-course-meta">
                             <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
