@@ -14,10 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            StatesSeeder::class,
-            CitiesSeeder::class,
-            CollegesSeeder::class,
-            NeetRangeRankingSeeder::class,
+            AddCollegesSeeder::class
+            // StatesSeeder::class,
+            // CitiesSeeder::class,
+            // CollegesSeeder::class,
+            // NeetRangeRankingSeeder::class,
         ]);
     }
 }
