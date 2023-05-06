@@ -30,6 +30,7 @@
        </div>
        <div class="course-page-courses-item">
           <div class="row">
+             @foreach($colleges as $key => $college)
              <div class="col-lg-3 col-md-4">
                 <div class="yl-popular-course-img-text">
                    <div class="yl-popular-course-img text-center">
@@ -70,7 +71,9 @@
                    </div>
                 </div>
              </div>
-             <div class="col-lg-3 col-md-4">
+             @endforeach
+
+             {{-- <div class="col-lg-3 col-md-4">
                 <div class="yl-popular-course-img-text">
                    <div class="yl-popular-course-img text-center">
                       <img src="{{ asset('assets/home/img/course/cpc2.jpg')}}" alt="">
@@ -350,15 +353,16 @@
                       </div>
                    </div>
                 </div>
-             </div>
+             </div> --}}
           </div>
           <div class="yl-course-pagination text-center ul-li">
              <ul>
-                <li>
+               {{ $colleges->links() }}
+                {{-- <li>
                    <a href="#">01</a>
                    <a href="#">02</a>
                    <a href="#">03</a>
-                </li>
+                </li> --}}
              </ul>
           </div>
        </div>

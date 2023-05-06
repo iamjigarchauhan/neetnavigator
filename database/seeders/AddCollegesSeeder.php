@@ -17,7 +17,6 @@ class AddCollegesSeeder extends Seeder
         $users = (new FastExcel)->import(public_path('collegelist.xlsx'), function ($line) {
             $state = DB::table('states')->whereName($line['State'])->first();
             if($state != null){
-                // dd($line);
                 $college = [
                     'name'=>$line['Name and Address of Medical College/Medical Institution'],
                     'state_id'=>$state->id,
@@ -28,7 +27,6 @@ class AddCollegesSeeder extends Seeder
                     'lop_date'=> !empty($line['Date of LOP']) && $line['Date of LOP'] != 'N/A' ? $line['Date of LOP'] : null,
                     'status'=>'active'
                 ];
-                // dd($college);
                 return DB::table('colleges')->insert($college);
             } else {
                 return  DB::table('states')->insert([

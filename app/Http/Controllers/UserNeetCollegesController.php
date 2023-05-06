@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUserNeetInfo;
 use App\Models\City;
 use App\Models\NeetRangeRanking;
 use App\Models\State;
+use App\Models\College;
 use App\Models\UserNeetInfo;
 use Http;
 use Illuminate\Contracts\Session\Session;
@@ -44,10 +45,11 @@ class UserNeetCollegesController extends Controller
      */
     public function collegeList(EstimatedNeetCollegeDataTable $dataTable)
     {
-        if (!request()->ajax()) {
-            $this->states = State::allState('active');
-        }
-        return $dataTable->render('user_neet_colleges.result', $this->data);
+        // if (!request()->ajax()) {
+        //     $this->states = State::allState('active');
+        // }
+        $this->colleges = College::paginate(12);
+        return view('user_neet_colleges.result', $this->data);
     }
 
     /**
