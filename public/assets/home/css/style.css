@@ -6402,6 +6402,141 @@ select:visited {
     padding: 40px;
   }
 }
+
+.contect_wrapper {
+  padding: 50px 0px;
+}
+
+.contect_wrapper h2 {
+  font-size: 38px;
+  margin-top: 0;
+  font-family: roboto,sans-serif;
+  color: #398fc5!important;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contect_wrapper p {
+  font-size: 22px;
+  line-height: 22px;
+  color: #343434;
+}
+
+.branchlist {
+  margin: 10px 0;
+  padding: 0;
+}
+
+.contect_wrapper ul {
+
+}
+
+.contect_wrapper ul li {
+  margin: 3px 0px 10px;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+}
+
+.contect_wrapper ul li span {
+    font-family: barlow,sans-serif;
+    font-weight: 600;
+}
+
+.contactitemblk {
+  font-size: 0;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #ccc;
+}
+
+.cityitemblk {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 50px;
+}
+
+.cityname {
+  font-size: 25px;
+  line-height: 25px;
+  color: #343434;
+  font-family: barlow,sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+.cityaddress {
+  font-size: 16px;
+  line-height: 24px;
+  color: #343434;
+  font-family: barlow,sans-serif;
+}
+
+.cityaddress span {
+  display: block;
+  font-weight: 700;
+}
+
+.cityitemblk.bigcity {
+  width: 40%;
+}
+
+.hotlineitem {
+  font-family: barlow,sans-serif;
+  margin: 0;
+}
+
+.hotlineitem span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0;
+}
+
+.citynumblk {
+  position: relative;
+  padding: 0 0 0 30px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 7px;
+}
+
+.citynumblk.disblk {
+  display: block;
+  width: 100%;
+}
+
+.citynumblk.disblk a {
+  font-weight: 600;
+  color: #43aef0;
+}
+
+.citynumblk span.callicon {
+  position: absolute;
+  background: url(../img/sprite.png) no-repeat -45px -39px;
+  width: 19px;
+  height: 19px;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.citynumblk span.mailicon {
+  position: absolute;
+  background: url(../img/sprite.png) no-repeat -9px -39px;
+  width: 20px;
+  height: 12px;
+  display: inline-block;
+  top: 4px;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
 /*---------------------------------------------------- */
 /*Footer area*/
 /*----------------------------------------------------*/
@@ -6414,7 +6549,7 @@ select:visited {
 }
 .yl-footer-copyright span {
   font-size: 15px;
-  color: #ffffff;
+  color: #000;
 }
 
 .yl-footer-content-wrap {
@@ -6444,6 +6579,7 @@ select:visited {
 .yl-footer-widget .yl-footer-logo-widget p {
   color: #9d9d9d;
   padding-bottom: 35px;
+  width: 67%;
 }
 .yl-footer-widget .yl-footer-logo-widget .footer-logo-btn {
   color: #fff;
@@ -6515,6 +6651,9 @@ select:visited {
 }
 .yl-footer-widget .yl-footer-info-widget ul {
   padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .yl-footer-widget .yl-footer-info-widget i {
   float: left;
@@ -6534,12 +6673,13 @@ select:visited {
   margin-top: 10px;
 }
 .yl-footer-widget .yl-footer-info-widget .office-open-hour span {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   display: block;
   margin-bottom: 10px;
   font-weight: 700;
   text-decoration: underline;
+  margin-top: 19px !important;
 }
 .yl-footer-widget .yl-footer-info-widget .office-open-hour p {
   font-size: 14px;
@@ -6744,6 +6884,37 @@ select:visited {
   .yl-sticky-menu {
     top: 0;
   }
+
+  .contect_wrapper h2 {
+    font-size: 30px;
+}
+/* .contect_wrapper {
+  padding: 20px 20px;
+} */
+.contect_wrapper p {
+  font-size: 19px;
+  line-height: 22px;
+}
+.contect_wrapper ul li {
+  font-size: 15px;
+}
+.cityitemblk {
+  width: 33.33%;
+}
+.cityaddress {
+  width: 85%;
+  font-size: 15px;
+}
+.cityaddress br {
+  display: none;
+}
+.cityname {
+  font-size: 20px;
+  line-height: 20px;
+}
+.cityitemblk:last-child {
+  width: 50%;
+}
 
   .yl-feature-innerbox {
     margin-bottom: 30px;
@@ -7009,6 +7180,39 @@ select:visited {
   .yl-newslatter-content .yl-newslatter-text-icon .yl-newslatter-text h3 {
     font-size: 20px;
   }
+
+  .contect_wrapper h2 {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.contect_wrapper p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #343434;
+}
+
+.cityitemblk {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px dotted #343434;
+}
+
+.cityaddress {
+  width: 100%;
+  font-size: 14px;
+}
+
+.cityaddress br {
+  display: none;
+}
+
+.cityitemblk.bigcity {
+  display: block;
+  width: 100%;
+}
 
   .yl-testimonial-section {
     padding: 50px 0px;
@@ -7311,6 +7515,21 @@ input#floatingPincode {
   -webkit-appearance: none !important;
   margin: 0;
 }
+input.form-control::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+}
+.course-page-course-section label.text-muted {
+  font-weight: 300;
+  color: #000 !important;
+}
+.course-page-course-section span.fw-bolder,
+.course-page-course-section span.fw-bold.fs-6,
+.course-page-course-section a.fw-bold.fs-6.text-dark.text-hover-primary {
+  font-weight: 600;
+}
 input#floatingPincode::-webkit-outer-spin-button,
 input#floatingPincode::-webkit-inner-spin-button,
 input#floatingMarks::-webkit-outer-spin-button,
@@ -7346,7 +7565,40 @@ form#kt_stepper_checkout_form label {
 }
 section#wizard-p-3 .table-responsive {
   margin-top: 25px;
-  border-bottom: 1px solid #dee2e6;
+  /* border-bottom: 1px solid #dee2e6; */
+  height: auto !important;
+  max-height: 350px !important;
+  margin-bottom: 0px;
+}
+section#wizard-p-3 .table-responsive td.text-start.fw-bolder.fs-lg-3,
+section#wizard-p-3 .table-responsive td.fw-bolder.fs-lg-3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000 !important;
+}
+.align_marks_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 49px;
+}
+.align_markds {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+}
+form#kt_stepper_checkout_form .align_markds label {
+  margin: 0 !important;
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0;
+}
+.align_markds span {
+  color: #43aef0 !important;
 }
 .yl-footer-widget .widget-title {
   color: #000;
@@ -7378,7 +7630,7 @@ section#wizard-p-3 .table-responsive {
 }
 .steps ul li.first a,
 .steps ul li.checked a {
-  background: #8eac49;
+  background: #43aef0;
   transition: all 0.5s ease;
 }
 .steps ul:before {

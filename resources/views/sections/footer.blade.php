@@ -2,7 +2,7 @@
 	<div class="container">
 			<div class="yl-footer-content-wrap">
 				<div class="row">
-						<div class="col-lg-3 col-md-6">
+						<div class="col-lg-6 col-md-6">
 							<div class="yl-footer-widget">
 									<div class="yl-footer-logo-widget yl-headline pera-content">
 										<div class="yl-footer-logo">
@@ -13,7 +13,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6">
+						<!-- <div class="col-lg-3 col-md-6">
 							<div class="yl-footer-widget">
 									<div class="yl-footer-newslatter-widget pera-content">
 										<h3 class="widget-title">Newsletter</h3>
@@ -34,8 +34,8 @@
 										</div>
 									</div>
 							</div>
-						</div>
-						<div class="col-lg-3 col-md-6">
+						</div> -->
+						<div class="col-lg-6 col-md-6">
 							<div class="yl-footer-widget">
 									<div class="yl-footer-info-widget ul-li">
 										<h3 class="widget-title">Official info</h3>
@@ -58,7 +58,7 @@
 									</div>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-6">
+						<!-- <div class="col-lg-3 col-md-6">
 							<div class="yl-footer-widget">
 									<div class="yl-footer-instagram-widget">
 										<h3 class="widget-title">Instagram</h3>
@@ -74,7 +74,7 @@
 										</div>
 									</div>
 							</div>
-						</div>
+						</div> -->
 				</div>
 			</div>
 			<div class="yl-footer-copyright text-center"><span>© 2020 Yale - Education. All rights reserved.</span></div>
