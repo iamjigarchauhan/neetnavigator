@@ -236,10 +236,10 @@ select:visited {
   margin: 0 auto;
 }
 .yl-section-title.yl-title-style-two span {
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-section-title.yl-title-style-two span:after, .yl-section-title.yl-title-style-two span:before {
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-section-title.yl-title-style-two .title-watermark {
   left: 0;
@@ -286,7 +286,7 @@ select:visited {
   transform: skew(50deg);
   transition-duration: 0.6s;
   transform-origin: top left;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-footer-widget .yl-footer-logo-widget .footer-logo-btn:hover:after, .yl-newslatter-content .yl-newslatter-form button:hover:after, .yl-registration-content-2 .registration-text-2 a:hover:after, .yl-registration-text-wrap a:hover:after, .yl-popular-course-section .yl-popular-course-btn:hover:after, .yl-course-more-btn:hover:after, .yl-department-section .yl-department-btn:hover:after, .banner-search-select button:hover:after, .yl-banner-text .yl-banner-btn a:hover:after, .slider-main-item .slider-main-text .slider-main-btn a:hover:after {
   height: 100%;
@@ -525,7 +525,7 @@ select:visited {
   transition: 0.3s all ease-in-out;
 }
 .yl-header-cart-login .yl-top-cart-login button:hover {
-  color: #0000fe;
+  color: #8eac49;
 }
 
 .yi-header-social {
@@ -578,7 +578,7 @@ select:visited {
   height: 5px;
   position: absolute;
   border-radius: 100%;
-  background-color: #0000fe;
+  background-color: #8eac49;
   transition: 0.3s all ease-in-out;
 }
 .header-style-two .yl-main-navigation li {
@@ -592,7 +592,7 @@ select:visited {
   content: "";
   position: absolute;
   border-radius: 30%;
-  background-color: #0000fe;
+  background-color: #8eac49;
   transition: 0.3s all ease-in-out;
 }
 .header-style-two .yl-main-navigation li:hover:before {
@@ -608,10 +608,10 @@ select:visited {
   display: none;
 }
 .header-style-two .yl-main-navigation .dropdown .dropdown-menu li a:hover {
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .header-style-two .yl-main-navigation .dropdown:hover .dropdown-menu {
-  border-bottom: 2px solid #0000fe;
+  border-bottom: 2px solid #8eac49;
 }
 
 .yl-sticky-menu {
@@ -1519,7 +1519,7 @@ select:visited {
   height: 10px;
   right: 50%;
   bottom: 200px;
-  background-color: #0000fe;
+  background-color: #8eac49;
   box-shadow: 0px 6px 13px 0px rgba(0, 0, 254, 0.25);
   animation: animationFramesTwo 18s infinite alternate;
 }
@@ -1556,7 +1556,7 @@ select:visited {
   margin-right: 10px;
   border-radius: 40px;
   display: inline-block;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-banner-text .yl-banner-tag p {
   color: #000000;
@@ -1573,7 +1573,7 @@ select:visited {
   padding-bottom: 35px;
 }
 .yl-banner-text h1 span {
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-banner-text p {
   color: #4f4f4f;
@@ -1607,7 +1607,7 @@ select:visited {
   line-height: 50px;
   border-radius: 100%;
   transition: 0.3s all ease-in-out;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-banner-text .yl-banner-play a {
   color: #fff;
@@ -1681,7 +1681,7 @@ select:visited {
   font-weight: 700;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .banner-search-select button:after {
   background-color: #43aef0;
@@ -1700,7 +1700,7 @@ select:visited {
 .select-apply-btn p a {
   font-weight: 700;
   margin-left: 8px;
-  color: #0000fe;
+  color: #8eac49;
   text-decoration: underline;
 }
 @keyframes animateBubble {
@@ -2285,7 +2285,7 @@ select:visited {
   background-color: #fff;
 }
 .about-page-service-section .yl-feature-innerbox .yl-feature-icon i {
-  color: #0000fe;
+  color: #8eac49;
 }
 .about-page-service-section .yl-feature-innerbox:hover .yl-feature-icon i {
   color: #43aef0;
@@ -2638,7 +2638,7 @@ select:visited {
 .yl-testimonial-img-text-2 .yl-testimonial-text-2 h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #0000fe;
+  color: #8eac49;
   padding-bottom: 15px;
 }
 .yl-testimonial-img-text-2 .yl-testimonial-text-2 p {
@@ -2663,7 +2663,7 @@ select:visited {
   height: 65px;
   border-radius: 100%;
   position: absolute;
-  border: 3px solid #0000fe;
+  border: 3px solid #8eac49;
 }
 .yl-testimonial-img-text-2 .yl-testimonial-author-2 .yl-testi-author-img-2:after {
   top: 3px;
@@ -2728,7 +2728,7 @@ select:visited {
 }
 .yl-testimonial-wrap-2 .owl-dots .owl-dot.active {
   width: 38px;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 .yl-testimonial-section-3 {
@@ -3059,7 +3059,7 @@ select:visited {
   line-height: 50px;
   overflow: hidden;
   border-radius: 40px;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-popular-course-section .yl-popular-course-btn:after {
   background-color: #43aef0;
@@ -3129,7 +3129,7 @@ select:visited {
 }
 .yl-popular-course-img-text .popular-course-title .yl-course-meta a i {
   margin-right: 5px;
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-popular-course-img-text .popular-course-rate ul {
   margin-right: 5px;
@@ -3151,7 +3151,7 @@ select:visited {
   line-height: 30px;
   text-align: center;
   border-radius: 100%;
-  background-color: #0000fe;
+  background-color: #8eac49;
   transition: 0.3s all ease-in-out;
 }
 .yl-popular-course-img-text .popular-course-rate .p-course-btn a {
@@ -3264,7 +3264,7 @@ select:visited {
 }
 .yl-course-pagination ul li a:hover {
   color: #fff;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 @media screen and (max-width: 767px) {
@@ -3447,7 +3447,7 @@ select:visited {
   width: 150px;
   line-height: 44px;
   border-radius: 30px;
-  border: 2px solid #0000fe;
+  border: 2px solid #8eac49;
 }
 .cd-ins-btn a {
   color: #000;
@@ -3616,7 +3616,7 @@ select:visited {
   border: none;
   font-weight: 700;
   border-radius: 40px;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .cd-review-form button i {
   margin-left: 5px;
@@ -4265,10 +4265,10 @@ select:visited {
   height: 1px;
   position: absolute;
   transition: 0.3s all ease-in-out;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-blog-img-text-2 .yl-blog-title-text-2 .yl-blog-more:hover {
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-blog-img-text-2 .yl-blog-title-text-2 .yl-blog-more:hover:after {
   width: 100%;
@@ -4285,7 +4285,7 @@ select:visited {
   font-weight: 700;
   margin-right: 25px;
   position: relative;
-  color: #0000fe;
+  color: #8eac49;
   font-family: "Fira Sans";
 }
 .yl-blog-meta-2 a:after {
@@ -4295,7 +4295,7 @@ select:visited {
   right: -15px;
   height: 20px;
   position: absolute;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-blog-meta-2 a:last-child:after {
   display: none;
@@ -4330,7 +4330,7 @@ select:visited {
 }
 #yl-blog-slider-2 .owl-dots .owl-dot.active {
   width: 38px;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 .yl-blog-feed-section,
@@ -4621,7 +4621,7 @@ select:visited {
 }
 .yl-blog-details-section .yl-blog-details-next-prev-wrap .yl-blog-details-next-prev-item .yl-blog-next-prev-title a i {
   font-size: 14px;
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-blog-details-section .yl-blog-details-next-prev-wrap .yl-blog-details-next-prev-item h3 {
   color: #000;
@@ -4889,7 +4889,7 @@ select:visited {
   line-height: 60px;
   position: absolute;
   border-radius: 100%;
-  background-color: #0000fe;
+  background-color: #8eac49;
   transition: 0.3s all ease-in-out;
 }
 .yl-category-img-text .yl-category-hover-icon i {
@@ -4933,7 +4933,7 @@ select:visited {
 }
 .yl-category-slide-content .owl-dots .owl-dot.active {
   width: 38px;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 .yl-category-section-2 {
@@ -5205,7 +5205,7 @@ select:visited {
   transition: 0.3s all ease-in-out;
 }
 .yl-event-innerbox .yl-event-text h3:hover {
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-event-innerbox .yl-event-text .yl-event-meta {
   padding-top: 20px;
@@ -5219,7 +5219,7 @@ select:visited {
 }
 .yl-event-innerbox .yl-event-text .yl-event-meta a i {
   margin-right: 5px;
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-event-innerbox .yl-event-text .yl-event-meta a:last-child {
   margin-right: 0;
@@ -5238,7 +5238,7 @@ select:visited {
   margin-top: 10px;
   line-height: 46px;
   border-radius: 40px;
-  border: 2px solid #0000fe;
+  border: 2px solid #8eac49;
   transition: 0.3s all ease-in-out;
 }
 .yl-event-btn a {
@@ -5249,7 +5249,7 @@ select:visited {
   transition: 0.3s all ease-in-out;
 }
 .yl-event-btn:hover {
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-event-btn:hover a {
   color: #fff;
@@ -5342,7 +5342,7 @@ select:visited {
   line-height: 45px;
   border-radius: 4px;
   display: inline-block;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 .yl-event-wrap-section {
@@ -5511,7 +5511,7 @@ select:visited {
 }
 .instructor-details-profile span i {
   margin-right: 10px;
-  color: #0000fe;
+  color: #8eac49;
 }
 
 .instructor-details-content-text {
@@ -5586,11 +5586,11 @@ select:visited {
   padding-bottom: 0;
 }
 .yl-instructor-section-wrap .yl-section-title span {
-  color: #0000fe;
+  color: #8eac49;
 }
 .yl-instructor-section-wrap .yl-section-title span:after,
 .yl-instructor-section-wrap .yl-section-title span:before {
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 
 #yl-instructor-slider .owl-stage-outer {
@@ -5656,7 +5656,7 @@ select:visited {
 }
 .yl-faq-tab-btn .nav-tabs .nav-link.active {
   color: #fff;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-faq-tab-btn .faq-tab-btn-area {
   overflow: hidden;
@@ -5736,7 +5736,7 @@ select:visited {
   background-color: transparent;
 }
 .yl-photo-filter-btn button.is-checked {
-  color: #0000fe;
+  color: #8eac49;
 }
 
 .grid-size-33 {
@@ -6039,7 +6039,7 @@ select:visited {
   margin-top: 20px;
   border-radius: 8px;
   font-weight: 700;
-  background-color: #0000fe;
+  background-color: #8eac49;
 }
 .yl-contact-form-area button i {
   margin-left: 10px;
