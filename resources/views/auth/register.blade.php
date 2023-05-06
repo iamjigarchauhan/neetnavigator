@@ -12,7 +12,6 @@
         <div class="col-md-7">
             <div id="wizard">
                 <h4 class="bold">Register</h4>
-                <p>&nbsp;</p>
                 @if(session()->has('error'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong>Oops!</strong> {{ session()->get('error') }}
@@ -25,29 +24,29 @@
                     <form method="POST" action="{{ route('register.custom') }}">
                     @csrf
                     <div class="form-floating  mb-2">
-                        <input id="full_name" type="text" class="form-control" name="full_name" placeholder="Full Name" autofocus="" required value="{{ old('full_name') }}">
                         <label for="full_name">Full Name *</label>
+                        <input id="full_name" type="text" class="form-control" name="full_name" placeholder="" autofocus="" required value="{{ old('full_name') }}">
                         @if ($errors->has('full_name'))
                         <span class="text-danger">{{ $errors->first('full_name') }}</span>
                         @endif
                     </div>
                     <div class="form-floating  mb-2">
-                        <input placeholder="Email ID" id="email" name="email" type="email" class="form-control" required value="{{ old('email') }}">
                         <label for="email">Email ID *</label>
+                        <input placeholder="" id="email" name="email" type="email" class="form-control" required value="{{ old('email') }}">
                         @if ($errors->has('email'))
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
                     <div class="form-floating  mb-2">
-                        <input placeholder="Password" id="password" type="password" class="form-control" name="password" required>
                         <label for="password">Password *</label>
+                        <input placeholder="" id="password" type="password" class="form-control" name="password" required>
                         @if ($errors->has('password'))
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                         @endif
                     </div>
                     <div class="form-floating  mb-2">
-                        <input placeholder="Mobile Number" id="mobile_no" type="text" maxlength="10" class="form-control" name="mobile_no" required value="{{ old('mobile_no') }}">
                         <label for="mobile_no">Mobile Number *</label>
+                        <input placeholder="" id="mobile_no" type="text" maxlength="10" class="form-control" name="mobile_no" required value="{{ old('mobile_no') }}">
                         @if ($errors->has('mobile_no'))
                         <span class="text-danger">{{ $errors->first('mobile_no') }}</span>
                         @endif

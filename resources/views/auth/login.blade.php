@@ -1,40 +1,44 @@
 @extends('layouts.app')
 @section('content')
-<section id="yl-popular-course" class="yl-popular-course-section">
+<!-- <section id="yl-popular-course" class="yl-popular-course-section">
     <div class="container">
     </div>
-</section>
+</section> -->
 <section id="yl-popular-course" class="yl-popular-course-section">
     <div class="container">
-        <div class="yl-login-head text-center pera-content">
-            <h2>Login</h2>
-        </div>
-        <div class="yl-login-content pera-content text-center pt-3">
-            @if(session()->has('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Oops!</strong> {{ session()->get('error') }}.
-                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @endif
-            <form method="POST" action="{{ route('login.custom') }}">
-                @csrf
-                <input type="text" name="email" placeholder="Email">
-                @if ($errors->has('email'))
-                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                @endif
-                <input type="text" name="password" placeholder="Password">
-                @if ($errors->has('password'))
-                <span class="text-danger">{{ $errors->first('password') }}</span>
-                @endif
-                <div class="yl-login-label clearfix">
-                    {{-- <span><input type="checkbox">Remember me</span> --}}
-                    {{-- <a href="{{ route('') }}">Forget Password?</a> --}}
+        <div class="card_container">
+            <div class="white_card">
+                <div class="yl-login-head text-center pera-content">
+                    <h2>Login</h2>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
-            <p>Don’t have any account? <a href="{{ route('register-user')}}">Signup</a></p>
+                <div class="yl-login-content pera-content text-center pt-3">
+                    @if(session()->has('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Oops!</strong> {{ session()->get('error') }}.
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('login.custom') }}">
+                        @csrf
+                        <input type="text" name="email" placeholder="Email">
+                        @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                        <input type="text" name="password" placeholder="Password">
+                        @if ($errors->has('password'))
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                        @endif
+                        <div class="yl-login-label clearfix">
+                            {{-- <span><input type="checkbox">Remember me</span> --}}
+                            {{-- <a href="{{ route('') }}">Forget Password?</a> --}}
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <p>Don’t have any account? <a href="{{ route('register-user')}}">Signup</a></p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

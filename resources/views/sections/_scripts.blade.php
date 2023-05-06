@@ -12,3 +12,9 @@
 <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
 <script src="{{ asset('assets/home/js/typer.js') }}"></script>
 <script src="{{ asset('assets/home/js/custom.js') }}"></script>
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+</script>

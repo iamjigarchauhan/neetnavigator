@@ -15,7 +15,7 @@
         <!--begin::Row-->
         @auth
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('Name') }}</label>
@@ -32,7 +32,7 @@
             </div>
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('12th Passign State') }}</label>
@@ -57,7 +57,7 @@
             </div>
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">
@@ -85,7 +85,7 @@
             <!--end::Input group-->
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('Domicile State') }}</label>
@@ -111,7 +111,7 @@
             <!--end::Input group-->
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">
@@ -139,7 +139,7 @@
             <!--end::Input group-->
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-7">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('State Category') }}</label>
@@ -165,7 +165,7 @@
             <!--end::Input group-->
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-10">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('Minority') }}</label>
@@ -191,7 +191,7 @@
             <!--end::Input group-->
 
             <!--begin::Input group-->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row mb-10">
                     <!--begin::Label-->
                     <label class="col-lg-5 fw-bold text-muted">{{ __('Quota') }}</label>
@@ -248,8 +248,8 @@
                 <div class="row mb-6">
                     <div class="col-lg-12 fv-row">
                         <div class="form-floating">
-                        <input name="marks" type="number" max="999" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="Enter Your Marks" value="{{ old('marks') }}" required />
                         <label for="floatingMarks">{{ __('Enter Your Marks') }}</label>
+                        <input name="marks" type="number" max="999" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" value="{{ old('marks') }}" required />
                         @if ($errors->has('marks'))
                         <span class="text-danger">{{ $errors->first('marks') }}</span>
                         @endif

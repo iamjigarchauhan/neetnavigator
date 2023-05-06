@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <div class="row mb-7">
             <label class="col-lg-8 fw-bold text-muted">{{ __('Marks') }}</label>
             <div class="col-lg-4">
@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="row mb-7">
             <label class="col-lg-8 fw-bold text-muted">{{ __('Minimum Rank') }}</label>
             <div class="col-lg-4 fv-row">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="row mb-7">
             <!--begin::Label-->
             <label class="col-lg-8 fw-bold text-muted">

@@ -38,7 +38,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="yl-footer-widget">
 									<div class="yl-footer-info-widget ul-li">
-										<h3 class="widget-title">Official info:</h3>
+										<h3 class="widget-title">Official info</h3>
 										<ul>
 												<li>
 													<i class="fas fa-map-marker-alt"></i> 
