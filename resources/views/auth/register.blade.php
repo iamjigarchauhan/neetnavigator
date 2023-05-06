@@ -1,66 +1,74 @@
-@extends('layouts.wizard')
+@extends('layouts.app')
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<div class="wrapper">
-  <div class="image-holder">
-    <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
-  </div>
-    <div id="wizard">
-      <h4 class="bold">Register</h4>
-      <p>&nbsp;</p>
-      @if(session()->has('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Oops!</strong> {{ session()->get('error') }}
-            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+<section class="course-page-course-section">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-5">
+            <div class="image-holder">
+                <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
+            </div>
         </div>
-      @endif
-      <section>
-        <form method="POST" action="{{ route('register.custom') }}">
-          @csrf
-          <div class="form-floating  mb-4">
-              <input id="full_name" type="text" class="form-control" name="full_name" placeholder="Full Name" autofocus="" required value="{{ old('full_name') }}">
-              <label for="full_name">Full Name *</label>
-              @if ($errors->has('full_name'))
-              <span class="text-danger">{{ $errors->first('full_name') }}</span>
-              @endif
-          </div>
-          <div class="form-floating  mb-4">
-              <input placeholder="Email ID" id="email" name="email" type="email" class="form-control" required value="{{ old('email') }}">
-              <label for="email">Email ID *</label>
-              @if ($errors->has('email'))
-              <span class="text-danger">{{ $errors->first('email') }}</span>
-              @endif
-          </div>
-          <div class="form-floating  mb-4">
-              <input placeholder="Password" id="password" type="password" class="form-control" name="password" required>
-              <label for="password">Password *</label>
-              @if ($errors->has('password'))
-              <span class="text-danger">{{ $errors->first('password') }}</span>
-              @endif
-          </div>
-          <div class="form-floating  mb-4">
-              <input placeholder="Mobile Number" id="mobile_no" type="text" maxlength="10" class="form-control" name="mobile_no" required value="{{ old('mobile_no') }}">
-              <label for="mobile_no">Mobile Number *</label>
-              @if ($errors->has('mobile_no'))
-              <span class="text-danger">{{ $errors->first('mobile_no') }}</span>
-              @endif
-          </div>
-          <div class="form-floating  mb-4">
-              <div class="form-check form-check-xs custom-checkbox">
-                  <input type="checkbox" class="form-check-input" name="agreeCheckboxUser" id="agree_checkbox_user" required>
-                  <label for="agree_checkbox_user" class="text-primary">Agree to Terms & Conditions</label>
-              </div>
-          </div>
-          <button class="btn btn-primary login-btn" type="submit">Create Account</button>
-          <div class="account-footer text-center mt-3">
-              Already have an account? <a class="forgot-link mb-0" href="{{route('login')}}">Login</a>
-          </div>
-        </form>
-      </section>
+        <div class="col-md-7">
+            <div id="wizard">
+                <h4 class="bold">Register</h4>
+                <p>&nbsp;</p>
+                @if(session()->has('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Oops!</strong> {{ session()->get('error') }}
+                        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                <section>
+                    <form method="POST" action="{{ route('register.custom') }}">
+                    @csrf
+                    <div class="form-floating  mb-2">
+                        <input id="full_name" type="text" class="form-control" name="full_name" placeholder="Full Name" autofocus="" required value="{{ old('full_name') }}">
+                        <label for="full_name">Full Name *</label>
+                        @if ($errors->has('full_name'))
+                        <span class="text-danger">{{ $errors->first('full_name') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-floating  mb-2">
+                        <input placeholder="Email ID" id="email" name="email" type="email" class="form-control" required value="{{ old('email') }}">
+                        <label for="email">Email ID *</label>
+                        @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-floating  mb-2">
+                        <input placeholder="Password" id="password" type="password" class="form-control" name="password" required>
+                        <label for="password">Password *</label>
+                        @if ($errors->has('password'))
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-floating  mb-2">
+                        <input placeholder="Mobile Number" id="mobile_no" type="text" maxlength="10" class="form-control" name="mobile_no" required value="{{ old('mobile_no') }}">
+                        <label for="mobile_no">Mobile Number *</label>
+                        @if ($errors->has('mobile_no'))
+                        <span class="text-danger">{{ $errors->first('mobile_no') }}</span>
+                        @endif
+                    </div>
+                    <div class="form-floating  mb-3">
+                        <div class="form-check form-check-xs custom-checkbox pl-0">
+                            <input type="checkbox" class="form-check-input" name="agreeCheckboxUser" id="agree_checkbox_user" required>
+                            <label for="agree_checkbox_user" class="text-primary">Agree to Terms & Conditions</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary login-btn" type="submit">Create Account</button>
+                    <div class="account-footer mt-4">
+                        Already have an account? <a class="forgot-link mb-0" href="{{route('login')}}">Login</a>
+                    </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+      </div>
     </div>
-</div>
+</section>
 @include('auth.terms_and_condition_modal')
 @endsection
 @section('scripts')
