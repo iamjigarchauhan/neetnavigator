@@ -23,9 +23,9 @@
                   </li>
                   @auth                 
                   <li class="dropdown float-right">
-                    <a href="{{ route('contact')}}"><i class="fas fa-user"></i></a>
-                    <ul class="dropdown-menu clearfix">
-                      <li><a href="{{ route('signout') }}" >Logout</a></li>
+                    <a href="{{ route('signout')}}">Logout</a>
+                    {{-- <ul class="dropdown-menu clearfix">
+                      <li><a href="{{ route('signout') }}" >Logout</a></li> --}}
                       {{-- <form id="logout-form" action="{{ route('signout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                       </form> --}}
