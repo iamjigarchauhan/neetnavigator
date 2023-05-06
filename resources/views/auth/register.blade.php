@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-7">
             <div id="wizard">
-                <h4 class="bold">Register</h4>
+                <h4 class="bold">Student Registration</h4>
                 @if(session()->has('error'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <strong>Oops!</strong> {{ session()->get('error') }}

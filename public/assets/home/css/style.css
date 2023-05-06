@@ -270,6 +270,9 @@ select:visited {
   color: #fff;
 }
 
+.cart-area h2 {
+  font-size: 18px;
+}
 .yl-footer-widget .yl-footer-logo-widget .footer-logo-btn, .yl-newslatter-content .yl-newslatter-form button, .yl-registration-content-2 .registration-text-2 a, .yl-registration-text-wrap a, .yl-popular-course-section .yl-popular-course-btn, .yl-course-more-btn, .yl-department-section .yl-department-btn, .banner-search-select button, .yl-banner-text .yl-banner-btn a, .slider-main-item .slider-main-text .slider-main-btn a {
   z-index: 1;
   overflow: hidden;
@@ -7334,6 +7337,7 @@ form#kt_stepper_checkout_form label {
 }
 section#wizard-p-3 .table-responsive {
   margin-top: 25px;
+  border-bottom: 1px solid #dee2e6;
 }
 .yl-footer-widget .widget-title {
   color: #000;
