@@ -21,6 +21,18 @@
                   <li class="dropdown">
                     <a href="{{ route('contact')}}">Contact</a>
                   </li>
+                  @auth                 
+                  <li class="dropdown float-right">
+                    <a href="{{ route('contact')}}"><i class="fas fa-user"></i></a>
+                    <ul class="dropdown-menu clearfix">
+                      <li><a href="{{ route('signout') }}" >Logout</a></li>
+                      {{-- <form id="logout-form" action="{{ route('signout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                      </form> --}}
+                      {{-- <li><a target="_blank" href="instructor-details.html">Instructor Details</a></li> --}}
+                    </ul>
+                  </li>
+                  @endauth
                 </ul>
               </nav>
               <div class="yl-mobile-menu-wrap">
@@ -54,6 +66,9 @@
                                 <li class="dropdown">
                                 <a href="{{ route('contact')}}">Contact</a>
                                 </li>
+                                <li class="dropdown float-right">
+                                  <a href="{{ route('contact')}}">Contact</a>
+                                </li>
                             </ul>
                           </nav>
                       </div>
@@ -63,12 +78,20 @@
               </div>
           </div>
           {{-- <div class="yl-header-cart-login float-right">
-              <div class="yl-top-cart-login">
+              {{-- <div class="yl-top-cart-login">
                 <button><i class="fas fa-shopping-cart"></i></button>
-              </div>
+              </div> - -}}
+              <nav class="yl-main-navigation float-left ul-li">
               <div class="yl-top-cart-login">
-                <button data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user"></i></button>
+                <li class="dropdown">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <ul class="dropdown-menu clearfix">
+                  <li><a target="_blank" href="instructor.html">Logout</a></li>
+                  {{-- <li><a target="_blank" href="instructor-details.html">Instructor Details</a></li> -- }}
+                </ul>
+                </li>
               </div>
+              </nav>
           </div> --}}
         </div>
     </div>
