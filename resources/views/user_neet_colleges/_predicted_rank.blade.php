@@ -22,7 +22,7 @@
 
         <!--begin::Col-->
         <div class="col-lg-7 fv-row">
-            <span class="fw-bold fs-6">
+            <span class="fw-bold fs-6" id="minimum_rank">
                 @if(isset($markRank) && !is_null($markRank))
                 {{ $markRank->min_rank }}
                 @else
@@ -39,7 +39,7 @@
 <div class="col-md-6">
     <div class="row mb-7">
         <!--begin::Label-->
-        <label class="col-lg-5 fw-bold text-muted">
+        <label class="col-lg-5 fw-bold text-muted" id="maximum_rank">
             {{ __('Maximum Rank') }}
         </label>
         <!--end::Label-->

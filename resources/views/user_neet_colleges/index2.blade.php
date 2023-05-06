@@ -120,9 +120,10 @@ onStepChanging:function(event,currentIndex,newIndex){
             html = '';
             $.each(data.states,function(index, value){
               html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
-            })
+           $('.predicted-marks').html(data.marks); })
             table.html(html);
-           $('.predicted-marks').html(data.marks);
+           $('#minimum_rank').html(data.markRank.mini_rank);
+           $('#maximum_rank').html(data.markRank.max_rank);
           }
         });
         $('.steps ul').addClass('step-4');
