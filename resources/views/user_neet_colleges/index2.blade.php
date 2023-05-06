@@ -199,25 +199,25 @@ function cartSummaryRadioDisableOrNot(selectedState) {
     $(".cart-radio").prop('checked', false);
   
     if (selectedState == 1) {
-        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', false);
-        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', false).show();
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true).hide();
     } else if (selectedState == 2) {
-        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', false);
-        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', false).show();
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true).hide();
     } else if (selectedState > 2) {
-        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
-        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', false);
-        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', false);
-        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', false);
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true).hide();
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', false).show();
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', false).show();
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', false).show();
     } else {
-        $(".cart-radio").prop('disabled', true);
+        $(".cart-radio").prop('disabled', true).hide();
     }
 
 }
