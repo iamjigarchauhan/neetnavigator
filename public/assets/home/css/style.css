@@ -6419,7 +6419,7 @@ select:visited {
 
 .yl-footer-content-wrap {
   padding-bottom: 85px;
-  border-bottom: 2px solid #383737;
+  border-bottom: 1px solid #ced4da;
 }
 
 .yl-footer-widget .widget-title {
@@ -6474,7 +6474,7 @@ select:visited {
   height: 45px;
   width: 100%;
   padding-left: 20px;
-  border: 2px solid #313131;
+  border: 1px solid #ced4da;
   background-color: transparent;
 }
 .yl-footer-widget .yl-footer-newslatter-widget input::placeholder {
