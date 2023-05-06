@@ -24,7 +24,7 @@
                         <h4 class="modal-title border-bottom-3">Terms & Conditions</h4>
                     </div>
                     <div class="card mb-0" style="max-height:50vh; overflow-y: scroll;overflow-x: hidden;">
-                        <div class="card-body p-0">
+                        <div class="card-body">
                             <div class="row">
                                 <ul>
                                     <li>NEET Navigator Educational Services is a private business entity incorporated as sole proprietor firm in 2022 registered at New Delhi. NEET Navigator is in service business of providing consultancy and advisory services mainly related to education, counselling and medical admissions.</li>
