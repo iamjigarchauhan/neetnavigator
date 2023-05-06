@@ -592,7 +592,7 @@ select:visited {
   content: "";
   position: absolute;
   border-radius: 30%;
-  background-color: #8eac49;
+  background-color: #43aef0;
   transition: 0.3s all ease-in-out;
 }
 .header-style-two .yl-main-navigation li:hover:before {
