@@ -578,7 +578,7 @@ select:visited {
   height: 5px;
   position: absolute;
   border-radius: 100%;
-  background-color: #8eac49;
+  background-color: #43aef0;
   transition: 0.3s all ease-in-out;
 }
 .header-style-two .yl-main-navigation li {
@@ -608,10 +608,10 @@ select:visited {
   display: none;
 }
 .header-style-two .yl-main-navigation .dropdown .dropdown-menu li a:hover {
-  background-color: #8eac49;
+  background-color: #43aef0;
 }
 .header-style-two .yl-main-navigation .dropdown:hover .dropdown-menu {
-  border-bottom: 2px solid #8eac49;
+  border-bottom: 2px solid #43aef0;
 }
 
 .yl-sticky-menu {
