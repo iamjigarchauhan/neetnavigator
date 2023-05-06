@@ -171,15 +171,15 @@ $(document).on('blur', '#floatingPincode', function() {
         })
     }
 });
-
+$('.cart-area').hide();
 $(document).on('change', '#all_state', function() {
     if ($(this).prop('checked') == true) {
         $(".all_state").prop('checked', true);
     } else {
         $(".all_state").prop('checked', false);
     }
-
     let selectedStateAll = $('.all_state:checked').length;
+    $('.cart-area').show();
     cartSummaryRadioDisableOrNot(selectedStateAll);
 })
 $(document).on('change', '.all_state', function() {
