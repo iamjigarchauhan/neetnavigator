@@ -39,14 +39,14 @@
 <div class="col-md-6">
     <div class="row mb-7">
         <!--begin::Label-->
-        <label class="col-lg-5 fw-bold text-muted" id="maximum_rank">
+        <label class="col-lg-5 fw-bold text-muted">
             {{ __('Maximum Rank') }}
         </label>
         <!--end::Label-->
 
         <!--begin::Col-->
         <div class="col-lg-7 d-flex align-items-center">
-            <span class="fw-bolder fs-6 me-2">
+            <span class="fw-bolder fs-6 me-2" id="maximum_rank">
                 @if(isset($markRank) && !is_null($markRank))
                 {{ $markRank->max_rank }}
                 @else
