@@ -14,6 +14,7 @@ class AddCollegesSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('colleges')->truncate();
         $users = (new FastExcel)->import(public_path('collegelist.xlsx'), function ($line) {
             $state = DB::table('states')->whereName($line['State'])->first();
             if($state != null){
