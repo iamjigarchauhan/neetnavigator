@@ -1,4 +1,4 @@
-<div class="table-responsive" style="display: block; height:300px; overflow-y:scroll; overflow-y:scroll">
+<div class="table-responsive" style="display: block; height:250px; overflow-y:scroll; overflow-x:hidden">
 	<table class="statelist table table-hover table-rounded border gy-7 gs-7">
 		<thead>
 			<tr>
