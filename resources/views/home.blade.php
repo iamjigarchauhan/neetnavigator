@@ -323,9 +323,9 @@
             <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
         </div> --}}
       </div>
-      <div class="yl-popular-course-btn text-center">
+      {{-- <div class="yl-popular-course-btn text-center">
         <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>
