@@ -36,7 +36,8 @@ class AddCollegesSeeder extends Seeder
                     'year_inspection'=>$line['Year of Inspection of College'],
                     'annual_seat'=> !empty($line['Annual Intake (Seats)']) && $line['Annual Intake (Seats)'] > 0  ? $line['Annual Intake (Seats)'] : 0,
                     'lop_date'=> !empty($line['Date of LOP']) && $line['Date of LOP'] != 'N/A' ? $line['Date of LOP'] : null,
-                    'status'=>'active'
+                    'status'=>'active',
+                    'total_fee' => $line['Management of College'] == 'Govt.' ? $line['GOVTFEE'] : $line['MQ_FEE']
                 ];
                 $college = DB::table('colleges')->insertGetId($college);
                 // dd($college);
