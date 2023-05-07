@@ -278,308 +278,53 @@
       </div>
       <div class="yl-popular-course-content">
         <div class="row">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <div class="yl-popular-course-img-text">
-                  <div class="yl-popular-course-img text-center">
-                    <img src="assets/img/course/pc1.jpg" alt="">
-                  </div>
-                  <div class="yl-popular-course-text">
-                    <div class="popular-course-fee">
-                        <span>Course Fee:  </span>
+          @php
+            $collges = \App\Models\College::all()->random(8);
+          @endphp
+          @foreach($collges as $key => $college)
+          <div class="col-lg-3 col-md-4">
+            <div class="yl-popular-course-img-text">
+                <div class="yl-popular-course-img text-center">
+                  <img src="{{ asset('assets/home/img/course/cpc1.jpg')}}" alt="">
+                </div>
+                <div class="yl-popular-course-text">
+                  <div class="popular-course-fee clearfix">
+                      <span>Course Fee:  </span>
+                      <div class="course-fee-amount">
                         <del>$59</del>
                         <strong>$39</strong>
-                    </div>
-                    <div class="popular-course-title yl-headline">
-                        <h3><a href="#">User Experience Research
-                        & Design</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                        <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                        <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                  </div>
-                  <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                        <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
-            <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                  <img src="assets/img/course/pc2.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                  <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
+                      </div>
                   </div>
                   <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Copyright  Law in Music Course</a>
-                    </h3>
-                    <div class="yl-course-meta">
+                      <h3><a href="#">{{ $college->name}}</a>
+                      </h3>
+                      <div class="yl-course-meta">
                         <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                        <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
+                        <a href="#"><i class="fas fa-user"></i>20 Students</a>
+                      </div>
                   </div>
                   <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
+                      <div class="p-rate-vote float-left">
                         <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
                         </ul>
                         <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
+                      </div>
+                      <div class="p-course-btn float-right">
                         <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
+                      </div>
                   </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-            <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                  <img src="assets/img/course/pc3.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                  <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                  </div>
-                  <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Master of Public Health Course</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                        <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                        <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                  </div>
-                  <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                        <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-            <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                  <img src="assets/img/course/pc4.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                  <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                  </div>
-                  <div class="popular-course-title yl-headline">
-                    <h3><a href="#">User Experience Research
-                    & Design</a>
-                  </h3>
-                  <div class="yl-course-meta">
-                    <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                    <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                  </div>
-              </div>
-              <div class="popular-course-rate clearfix ul-li">
-                  <div class="p-rate-vote float-left">
-                    <ul>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                    </ul>
-                    <span>(12 Votes)</span>
-                  </div>
-                  <div class="p-course-btn float-right">
-                    <a href="#"><i class="fas fa-chevron-right"></i></a>
-                  </div>
-              </div>
+                </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-          <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                <img src="assets/img/course/pc5.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                </div>
-                <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Digital Marketing and SMM Course</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                      <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                      <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                </div>
-                <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                      <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                      </ul>
-                      <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                      <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
-          <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                <img src="assets/img/course/pc6.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                </div>
-                <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Graphic Design and Logo Design Course</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                      <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                      <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                </div>
-                <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                      <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                      </ul>
-                      <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                      <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-          <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                <img src="assets/img/course/pc7.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                </div>
-                <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Computer Basic Startup Ultricies Vitae</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                      <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                      <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                </div>
-                <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                      <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                      </ul>
-                      <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                      <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="700ms" data-wow-duration="1500ms">
-          <div class="yl-popular-course-img-text">
-              <div class="yl-popular-course-img text-center">
-                <img src="assets/img/course/pc8.jpg" alt="">
-              </div>
-              <div class="yl-popular-course-text">
-                <div class="popular-course-fee">
-                    <span>Course Fee:  </span>
-                    <del>$59</del>
-                    <strong>$39</strong>
-                </div>
-                <div class="popular-course-title yl-headline">
-                    <h3><a href="#">Molecular Biology, Biotechnology Courses</a>
-                    </h3>
-                    <div class="yl-course-meta">
-                      <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                      <a href="#"><i class="fas fa-user"></i> 20 Students</a>
-                    </div>
-                </div>
-                <div class="popular-course-rate clearfix ul-li">
-                    <div class="p-rate-vote float-left">
-                      <ul>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                          <li><i class="fas fa-star"></i></li>
-                      </ul>
-                      <span>(12 Votes)</span>
-                    </div>
-                    <div class="p-course-btn float-right">
-                      <a href="#"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="yl-popular-course-btn text-center">
+          @endforeach        
+        {{-- <div class="yl-popular-course-btn text-center">
             <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
-        </div>
+        </div> --}}
       </div>
   </div>
 </section>

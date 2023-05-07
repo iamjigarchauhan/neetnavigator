@@ -49,7 +49,7 @@
                          </h3>
                          <div class="yl-course-meta">
                             <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                            <a href="#"><i class="fas fa-user"></i> 20 Students</a>
+                            <a href="#"><i class="fas fa-user"></i>20 Students</a>
                          </div>
                       </div>
                       <div class="popular-course-rate clearfix ul-li">
