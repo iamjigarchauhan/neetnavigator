@@ -15,12 +15,22 @@ class AddCollegesSeeder extends Seeder
     public function run()
     {
         DB::table('colleges')->truncate();
+        DB::table('neet_range_rankings')->truncate();
         $users = (new FastExcel)->import(public_path('collegelist.xlsx'), function ($line) {
             $state = DB::table('states')->whereName($line['State'])->first();
+            $city = DB::table('cities')->whereName($line['CITY'])->first();
+            if($city == null){
+                $city = DB::table('cities')->insertGetId([
+                    'name' => $line['CITY'],
+                    'state_id' => $state->id,
+                    'status' => 'active'
+                ]);
+            }
             if($state != null){
                 $college = [
                     'name'=>$line['Name and Address of Medical College/Medical Institution'],
                     'state_id'=>$state->id,
+                    'city_id'=>$city->id ?? $city,
                     'university'=>$line['University Name'],
                     'institution_type'=>$line['Management of College'],
                     'year_inspection'=>$line['Year of Inspection of College'],
@@ -28,13 +38,106 @@ class AddCollegesSeeder extends Seeder
                     'lop_date'=> !empty($line['Date of LOP']) && $line['Date of LOP'] != 'N/A' ? $line['Date of LOP'] : null,
                     'status'=>'active'
                 ];
-                return DB::table('colleges')->insert($college);
-            } else {
-                return  DB::table('states')->insert([
-                    'country_code'=>'IN',
-                    'name'=>$line['State'],
+                $college = DB::table('colleges')->insertGetId($college);
+                // dd($college);
+                $marks[] = [
+                    'year' => 2019,
+                    'category'=> 'GENERAL',
+                    'min_mark'=> $line['2019_NEET_CUT_OFF_SCORE_GENERAL'],
+                    'min_rank'=> $line['2019_NEETRANK_GENERAL'],
+                    'college_id'=>$college,
                     'status'=>'active'
-                ]);
+                ];
+                $marks[] = [
+                    'year' => 2019,
+                    'category'=> 'ST',
+                    'min_mark'=> $line['2019_NEET_CUT_OFF_SCORE_ST'],
+                    'min_rank'=> $line['2019_NEET_RANK_ST'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2019,
+                    'category'=> 'OBC',
+                    'min_mark'=> $line['2019_NEET_CUT_OFF_SCORE_OBC'],
+                    'min_rank'=> $line['2019_NEET_RANK_OBC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2019,
+                    'category'=> 'SC',
+                    'min_mark'=> $line['2019_NEET_CUT_OFF_SCORE_SC'],
+                    'min_rank'=> $line['2019_NEETRANK_SC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2020,
+                    'category'=> 'GENERAL',
+                    'min_mark'=> $line['2020_NEET_CUT_OFF_SCORE_GENERAL'],
+                    'min_rank'=> $line['2020_NEETRANK_GENERAL'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2020,
+                    'category'=> 'ST',
+                    'min_mark'=> $line['2020_NEET_CUT_OFF_SCORE_ST'],
+                    'min_rank'=> $line['2020_NEET_RANK_ST'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2020,
+                    'category'=> 'OBC',
+                    'min_mark'=> $line['2020_NEET_CUT_OFF_SCORE_OBC'],
+                    'min_rank'=> $line['2020_NEET_RANK_OBC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2020,
+                    'category'=> 'SC',
+                    'min_mark'=> $line['2020_NEET_CUT_OFF_SCORE_SC'],
+                    'min_rank'=> $line['2020_NEETRANK_SC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2021,
+                    'category'=> 'GENERAL',
+                    'min_mark'=> $line['2021_NEET_CUT_OFF_SCORE_GENERAL'],
+                    'min_rank'=> $line['2021_NEETRANK_GENERAL'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2021,
+                    'category'=> 'ST',
+                    'min_mark'=> $line['2021_NEET_CUT_OFF_SCORE_ST'],
+                    'min_rank'=> $line['2021_NEET_RANK_ST'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2021,
+                    'category'=> 'OBC',
+                    'min_mark'=> $line['2021_NEET_CUT_OFF_SCORE_OBC'],
+                    'min_rank'=> $line['2021_NEET_RANK_OBC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                $marks[] = [
+                    'year' => 2021,
+                    'category'=> 'SC',
+                    'min_mark'=> $line['2021_NEET_CUT_OFF_SCORE_SC'],
+                    'min_rank'=> $line['2021_NEETRANK_SC'],
+                    'college_id'=>$college,
+                    'status'=>'active'
+                ];
+                DB::table('neet_range_rankings')->insert($marks);
+                return true;
             }
         });
 
