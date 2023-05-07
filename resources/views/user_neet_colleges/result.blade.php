@@ -12,7 +12,7 @@
                          <a href="#"><i class="fas fa-th"></i></a>
                          <a href="#"><i class="fas fa-list"></i></a>
                       </div>
-                      <span class="show-result-text">Showing 1-6 of 6 results</span>
+                      <span class="show-result-text">Showing {{ $colleges->firstItem() }} - {{ $colleges->currentPage() * $colleges->perPage() }} of {{ $totalcolleges }} results</span>
                    </div>
                 </div>
              </div>
@@ -357,26 +357,11 @@
           <div class="yl-course-pagination text-center ul-li">
              <ul>
                {{ $colleges->links() }}
-                {{-- <li>
-                   <a href="#">01</a>
-                   <a href="#">02</a>
-                   <a href="#">03</a>
-                </li> --}}
+               
              </ul>
           </div>
        </div>
     </div>
   </div>
 </section>
-{{-- <section id="yl-category" class="yl-category-section">
-  <div class="card">
-      <div class="card-body pt-6">
-          <div class="final-section">
-              <div class="flex-column">
-                  @include('user_neet_colleges._estimated_college_list', array('class' => 'mb-5 mb-xl-10', 'dataTable' => $dataTable))
-              </div>
-          </div>
-      </div>
-  </div>
-</section> --}}
 @endsection

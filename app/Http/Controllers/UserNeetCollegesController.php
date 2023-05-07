@@ -48,7 +48,13 @@ class UserNeetCollegesController extends Controller
         // if (!request()->ajax()) {
         //     $this->states = State::allState('active');
         // }
-        $this->colleges = College::paginate(12);
+        // $this->colleges = College::paginate(12);
+        $marks = session('user_mark');
+        $category = auth()->user()->user_neet_info->state_category;
+        $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
+        $this->totalcolleges = College::whereIn('id',$this->markRank->unique())->count();
+        $this->colleges = College::whereIn('id',$this->markRank->unique())->paginate(12);
+        // $this->colleges = State::getCollegeCountByState($collegestates);
         return view('user_neet_colleges.result', $this->data);
     }
 
@@ -112,7 +118,6 @@ class UserNeetCollegesController extends Controller
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
-            // dd($this->markRank);
             $this->marks = $request->marks;
             $collegestates = College::whereIn('id',$this->markRank)->pluck('state_id');
             $this->states = State::getCollegeCountByState($collegestates);
