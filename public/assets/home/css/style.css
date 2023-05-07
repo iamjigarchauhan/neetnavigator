@@ -2629,6 +2629,50 @@ select:visited {
   background-color: #43aef0;
 }
 
+.contact_banner {
+  height: 550px;
+  background: url(../img/contactus-banner.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.contect_wrapper h6 {
+  font-size: 21px;
+  font-family: barlow,sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.contect_wrapper.about p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #343434;
+}
+.contect_wrapper.about h2 {
+  margin-bottom: 10px;
+}
+.blue_about {
+  padding: 20px;
+  background: #0d5fab;
+  color: #fff;
+  border-radius: 15px;
+}
+.contact_banner h2 {
+  font-size: 55px;
+  color: #fff;
+  margin: 0;
+}
+.contact_banner.about {
+  height: 550px;
+  background: url(../img/about-us-banner.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 /*Testimonial section 2*/
 /*-----------------------------*/
 .yl-testimonial-section-2 {
@@ -3060,6 +3104,9 @@ select:visited {
 .yl-popular-course-section {
   padding: 105px 0px 50px;
   background-color: #f7f7f7;
+}
+.yl-popular-course-section.contact {
+  padding-top: 0px;
 }
 .yl-popular-course-section .yl-popular-course-content {
   margin-top: 25px;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MBBS Abroad Consultants | Atmia Education</title>
+<title>MBBS IN INDIA Consultants | Atmia Education</title>
 <link rel="shortcut icon" href="//www.atmiaeducation.com/images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="//www.atmiaeducation.com/images/favicon.ico" type="image/x-icon">
 <!-- <title>{{ (isset($pageTitle) ? __($pageTitle) : env('APP_NAME')) }}</title> -->

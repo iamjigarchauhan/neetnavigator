@@ -1,5 +1,8 @@
 @extends('layouts.app') @section('content')
-<section id="yl-popular-course" class="yl-popular-course-section">
+<div class="contact_banner">
+    <h2>Contact Us</h2>
+</div>
+<section id="yl-popular-course" class="yl-popular-course-section contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

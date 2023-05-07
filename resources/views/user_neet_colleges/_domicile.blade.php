@@ -33,7 +33,7 @@
 <div class="row mb-6">
     <div class="col-lg-12 fv-row">
     <div class="form-floating">
-        <label for="floatingPincode">{{ __('Pincode Based on Aadhaar *') }}</label>
+        <label for="floatingPincode">{{ __('Pincodes Based on Aadhaar *') }}</label>
         <input name="pincode" type="number" maxlength="6" class="form-control" id="floatingPincode" placeholder="Enter Pincode" value="{{ old('pincode') }}" required />
         @if ($errors->has('pincode'))
         <span class="text-danger">{{ $errors->first('pincode') }}</span>

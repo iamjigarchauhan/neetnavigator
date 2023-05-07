@@ -42,11 +42,14 @@
 										<ul>
 												<li>
 													<i class="fas fa-map-marker-alt"></i> 
-													<a href="#">30 Commercial Road
-													Fratton, Australia</a>
+													<a href="#">Atmia Education D-407, Imperial Heights,
+													Opp. Big Bazaar,
+													150ft Ring Rd., Rajkot
+													360 001, Gujarat.</a>
 												</li>
 												<li>
 													<i class="fas fa-phone"></i><a href="#">1-888-452-1505</a>
+													<p>(Talk to one of our Expert Counsellor)</p>
 												</li>
 										</ul>
 										<div class="office-open-hour">
@@ -77,6 +80,6 @@
 						</div> -->
 				</div>
 			</div>
-			<div class="yl-footer-copyright text-center"><span>© 2020 Yale - Education. All rights reserved.</span></div>
+			<div class="yl-footer-copyright text-center"><span>Copyright 2023 Atima Education, All Rights Reserved.</span></div>
 	</div>
 </footer>
