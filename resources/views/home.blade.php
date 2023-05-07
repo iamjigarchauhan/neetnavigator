@@ -308,7 +308,9 @@
                   <div class="popular-course-fee clearfix">
                       <span>{{ $college->institution_type}} </span>
                       <div class="course-fee-amount mt-2">
+                        @if($college->total_fee > 0)
                         <strong>INR {{ formatNumber($college->total_fee) }}</strong>
+                        @endif
                       </div>
                   </div>
                   <div class="popular-course-title yl-headline">
