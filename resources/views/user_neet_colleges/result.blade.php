@@ -1,5 +1,19 @@
 @extends('layouts.app')
 @section('content')
+@php
+    function formatNumber($num) {
+      if($num >= 10000000) {
+         // convert to Crores and round to 2 decimal places
+         return round($num/10000000, 2) . ' Cr';
+      } elseif($num >= 100000) {
+         // convert to Lakhs and round to 2 decimal places
+         return round($num/100000, 2) . 'L';
+      } else {
+         // return the number as is
+         return $num;
+      }
+   }
+@endphp
 <section id="course-page-course" class="course-page-course-section">
   <div class="container mt-5">
     <div class="course-page-course-content">
@@ -39,10 +53,9 @@
                    <div class="yl-popular-course-text">
                      <div class="popular-course-fee clearfix">
                          <span>{{ $college->institution_type}} </span>
-                         {{-- <div class="course-fee-amount">
-                           <del>$59</del>
-                           <strong>$39</strong>
-                         </div> --}}
+                         <div class="course-fee-amount mt-2">
+                           <strong>INR {{ formatNumber($college->total_fee) }}</strong>
+                         </div>
                      </div>
                      <div class="popular-course-title yl-headline">
                          <h3><a href="#">{{ $college->name}}</a>
