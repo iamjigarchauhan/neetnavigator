@@ -8277,7 +8277,7 @@ span[aria-current="page"]{
   font-weight: 600;
   font-size: 15px;
 }
-.course-page-courses-item .yl-popular-course-img-text .yl-popular-course-text h3 {
+.course-page-courses-item .yl-popular-course-img-text .yl-popular-course-text h3, .yl-popular-course-img-text .popular-course-title h3 {
   font-size: 17px;
   font-weight: 400;
   -webkit-line-clamp: 2;
