@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @php
-    function formatNumber($num) {
+   function formatNumber($num) {
       if($num >= 10000000) {
          // convert to Crores and round to 2 decimal places
          return round($num/10000000, 2) . ' Cr';
