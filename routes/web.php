@@ -34,6 +34,10 @@ Route::get('/overview', function () {
     return view('overview');
 })->name('overview');
 
+Route::get('/terms-and-conidtions', function () {
+    return view('terms_and_conidtions');
+})->name('terms_and_conidtions');
+
 Route::get('/services', function () {
     return view('service');
 })->name('services');
