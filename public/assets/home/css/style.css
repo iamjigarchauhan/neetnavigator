@@ -8241,3 +8241,21 @@ input[type=checkbox], input[type=radio] {
     margin-top: 0 !important;
     margin-left: 0 !important;
 }
+
+.pr-4, .px-4{
+  padding-left:0.85rem!important;
+  padding-right:0.85rem!important;
+}
+p.text-sm.text-gray-700.leading-5 {
+  visibility: hidden;
+}
+span[aria-disabled="true"]{
+display: none;
+}
+span[aria-current="page"]{
+  color:#0077b5;
+  font-weight: 600;
+}
+.yl-course-pagination a[rel="prev"] svg, .yl-course-pagination a[rel="next"] svg{
+  height: 10px;
+}
