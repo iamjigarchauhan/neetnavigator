@@ -1,5 +1,20 @@
 @extends('layouts.app')
 @section('content')
+@php
+    function formatNumber($num) {
+      if($num >= 10000000) {
+         // convert to Crores and round to 2 decimal places
+         return round($num/10000000, 2) . ' Cr';
+      } elseif($num >= 100000) {
+         // convert to Lakhs and round to 2 decimal places
+         return round($num/100000, 2) . 'L';
+      } else {
+         // return the number as is
+         return $num;
+      }
+   }
+@endphp
+
 <!-- Login-Sign Form -->
 {{-- <div class="modal yl-login-modal fade" id="exampleModal" tabindex="-1" role="dialog"  aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -278,7 +293,7 @@
           @php
             $collges = \App\Models\College::all()->random(8);
           @endphp
-          @foreach($collges as $key => $college)
+          @foreach($colleges as $key => $college)
           <div class="col-lg-3 col-md-4">
             <div class="yl-popular-course-img-text">
                 {{-- <div class="yl-popular-course-img text-center">
@@ -287,17 +302,16 @@
                 <div class="yl-popular-course-text">
                   <div class="popular-course-fee clearfix">
                       <span>{{ $college->institution_type}} </span>
-                      {{-- <div class="course-fee-amount">
-                        <del>$59</del>
-                        <strong>$39</strong>
-                      </div> --}}
+                      <div class="course-fee-amount mt-2">
+                        <strong>INR {{ formatNumber($college->total_fee) }}</strong>
+                      </div>
                   </div>
                   <div class="popular-course-title yl-headline">
                       <h3><a href="#">{{ $college->name}}</a>
                       </h3>
                       <div class="yl-course-meta">
-                        <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ $college->state->name }}, {{ ucfirst(strtolower($college->city->name)) }}</a>
-                        <a href="#">{{ $college->annual_seat}} Seats</a>
+                        <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ ucfirst(strtolower($college->city->name))}}, {{ $college->state->state_code }}</a>
+                        <a href="#"><b>{{ $college->annual_seat}}</b> Seats</a>
                       </div>
                   </div>
                   <div class="popular-course-rate clearfix ul-li">
@@ -318,7 +332,7 @@
                 </div>
             </div>
           </div>
-          @endforeach        
+          @endforeach
         {{-- <div class="yl-popular-course-btn text-center">
             <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
         </div> --}}
