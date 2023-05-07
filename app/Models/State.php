@@ -39,14 +39,14 @@ class State extends Model
 
     public static function getCollegeCountByState($stateIds = [])
     {
-
         return State::withCount(['colleges' => function ($q) {
-            $q->where('status', 'active');
-        }])->where('status', 'active')
+                $q->where('status', 'active');
+            }])->where('status', 'active')
             ->when(!empty($stateIds), function ($q) use ($stateIds) {
                 $q->whereIn('id', $stateIds);
             })
             ->having('colleges_count', '>', 0)
+            ->orderby('colleges_count','desc')
             ->get();
     }
 }

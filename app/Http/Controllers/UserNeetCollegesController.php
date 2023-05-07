@@ -82,8 +82,9 @@ class UserNeetCollegesController extends Controller
             'minority' => $request->minority,
             'eligible_quota' => $request->eligible_quota,
         ]);
-
-        return redirect()->route('neet-college.user.index');
+        $this->user = UserNeetInfo::with(['city','state_10th','state_12th','user'])->whereUserId(Auth::user()->id)->first();
+        return response()->json($this->data);
+        // return redirect()->route('neet-college.user.index');
     }
 
     /**
@@ -109,9 +110,12 @@ class UserNeetCollegesController extends Controller
     {
         if ($request->marks > 0) {
             session()->put('user_mark', $request->marks);
-            $this->markRank = NeetRangeRanking::getRankByMark($request->marks);
+            $category = auth()->user()->user_neet_info->state_category;
+            $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
+            // dd($this->markRank);
             $this->marks = $request->marks;
-            $this->states = State::getCollegeCountByState();
+            $collegestates = College::whereIn('id',[$this->markRank->college_id])->pluck('state_id');
+            $this->states = State::getCollegeCountByState($collegestates);
             return response()->json($this->data);
             // return redirect()->route('neet-college.mark-rank');
         } else {

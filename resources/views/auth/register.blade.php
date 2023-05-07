@@ -88,78 +88,76 @@ $('.multiple').select2();
 $(document).on('click', '#kt_stepper_example_basic_form_submit', function() {
     $('#kt_stepper_example_basic_form').submit();
 })
-  $(document).on('blur', '#floatingPincode', function() {
-      let pincode = $(this).val();
-      if (pincode.length > 5) {
-          $.ajax({
-              url: "{{route('neet-college.check-pincode')}}/" + pincode,
-              method: 'GET',
-              dataType: 'json',
-              success: function(res) {
-                  var cityOptions = '<option value="">City based on area pincode</option>';
-                  if (res.status == 'success') {
-                      $("#floatingState").val(res.data.state);
-                      res.data.cities.forEach(ele => {
-                          cityOptions += `<option value="${ele.id}">${ele.name}</option>`;
-                      });
-                      $("#floatingCity").html(cityOptions).trigger('change');
-                  } else {
-                      $("#floatingState").val('');
-                      $("#floatingCity").html(cityOptions).trigger('change');
-                  }
-              }
-          })
-      }
-  });
+$(document).on('blur', '#floatingPincode', function() {
+    let pincode = $(this).val();
+    if (pincode.length > 5) {
+        $.ajax({
+            url: "{{route('neet-college.check-pincode')}}/" + pincode,
+            method: 'GET',
+            dataType: 'json',
+            success: function(res) {
+                var cityOptions = '<option value="">City based on area pincode</option>';
+                if (res.status == 'success') {
+                    $("#floatingState").val(res.data.state);
+                    res.data.cities.forEach(ele => {
+                        cityOptions += `<option value="${ele.id}">${ele.name}</option>`;
+                    });
+                    $("#floatingCity").html(cityOptions).trigger('change');
+                } else {
+                    $("#floatingState").val('');
+                    $("#floatingCity").html(cityOptions).trigger('change');
+                }
+            }
+        })
+    }
+});
+$(document).on('change', '#all_state', function() {
+    if ($(this).prop('checked') == true) {
+        $(".all_state").prop('checked', true);
+    } else {
+        $(".all_state").prop('checked', false);
+    }
 
-  $(document).on('change', '#all_state', function() {
-      if ($(this).prop('checked') == true) {
-          $(".all_state").prop('checked', true);
-      } else {
-          $(".all_state").prop('checked', false);
-      }
+    let selectedStateAll = $('.all_state:checked').length;
+    cartSummaryRadioDisableOrNot(selectedStateAll);
+})
+$(document).on('change', '.all_state', function() {
+    let selectedState = $('.all_state:checked').length;
+    if (selectedState == $('.all_state').length) {
+        $("#all_state").prop('checked', true);
+    } else {
+        $("#all_state").prop('checked', false);
+    }
+    cartSummaryRadioDisableOrNot(selectedState);
+})
+$(document).on('change', '.cart-radio', function() {
+    $('.cart-summary-error-msg').addClass('d-none');
+});
+function cartSummaryRadioDisableOrNot(selectedState) {
+    $(".cart-radio").prop('checked', false);
+    if (selectedState == 1) {
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', false);
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
+    } else if (selectedState == 2) {
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', false);
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
+    } else if (selectedState > 2) {
+        $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
+        $(".cart-radio[data-state-attempt='all-1']").prop('disabled', false);
+        $(".cart-radio[data-state-attempt='all-2']").prop('disabled', false);
+        $(".cart-radio[data-state-attempt='all-4']").prop('disabled', false);
+    } else {
+        $(".cart-radio").prop('disabled', true);
+    }
 
-      let selectedStateAll = $('.all_state:checked').length;
-      cartSummaryRadioDisableOrNot(selectedStateAll);
-  })
-  $(document).on('change', '.all_state', function() {
-      let selectedState = $('.all_state:checked').length;
-      if (selectedState == $('.all_state').length) {
-          $("#all_state").prop('checked', true);
-      } else {
-          $("#all_state").prop('checked', false);
-      }
-      cartSummaryRadioDisableOrNot(selectedState);
-  })
-  $(document).on('change', '.cart-radio', function() {
-      $('.cart-summary-error-msg').addClass('d-none');
-  });
-
-  function cartSummaryRadioDisableOrNot(selectedState) {
-      $(".cart-radio").prop('checked', false);
-      if (selectedState == 1) {
-          $(".cart-radio[data-state-attempt='1-1']").prop('disabled', false);
-          $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
-      } else if (selectedState == 2) {
-          $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='2-1']").prop('disabled', false);
-          $(".cart-radio[data-state-attempt='all-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-2']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-4']").prop('disabled', true);
-      } else if (selectedState > 2) {
-          $(".cart-radio[data-state-attempt='1-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='2-1']").prop('disabled', true);
-          $(".cart-radio[data-state-attempt='all-1']").prop('disabled', false);
-          $(".cart-radio[data-state-attempt='all-2']").prop('disabled', false);
-          $(".cart-radio[data-state-attempt='all-4']").prop('disabled', false);
-      } else {
-          $(".cart-radio").prop('disabled', true);
-      }
-
-  }
+}
 </script>
 {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> --}}
 {{-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816"

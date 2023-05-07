@@ -99,7 +99,15 @@ onStepChanging:function(event,currentIndex,newIndex){
           url: url,
           data: formData,
         }).done(function (data) {
-            $('.steps ul').addClass('step-3');
+            $('#hsc_marks').html(data.state_12th.name);
+            $('#ssc_marks').html(data.state_10th.name);
+            $('#domicile_state').html(data.state_by_pincode);
+            $('#neet_category').html(data.neet_category);
+            $('#state_category').html(data.state_category);
+            $('#minority').html(data.minority);
+            $('#quota').html(data.eligible_quota);
+            // $('#ssc_marks').html(data.state_10th.name);
+            // $('#ssc_marks').html(data.state_10th.name);
         });
         $('.steps ul').addClass('step-3');
       }else{
