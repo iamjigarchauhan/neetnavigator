@@ -48,8 +48,8 @@
                          <h3><a href="#">{{ $college->name}}</a>
                          </h3>
                          <div class="yl-course-meta">
-                           <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ $college->state->name }}, {{ ucfirst(strtolower($college->city->name)) }}</a>
-                           <a href="#">{{ $college->annual_seat}} Seats</a>
+                           <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ ucfirst(strtolower($college->city->name))}}, {{ $college->state->state_code }}</a>
+                           <a href="#"><b>{{ $college->annual_seat}}</b> Seats</a>
                          </div>
                      </div>
                      <div class="popular-course-rate clearfix ul-li">

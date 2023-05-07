@@ -3163,7 +3163,20 @@ select:visited {
 }
 .yl-popular-course-text {
   padding: 0 15px;
-  height: 200px;
+  height: 180px;
+}
+.yl-course-meta a:first-child{
+  max-width: 180px;
+  overflow: hidden;
+  display: block;
+}
+.yl-course-meta a:last-child{
+  float: right;
+  position: relative;
+  top: -20px;
+}
+.yl-course-meta a b{
+  font-size: 16px;
 }
 #course-page-course .col-lg-3
 {
@@ -8258,4 +8271,20 @@ span[aria-current="page"]{
 }
 .yl-course-pagination a[rel="prev"] svg, .yl-course-pagination a[rel="next"] svg{
   height: 10px;
+}
+
+.yl-popular-course-img-text .popular-course-fee span, .yl-popular-course-img-text .popular-course-fee del{
+  font-weight: 600;
+  font-size: 15px;
+}
+.course-page-courses-item .yl-popular-course-img-text .yl-popular-course-text h3 {
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: calc((2 * 1.5em ));
+  line-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.5em;
 }

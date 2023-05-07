@@ -52,8 +52,19 @@ class UserNeetCollegesController extends Controller
         $marks = session('user_mark');
         $category = auth()->user()->user_neet_info->state_category;
         $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
-        $this->totalcolleges = College::whereIn('id',$this->markRank->unique())->count();
-        $this->colleges = College::whereIn('id',$this->markRank->unique())->paginate(12);
+        $this->totalcolleges = College::whereIn('id',$this->markRank->unique())
+        ->where(function($query){
+            $states = session('states');
+            if(!empty($states))
+            $query->whereIn('state_id',$states);
+        })->count();
+        $this->colleges = College::whereIn('id',$this->markRank->unique())->where(function($query){
+            $states = session('states');
+            if(!empty($states))
+            $query->whereIn('state_id',$states);
+        })
+        ->paginate(12);
+        // dd($this->colleges);
         // $this->colleges = State::getCollegeCountByState($collegestates);
         return view('user_neet_colleges.result', $this->data);
     }
@@ -178,11 +189,13 @@ class UserNeetCollegesController extends Controller
 
     public function checkout(Request $request)
     {
+        // dd($request->all());
         session()->forget('checkoutSummary');
         $checkoutSummary = [
             'state_id' => $request->state_id,
             'cart_summary' => $request->cart_summary,
         ];
+        session()->put('states', $request->state_id);
         session()->put('checkoutSummary', $checkoutSummary);
         return redirect()->route('neet-college.college-list');
     }
