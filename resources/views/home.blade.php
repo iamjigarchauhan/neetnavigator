@@ -296,7 +296,7 @@
       <div class="yl-popular-course-content">
         <div class="row">
           @php
-            $collges = \App\Models\College::all()->random(8);
+            $colleges = \App\Models\College::all()->random(8);
           @endphp
           @foreach($colleges as $key => $college)
           <div class="col-lg-3 col-md-4">
