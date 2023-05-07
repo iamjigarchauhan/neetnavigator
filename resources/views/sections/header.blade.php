@@ -25,7 +25,7 @@
                   <li class="dropdown float-right">
                     <a href="#"><i class="fas fa-user"></i></a>
                     <ul class="dropdown-menu clearfix">
-                      <li><a href="{{ route('signout') }}">Profile</a></li> 
+                      <li><a href="{{ url('neet-college.index') }}">Profile</a></li> 
                       <li><a href="{{ route('signout') }}">Logout</a></li> 
                       {{-- <form id="logout-form" action="{{ route('signout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}

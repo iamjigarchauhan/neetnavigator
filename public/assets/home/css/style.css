@@ -3057,6 +3057,7 @@ select:visited {
 }
 .yl-course-img-text .yl-course-text .yl-course-meta a:last-child {
   margin-right: 0;
+
 }
 .yl-course-img-text .yl-course-text .yl-course-tilte-head {
   margin-bottom: 10px;
@@ -3230,6 +3231,10 @@ select:visited {
 .yl-popular-course-img-text .popular-course-title .yl-course-meta a:last-child {
   margin-right: 0;
   float: right;
+  position: absolute;
+  bottom: 37px;
+  right: 35px;
+  top: auto;
 }
 .yl-popular-course-img-text .popular-course-title .yl-course-meta a i {
   margin-right: 5px;
