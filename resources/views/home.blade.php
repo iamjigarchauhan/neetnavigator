@@ -281,23 +281,23 @@
           @foreach($collges as $key => $college)
           <div class="col-lg-3 col-md-4">
             <div class="yl-popular-course-img-text">
-                <div class="yl-popular-course-img text-center">
+                {{-- <div class="yl-popular-course-img text-center">
                   <img src="{{ asset('assets/home/img/course/cpc1.jpg')}}" alt="">
-                </div>
+                </div> --}}
                 <div class="yl-popular-course-text">
                   <div class="popular-course-fee clearfix">
-                      <span>Course Fee:  </span>
-                      <div class="course-fee-amount">
+                      <span>{{ $college->institution_type}} </span>
+                      {{-- <div class="course-fee-amount">
                         <del>$59</del>
                         <strong>$39</strong>
-                      </div>
+                      </div> --}}
                   </div>
                   <div class="popular-course-title yl-headline">
                       <h3><a href="#">{{ $college->name}}</a>
                       </h3>
                       <div class="yl-course-meta">
-                        <a href="#"><i class="fas fa-file"></i>14 Lessons</a>
-                        <a href="#"><i class="fas fa-user"></i>20 Students</a>
+                        <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ $college->state->name }}, {{ ucfirst(strtolower($college->city->name)) }}</a>
+                        <a href="#">{{ $college->annual_seat}} Seats</a>
                       </div>
                   </div>
                   <div class="popular-course-rate clearfix ul-li">
