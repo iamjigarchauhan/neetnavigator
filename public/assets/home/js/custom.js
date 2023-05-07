@@ -36,9 +36,9 @@ Author:
 
 			},
 			ylpreloader: function (){
-				jQuery(window).on('load', function(){
-					jQuery('#yl-preloader').fadeOut('slow',function(){jQuery(this).remove();});
-				});
+				// jQuery(window).on('load', function(){
+				// 	jQuery('#yl-preloader').fadeOut('slow',function(){jQuery(this).remove();});
+				// });
 				$(window).on("scroll", function() {
 					if ($(this).scrollTop() > 200) {
 						$('.scrollup').fadeIn();

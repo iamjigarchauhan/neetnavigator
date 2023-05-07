@@ -52,12 +52,6 @@
 													<p>(Talk to one of our Expert Counsellor)</p>
 												</li>
 										</ul>
-										<div class="office-open-hour">
-												<span>Open Hours: </span>
-												<p>Mon - Sat: 8 am - 5 pm,
-													Sunday: CLOSED
-												</p>
-										</div>
 									</div>
 							</div>
 						</div>
@@ -80,6 +74,6 @@
 						</div> -->
 				</div>
 			</div>
-			<div class="yl-footer-copyright text-center"><span>Copyright 2023 Atima Education, All Rights Reserved.</span></div>
+			<div class="yl-footer-copyright text-center"><span>Copyright 2023 Atima Education, All Rights Reserved.</span><br/><a href="{{ route('terms_and_conidtions')}}">Terms and Conditions</a></div>
 	</div>
 </footer>

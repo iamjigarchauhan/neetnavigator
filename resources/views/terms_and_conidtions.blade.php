@@ -1,24 +1,97 @@
 @extends('layouts.app')
 @section('content')
-<div class="contact_banner about">
-    <h2>About Atmia Education</h2>
-</div>
-<section id="yl-popular-course" class="yl-popular-course-section contact">
+<section id="yl-popular-course" class="yl-popular-course-section">
   <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="contect_wrapper about">
-                    <h2>About Atmia Education</h2>
-                    <h6>One of the LEADING Institute that Helps HIGHEST NUMBER of Students to get their MBBS Seat in India.</h6>
+                    <h2>Terms and Conditions</h2>
+                    <ul style="list-style-type: disc;">
+                      <li>
+                          <span style="font-family: Roboto;">
+                              ATMIA NEET College Predictor is a private business entity incorporated as sole proprietor firm in 2022 registered at Gujarat. NEET COLLEGE PREDICTOR is in service business of providing consultancy and advisory services mainly
+                              related to education, counselling and medical admissions.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              ATMIA NEET College Predictor has NO liaison with any medical college or management of any medical college. ATMIA NEET College Predictor is NOT a government agency and doesn&rsquo;t make any claim of influence on any counselling
+                              process.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              ATMIA NEET College Predictor is represented in market place through two service names, NEET COLLEGE PREDICTOR and MBBS COLLEGE PREDICTOR. ATMIA NEET College Predictor has already filed for trademark registration of these
+                              services.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              NEET COLLEGE PREDICTOR owns an online web application MBBS COLLEGE PREDICTOR which is an advanced data analytics based medical admission possibility predictor. MBBS COLLEGE PREDICTOR is an online service offering of NEET COLLEGE
+                              PREDICTOR.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR is designed on historical medical admission data. For 2023 predictions, MBBS COLLEGE PREDICTOR analyses counselling data of previous year. All the analytical reports are technology driven and based on
+                              entered user data.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR is currently developed on admission counselling data of MCC and 32 Indian states. The analytics and reports are auto-calculated on the basis of user data including NEET score, domicile, category and fee
+                              budget etc.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              The user data is stored in the encrypted formats and no person or agency including NEET COLLEGE PREDICTOR has access to modify or delete the user&rsquo;s data. The user data and credentials are stored on secured Google cloud
+                              servers.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR offers customized reports and analytics based on a specific user&rsquo;s credentials such as domicile, category and NEET score. The reports and analytics are not generalized. Therefore, generated report
+                              content is not applicable to any other applicant.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              The reports and analytics of MBBS COLLEGE PREDICTOR shall be used only as one input for planning of admission strategy. MBBS COLLEGE PREDICTOR does not claim or offer any directions for medical admission counselling process.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR or NEET COLLEGE PREDICTOR shall not be responsible for any loss of opportunity due to any of the reports and analytics. The user is advised to apply due diligence on the analysis of reports generated by
+                              MBBS COLLEGE PREDICTOR.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR, at present, estimates the admission possibility in MBBS for 646 medical colleges. NEET COLLEGE PREDICTOR is making continuous efforts to incorporate the admission data of remaining medical colleges and
+                              other courses as well.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR is designed on curated data of medical admissions. It is practically impossible to access and incorporate all the data entries into the application. MBBS COLLEGE PREDICTOR is curated to include approx 80%
+                              of admission counselling data for 2022.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              MBBS COLLEGE PREDICTOR reports and predictions shall be considered as indicative and not final. The reports are directional in nature. NEET COLLEGE PREDICTOR or MBBS COLLEGE PREDICTOR claims no guarantee or assurance of medical
+                              admission.
+                          </span>
+                      </li>
+                      <li>
+                          <span style="font-family: Roboto;">
+                              Use of NEET COLLEGE PREDICTOR and MBBS COLLEGE PREDICTOR is completely voluntary in nature. ATMIA NEET College Predictor ensures due diligence in all the promotional communications. However, any reference to threat, fear or
+                              coercion is unintentional and inadvertent. ATMIA NEET College Predictor shall not be liable for any such action.
+                          </span>
+                      </li>
+                  </ul>
 
-                    <p>Atmia Education is founded and managed by Dr. Hasmukh Vaghela for more than a decade now. Maximizing his academic excellence, being among the Topper in SSC and HSC in Board Examinations, Dr. Vaghela served thousands of students and individuals reach the peak of their career, creating dreams into realities. Atmia as an institution has established a culture of excellence and quality. <b>Its exemplary performances resulted in the achievements of prestigious recognitions and certifications making it as an organization compliant with international standards.</b></p>
-                </div>
-                <div class="blue_about">
-                  <p>Being a notable institution, Atmia provides comprehensive services for its students sent abroad for MBBS (MD). Counseling, Admission, Documentation, Hostel Accommodation are its prime strengths.</p>
-                  <p>Facilities of Face-to-Face and Online Coaching for NEXT (National Exit Exam)/USMLE/PLAB are among its premium implemented programs to ensure that all needs of students are totally taken-care-of.</p>
-                  <p>We just don’t say, we do it. This is the reason why there are 4000+ students and families who fully trust Atmia Education - The Gold Standard for MBBS INDIA, with the most awarded India’s 12+ Legendary Medical Faculty.</p>
-                  <p>Through our initiatives, there are more than 1000+ Indian students graduated and now practicing as Doctors, in various leading hospitals in India and the rest of the world. </p>
-                  <h3>“We are not Agents, we are Parents”.</h3>
                 </div>
             </div>
         </div>

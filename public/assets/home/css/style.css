@@ -103,7 +103,7 @@ theme.
   display: block;
 }
 
-div#yl-preloader {
+/* div#yl-preloader {
   position: fixed;
   left: 0;
   top: 0;
@@ -113,6 +113,12 @@ div#yl-preloader {
   overflow: visible;
   background-color: #fff;
   background: #fff url("../img/pre.svg") no-repeat center center;
+} */
+
+.ul-li ul li p {
+  font-size: 13px;
+  color: #43aef0;
+  margin: 0;
 }
 
 [data-background] {
@@ -1586,7 +1592,7 @@ select:visited {
 }
 .yl-banner-text h1 {
   color: #000;
-  font-size: 58px;
+  font-size: 55px;
   font-weight: 700;
   line-height: 1.2;
   padding-bottom: 35px;
@@ -1606,7 +1612,7 @@ select:visited {
 }
 .yl-banner-text .yl-banner-btn a {
   color: #fff;
-  width: 160px;
+  width: auto;
   height: 55px;
   display: block;
   overflow: hidden;
@@ -1614,6 +1620,7 @@ select:visited {
   line-height: 55px;
   border-radius: 40px;
   background-color: #43aef0;
+  padding: 0px 30px;
 }
 .yl-banner-text .yl-banner-btn a i {
   margin-left: 5px;
@@ -3017,6 +3024,15 @@ select:visited {
   transform: translateY(-50%);
   transition: 0.3s all ease-in-out;
   background-color: rgba(255, 255, 255, 0.8);
+}
+.contect_wrapper.about ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+.contect_wrapper.about ul li {
+  width: 100%;
 }
 .yl-course-img-text .yl-course-img .c-hover-icon i {
   font-size: 14px;
