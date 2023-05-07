@@ -11,12 +11,11 @@ class NeetRangeRanking extends Model
 
     public static function getRankByMark($marks, $category)
     {
-        return NeetRangeRanking::where('min_mark', '>=', $marks)
-            // ->where('max_mark', '<=', $marks)
+        return NeetRangeRanking::where('min_mark', '<=', $marks)
+            // ->leftJoin('colleges','colleges.id','neet_range_rankings.college_id')
             ->where('category', strtoupper($category))
-            // ->where('year', date('Y'))
-            // ->where('status', 'active')
-            ->orderBy('year','desc')
-            ->first();
+            // ->orderBy('year','desc')
+            // ->toSql();
+            ->pluck('college_id');
     }
 }

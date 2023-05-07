@@ -114,7 +114,7 @@ class UserNeetCollegesController extends Controller
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
             // dd($this->markRank);
             $this->marks = $request->marks;
-            $collegestates = College::whereIn('id',[$this->markRank->college_id])->pluck('state_id');
+            $collegestates = College::whereIn('id',$this->markRank)->pluck('state_id');
             $this->states = State::getCollegeCountByState($collegestates);
             return response()->json($this->data);
             // return redirect()->route('neet-college.mark-rank');
