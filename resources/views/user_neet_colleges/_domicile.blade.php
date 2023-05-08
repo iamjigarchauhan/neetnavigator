@@ -63,7 +63,7 @@
         </div>
     </div>
 </div>
-<div class="row mb-6">
+{{-- <div class="row mb-6">
     <div class="col-lg-12 fv-row">
         <div class="form-floating">
             <label for="floatingArea">Area *</label>
@@ -78,5 +78,5 @@
             @endif
         </div>
     </div>
-</div>
+</div> --}}
         

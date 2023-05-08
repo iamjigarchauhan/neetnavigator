@@ -99,13 +99,13 @@ onStepChanging:function(event,currentIndex,newIndex){
           url: url,
           data: formData,
         }).done(function (data) {
-            $('#hsc_marks').html(data.state_12th.name);
-            $('#ssc_marks').html(data.state_10th.name);
-            $('#domicile_state').html(data.state_by_pincode);
-            $('#neet_category').html(data.neet_category);
-            $('#state_category').html(data.state_category);
-            $('#minority').html(data.minority);
-            $('#quota').html(data.eligible_quota);
+            $('#hsc_marks').html(data.user.state_12th.name);
+            $('#ssc_marks').html(data.user.state_10th.name);
+            $('#domicile_state').html(data.user.state_by_pincode);
+            $('#neet_category').html(data.user.neet_category);
+            $('#state_category').html(data.user.state_category);
+            $('#minority').html(data.user.minority);
+            $('#quota').html(data.user.eligible_quota);
             // $('#ssc_marks').html(data.state_10th.name);
             // $('#ssc_marks').html(data.state_10th.name);
         });
