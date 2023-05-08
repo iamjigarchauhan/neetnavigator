@@ -12,7 +12,7 @@ Route::group(['prefix'=>'admin/'], function(){
         Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
         Route::group(['middleware'=>'auth:admin'],function(){
             Route::any('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-            Route::get('master/bill-payments', function(StudentsDataTable $dataTable) {
+            Route::get('master/students', function(StudentsDataTable $dataTable) {
                 return $dataTable->render('backend.students');
             })->name('admin.students');           
                 
