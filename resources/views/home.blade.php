@@ -1,23 +1,23 @@
 @extends('layouts.app')
 @section('content')
 @php
-    function formatNumber($num) {
-      if($num >= 10000000) {
-         // convert to Crores and round to 2 decimal places
-         return round($num/10000000, 2) . ' Cr';
-      }
-      elseif($num >= 100000) {
-         // convert to Lakhs and round to 2 decimal places
-         return round($num/100000, 2) . 'L';
-      }
-      elseif($num >= 1000) {
-         // convert to Lakhs and round to 2 decimal places
-         return round($num/1000, 2) . 'K';
-      }else {
-         // return the number as is
-         return $num;
-      }
-   }
+function formatNumber($num) {
+if($num >= 10000000) {
+// convert to Crores and round to 2 decimal places
+return round($num/10000000, 2) . ' Cr';
+}
+elseif($num >= 100000) {
+// convert to Lakhs and round to 2 decimal places
+return round($num/100000, 2) . 'L';
+}
+elseif($num >= 1000) {
+// convert to Lakhs and round to 2 decimal places
+return round($num/1000, 2) . 'K';
+}else {
+// return the number as is
+return $num;
+}
+}
 @endphp
 
 <!-- Login-Sign Form -->
@@ -133,30 +133,28 @@
         <div class="yl-select-option-wrap">
           <div class="banner-select-option">
             <select>
-              <option data-display="Course Type">Course Type </option>
-              <option value="1">Weekly</option>
-              <option value="2">Monthly</option>
-              <option value="4">Yearly</option>
+              <option data-display="Course Type">Type of Colleges </option>
+              <option value="1">ALL INDIA QUOTA</option>
+              <option value="2">AIIMS</option>
+              <option value="4">JIPMER</option>
+              <option value="5">DEEMED UNIVERSITY</option>
+              <option value="6">AFMC</option>
+              <option value="7">BHU</option>
+              <option value="8">AMU</option>
             </select>
           </div>
           <div class="banner-select-option">
             <select>
-              <option data-display="Language ">Language </option>
-              <option value="1">English</option>
-              <option value="2">German</option>
-              <option value="4">Spanish</option>
-            </select>
-          </div>
-          <div class="banner-select-option">
-            <select>
-              <option data-display="Skill">Skill</option>
-              <option value="1">Developer</option>
-              <option value="2">Designer</option>
-              <option value="4">Marketer</option>
+              <option data-display="Language ">Category </option>
+              <option value="1">OPEN</option>
+              <option value="2">OBC</option>
+              <option value="4">EWS</option>
+              <option value="5">SC</option>
+              <option value="6">ST</option>
             </select>
           </div>
         </div>
-        <button type="submit"><i class="fas fa-search"></i> Search</button>
+        <button type="submit"><i class="fas fa-search"></i> PREDICT</button>
       </form>
     </div>
     <div class="select-apply-btn">
@@ -286,68 +284,68 @@
 ============================================= -->
 <section id="yl-popular-course" class="yl-popular-course-section">
   <div class="container">
-      <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
-        <p class="title-watermark">COLLEGES</p>
-        <span>MEDICAL COLLEGES OF INDIA </span>
-        <h2>The largest selection of courses
-          for learning for students
-        </h2>
-      </div>
-      <div class="yl-popular-course-content">
-        <div class="row">
-          @php
-            $colleges = \App\Models\College::all()->random(8);
-          @endphp
-          @foreach($colleges as $key => $college)
-          <div class="col-lg-3 col-md-4">
-            <div class="yl-popular-course-img-text">
-                {{-- <div class="yl-popular-course-img text-center">
+    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
+      <p class="title-watermark">COLLEGES</p>
+      <span>MEDICAL COLLEGES OF INDIA </span>
+      <h2>The largest selection of courses
+        for learning for students
+      </h2>
+    </div>
+    <div class="yl-popular-course-content">
+      <div class="row">
+        @php
+        $colleges = \App\Models\College::all()->random(8);
+        @endphp
+        @foreach($colleges as $key => $college)
+        <div class="col-lg-3 col-md-4">
+          <div class="yl-popular-course-img-text">
+            {{-- <div class="yl-popular-course-img text-center">
                   <img src="{{ asset('assets/home/img/course/cpc1.jpg')}}" alt="">
-                </div> --}}
-                <div class="yl-popular-course-text">
-                  <div class="popular-course-fee clearfix">
-                      <span>{{ $college->institution_type}} </span>
-                      <div class="course-fee-amount mt-2">
-                        @if($college->total_fee > 0)
-                        <strong>INR {{ formatNumber($college->total_fee) }}</strong>
-                        @endif
-                      </div>
-                  </div>
-                  <div class="popular-course-title yl-headline">
-                      <h3><a href="#">{{ $college->name}}</a>
-                      </h3>
-                      <div class="yl-course-meta">
-                        <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ ucfirst(strtolower($college->city->name))}}, {{ $college->state->name }}</a>
-                        <a href="#"><b>{{ $college->annual_seat}}</b> Seats</a>
-                      </div>
-                  </div>
-                  <div class="popular-course-rate clearfix ul-li">
-                      <div class="p-rate-vote float-left">
-                        <ul>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                            <li><i class="fas fa-star"></i></li>
-                        </ul>
-                        <span>(12 Votes)</span>
-                      </div>
-                      <div class="p-course-btn float-right">
-                        <a href="#"><i class="fas fa-chevron-right"></i></a>
-                      </div>
-                  </div>
-                </div>
+          </div> --}}
+          <div class="yl-popular-course-text">
+            <div class="popular-course-fee clearfix">
+              <span>{{ $college->institution_type}} </span>
+              <div class="course-fee-amount mt-2">
+                @if($college->total_fee > 0)
+                <strong>INR {{ formatNumber($college->total_fee) }}</strong>
+                @endif
+              </div>
+            </div>
+            <div class="popular-course-title yl-headline">
+              <h3><a href="#">{{ $college->name}}</a>
+              </h3>
+              <div class="yl-course-meta">
+                <a href="#" class="mr-0"><i class="fas fa-map-marker"></i>{{ ucfirst(strtolower($college->city->name))}}, {{ $college->state->name }}</a>
+                <a href="#"><b>{{ $college->annual_seat}}</b> Seats</a>
+              </div>
+            </div>
+            <div class="popular-course-rate clearfix ul-li">
+              <div class="p-rate-vote float-left">
+                <ul>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                </ul>
+                <span>(12 Votes)</span>
+              </div>
+              <div class="p-course-btn float-right">
+                <a href="#"><i class="fas fa-chevron-right"></i></a>
+              </div>
             </div>
           </div>
-          @endforeach
-        {{-- <div class="yl-popular-course-btn text-center">
+        </div>
+      </div>
+      @endforeach
+      {{-- <div class="yl-popular-course-btn text-center">
             <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
         </div> --}}
-      </div>
-      {{-- <div class="yl-popular-course-btn text-center">
+    </div>
+    {{-- <div class="yl-popular-course-btn text-center">
         <a href="#">All Courses <i class="fas fa-arrow-right"></i></a>
       </div> --}}
-    </div>
+  </div>
   </div>
 </section>
 <!-- End of Popular course section
@@ -359,11 +357,11 @@
     <div class="yl-registration-content-2 position-relative yl-headline pera-content">
       <span class="registration-side-img position-absolute wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="{{ asset('assets/home/img/qr.png')}}" alt=""></span>
       <div class="registration-text-2">
-        <h3>Get 10% Off on registration
-          fee for <span>COVID-19</span>
+        <h3>MBBS COUNSELING
+          free for <span>INDIA & ABROAD</span>
         </h3>
-        <p>The last step you need to take to be allowed to follow a course is to be registered on it.</p>
-        <a href="#">Register now</a>
+        <p>MBBS counseling in India Guidance for form filling and seat selection.</p>
+        <a href="https://t.me/atmiambbsindia">Join now</a>
       </div>
     </div>
   </div>
@@ -388,16 +386,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Best Support ever!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Best Support ever!</h3> -->
+            <p>UV GUllas, has all modern facilities available and tutors are supporting as well. Atmia Hostel is well furnished and it's walking distance from college. They provide vegetarian Indian food and CEBU is a safe city to live nothing to worry about safety here. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a1.jpg" alt="">
+              <img src="assets/img/testi-a1.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Alina Lora</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Doshi Harshil</a></h4>
+              <span>(Gujarat, India)</span>
             </div>
           </div>
         </div>
@@ -406,16 +404,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Good cleaning service</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Good cleaning service</h3> -->
+            <p>Hello friends, I got to Know About the UV College from Dr. Chirag, He is like an elder brother always support us, makes sure all our needs are fulfilled. All facilities in the college is awesome and I recommend UV to all aspiring students planning to take course of medicine go for the Best.</p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a2.jpg" alt="">
+              <img src="assets/img/testi-a2.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Tanir Fro</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Sneddon Peire</a></h4>
+              <span>(Maharashtra, India)</span>
             </div>
           </div>
         </div>
@@ -424,16 +422,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Service satisfaction!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Service satisfaction!</h3> -->
+            <p>I am studying in UV Gullas college of Medicine I was suggested this collegeby Atmia Education, students not only from India entire world comes here, my best friend and classmate is from the basic question arose in my mind before I came here, will I get good food as I am vegetarian and these is Non-Veg Country. Atmia provides me the best food. Hostel is very good and security is excellent. If we have any difficulty seniors are alos very supportive and staff of atmia is always there to help. UV is the Best. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a3.jpg" alt="">
+              <img src="assets/img/testi-a3.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Leofar Lord</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Simran Jalandre </a></h4>
+              <span>(Madhya Pradesh, India)</span>
             </div>
           </div>
         </div>
@@ -442,16 +440,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Best teaching tips!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Best teaching tips!</h3> -->
+            <p>To all students who want to serve the society, want to become doctor, In Entire India you will not have the better Option than Atmia Education. The Honest and Committed Team. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a4.jpg" alt="">
+              <img src="assets/img/testi-a4.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Rohit Grow</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Dr. Zarna Dhamecha (MCI Topper) </a></h4>
+              <span>(Gujarat, India)</span>
             </div>
           </div>
         </div>
@@ -460,16 +458,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Best Support ever!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Best Support ever!</h3> -->
+            <p>I am Currently Working @Tata Main Hospital, Jamshedpur. My Journey Started with Atmia Education, The Guidance and Help Provided by them has helped me lot in my life, Thank you Dr. Manish & Dr. Chirag. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a1.jpg" alt="">
+              <img src="assets/img/testi-a5.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Alina Lora</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Dr. Uttam Kalariya</a></h4>
+              <span>(MCI & PG-NEET Topper)</span>
             </div>
           </div>
         </div>
@@ -478,16 +476,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Good cleaning service</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Good cleaning service</h3> -->
+            <p>Thank you for your Guidance & Support. Atmia have always helped me in all challenges. The professionalism and caring the team has, I appreciate it very much.</p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a2.jpg" alt="">
+              <img src="assets/img/testi-a6.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Tanir Fro</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Dr. Rajat Thummar</a></h4>
+              <!-- <span>Formar Manager.</span> -->
             </div>
           </div>
         </div>
@@ -496,16 +494,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Service satisfaction!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Service satisfaction!</h3> -->
+            <p>To all Aspiring Doctors, To Study MBBS Abroad and Stay Apart from Family is always difficult, but it was made easy for us by Atmia Team and I had excellent group, this journey in my life will always be remembered forever. Thank you Dr. Chirag. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a3.jpg" alt="">
+              <img src="assets/img/testi-a7.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Leofar Lord</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Dr. Ritee Chanababa</a></h4>
+              <!-- <span>Formar Manager.</span> -->
             </div>
           </div>
         </div>
@@ -514,16 +512,16 @@
             <i class="fas fa-quote-right"></i>
           </div>
           <div class="yl-testimonial-text-2">
-            <h3>Best teaching tips!</h3>
-            <p>5 stars for design quality, but also for prompt new customer service and great attention to details work.</p>
+            <!-- <h3>Best teaching tips!</h3> -->
+            <p>I can never thank you enough for all your services atmia has provided and always supported & Guided me, the team is Commited and deserves to be honoured. I will always pray to God for your betterment. </p>
           </div>
           <div class="yl-testimonial-author-2 clearfix">
             <div class="yl-testi-author-img-2 position-relative float-left">
-              <img src="assets/img/testi-a4.jpg" alt="">
+              <img src="assets/img/testi-a8.png" alt="">
             </div>
             <div class="yl-testi-author-text-2">
-              <h4><a href="#">Rohit Grow</a></h4>
-              <span>Formar Manager.</span>
+              <h4><a href="#">Dr. Neha Gohel</a></h4>
+              <!-- <span>Formar Manager.</span> -->
             </div>
           </div>
         </div>
