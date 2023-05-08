@@ -357,7 +357,7 @@
 <section id="yl-registration-2" class="yl-registration-section-2 position-relative">
   <div class="container">
     <div class="yl-registration-content-2 position-relative yl-headline pera-content">
-      <span class="registration-side-img position-absolute wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="assets/img/rm1.png" alt=""></span>
+      <span class="registration-side-img position-absolute wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="{{ asset('assets/home/img/qr.png')}}" alt=""></span>
       <div class="registration-text-2">
         <h3>Get 10% Off on registration
           fee for <span>COVID-19</span>
