@@ -106,7 +106,7 @@ return $num;
         </p>
         <div class="yl-banner-btn-wrap clearfix">
           <div class="yl-banner-btn text-center">
-            <a href="http://neetnavigator.atmianeet.in/neet-college/user">PREDICT COLLEGE NOW <i class="flaticon-right-arrow"></i></a>
+            <a href="{{ route('register-user')}}">PREDICT COLLEGE NOW <i class="flaticon-right-arrow"></i></a>
           </div>
           <div class="yl-banner-play text-center position-relative">
             <a class="video_box" href="https://www.youtube.com/watch?v=gUYjYEGbxEY">
@@ -129,7 +129,7 @@ return $num;
     <div class="banner-search-form position-relative">
       <span class="banner-search-shape1 position-absolute" data-parallax='{"x" : 70}'><img src="{{asset('assets/home/img/cr-shape1.png')}}" alt=""></span>
       <span class="banner-search-shape2 position-absolute" data-parallax='{"x" : -70}'><img src="{{asset('assets/home/img/cr-shape2.png')}}" alt=""></span>
-      <form action="#">
+      <form action="{{ route('register-user') }}" target="_blank">
         <div class="yl-select-option-wrap">
           <div class="banner-select-option">
             <select>
