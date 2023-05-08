@@ -63,7 +63,7 @@
         </div>
     </div>
 </div>
-{{-- <div class="row mb-6">
+<div class="row mb-6 d-none" >
     <div class="col-lg-12 fv-row">
         <div class="form-floating">
             <label for="floatingArea">Area *</label>
@@ -71,12 +71,12 @@
                 <option value="">{{ __('Select Area') }}</option>
                 <option {{ 'Surat' == old('area') ? 'selected' :'' }} value="Surat">Surat</option>
                 <option {{ 'Ahmedabad' == old('area') ? 'selected' :'' }} value="Ahmedabad">Ahmedabad</option>
-                <option {{ 'None' == old('area') ? 'selected' :'' }} value="None">None</option>
+                <option {{ 'None' == old('area') ? 'selected' :'selected' }} value="None">None</option>
             </select>
             @if ($errors->has('area'))
             <span class="text-danger">{{ $errors->first('area') }}</span>
             @endif
         </div>
     </div>
-</div> --}}
+</div>
         
