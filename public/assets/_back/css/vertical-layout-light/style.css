@@ -30611,3 +30611,14 @@ div.tagsinput span.tag a {
     vertical-align: top;
     border-top: 1px solid #CED4DA;
 }
+.dt-buttons button {
+  background: var(--primary) !important;
+  border: 0 !important;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 3px 1px #ccc;
+  border-radius: 7.5px;
+  color: var(--white) !important;
+}
+.card {
+ border-radius: 5px;
+}
