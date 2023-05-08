@@ -9,7 +9,7 @@
 												<a href="#"><img src="{{ asset('assets/img/logo.png')}}" alt=""></a>
 										</div>
 										<p>We work with a passion of taking challenges and creating new ones in advertising sector.</p>
-										<a class="footer-logo-btn text-center text-uppercase" href="#">About us</a>
+										<a class="footer-logo-btn text-center text-uppercase" href="{{ route('overview')}}">About us</a>
 									</div>
 							</div>
 						</div>
