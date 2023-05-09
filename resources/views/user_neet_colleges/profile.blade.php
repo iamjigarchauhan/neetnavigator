@@ -2,6 +2,23 @@
 @section('content')
 <section id="course-page-course" class="course-page-course-section">
   <div class="container mt-5">
+    {{-- <div class="card">
+      <div class="card-body">
+        <form id="kt_account_profile_details_form" class="form" method="POST" action="http://localhost/keytech/jigar/neetnavigator-master/public/neet-college/user/19" enctype="multipart/form-data">
+          <input type="hidden" name="_token" value="LtIR6zMaDvnlr7e7DfGNAzHG9xoApJ5rCmscuJBi">        <input type="hidden" name="_method" value="PUT">        <!--begin::Card body-->
+          
+              <!--begin::Input group-->
+              <div class="row mb-6">
+                  <div class="col-lg-12 fv-row">
+                      <div class="form-floating">
+                      <label for="floatingMarks">Enter Your Marks</label>
+                      <input name="marks" type="number" max="999" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" value="" required="">
+                      </div>
+                  </div>
+              </div>
+      </form>
+      </div>
+    </div> --}}
     <div class="card">
       <div class="card-body">
         <form method="POST" action="{{ route('neet-college.user.store')}}">
