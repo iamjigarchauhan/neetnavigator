@@ -25,7 +25,7 @@
             <li class="dropdown float-right">
               <a href="#"><i class="fas fa-user"></i></a>
               <ul class="dropdown-menu clearfix">
-                <li><a href="{{ '#' }}">Profile</a></li>
+                <li><a href="{{ route('neet-college.profile') }}">Profile</a></li>
                 <li><a href="{{ route('signout') }}">Logout</a></li>
                 {{-- <form id="logout-form" action="{{ route('signout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
@@ -81,31 +81,13 @@
                       <a href="{{ route('register-user')}}">Sign Up</a>
                     </li>
                     @endauth
-                    
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
-          <!-- /Mobile-Menu -->
         </div>
       </div>
-      {{-- <div class="yl-header-cart-login float-right">
-              {{-- <div class="yl-top-cart-login">
-                <button><i class="fas fa-shopping-cart"></i></button>
-              </div> - -}}
-      <nav class="yl-main-navigation float-left ul-li">
-        <div class="yl-top-cart-login">
-          <li class="dropdown">
-            <a href="#"><i class="fas fa-user"></i></a>
-            <ul class="dropdown-menu clearfix">
-              <li><a target="_blank" href="instructor.html">Logout</a></li>
-              {{-- <li><a target="_blank" href="instructor-details.html">Instructor Details</a></li> -- }}
-            </ul>
-          </li>
-        </div>
-      </nav>
-    </div> --}}
   </div>
   </div>
 </header>

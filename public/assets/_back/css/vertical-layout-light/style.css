@@ -30622,3 +30622,7 @@ div.tagsinput span.tag a {
 .card {
  border-radius: 5px;
 }
+
+section#wizard-p-2 span{
+  text-transform: capitalize !important;
+}

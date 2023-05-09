@@ -52,5 +52,6 @@ Route::prefix('neet-college')->name('neet-college.')->group(function () {
     Route::get('rank', [UserNeetCollegesController::class, 'rankByMark'])->name('mark-rank');
     Route::get('list', [UserNeetCollegesController::class, 'collegeList'])->name('college-list');
     Route::post('checkout', [UserNeetCollegesController::class, 'checkout'])->name('checkout');
+    Route::get('profile', [UserNeetCollegesController::class, 'show'])->name('profile');
     Route::resource('user', UserNeetCollegesController::class)->only(['index', 'store', 'update', 'destroy','new'])->middleware('auth:web');
 });

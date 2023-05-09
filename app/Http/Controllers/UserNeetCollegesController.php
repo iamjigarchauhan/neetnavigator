@@ -82,6 +82,7 @@ class UserNeetCollegesController extends Controller
      */
     public function store(StoreUserNeetInfo $request)
     {
+        // dd($request);
         UserNeetInfo::updateOrCreate([
             'user_id' => Auth::user()->id,
         ], [
@@ -100,16 +101,20 @@ class UserNeetCollegesController extends Controller
             'eligible_quota' => $request->eligible_quota,
         ]);
         $this->user = UserNeetInfo::with(['city','state_10th','state_12th','user'])->whereUserId(Auth::user()->id)->first();
+        if($request->ajax())
         return response()->json($this->data);
-        // return redirect()->route('neet-college.user.index');
+        else 
+        return redirect()->route('neet-college.profile');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $this->states = State::allState('active');
+
+        return view('user_neet_colleges.profile',$this->data);
     }
 
     /**

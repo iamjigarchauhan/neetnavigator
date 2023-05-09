@@ -29,7 +29,7 @@ class StoreUserNeetInfo extends FormRequest
             'pincode' => 'required|numeric',
             'state' => 'required|string',
             'city' => 'required',
-            'area' => 'required',
+            'area' => 'sometimes',
             'neet_category' => 'required',
             'state_category' => 'required',
             'gender' => 'required',
