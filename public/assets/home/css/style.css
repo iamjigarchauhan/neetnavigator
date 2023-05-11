@@ -2680,6 +2680,15 @@ select:visited {
   align-items: center;
   justify-content: center;
 }
+.contact_banner.services {
+  height: 550px;
+  background: url(../img/atmia-hostel.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 /*Testimonial section 2*/
 /*-----------------------------*/
 .yl-testimonial-section-2 {
@@ -6254,13 +6263,14 @@ select:visited {
 }
 
 .service_container {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .service_container h2 {
   text-align: center;
   font-size: 27px;
-  margin-bottom: 0;
+  line-height: 35px;
+  margin-bottom: 20px;
 }
 
 .service_container .align {

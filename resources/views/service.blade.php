@@ -1,4 +1,7 @@
 @extends('layouts.app') @section('content')
+<div class="contact_banner services">
+    <h2>Services Of Atmia Education</h2>
+</div>
 <section id="yl-popular-course" class="yl-popular-course-section">
     <div class="container">
         <div class="service_container">
