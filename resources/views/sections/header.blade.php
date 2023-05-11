@@ -12,9 +12,9 @@
             <li class="dropdown">
               <a href="{{ route('overview')}}">Overview</a>
             </li>
-            <!-- <li class="dropdown">
-                    <a href="{{ route('services')}}">Services</a>
-                  </li> -->
+            <li class="dropdown">
+              <a href="{{ route('services')}}">Services</a>
+            </li>
             <li class="dropdown">
               <a href="{{ route('contact')}}">Contact</a>
             </li>
@@ -88,6 +88,6 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
   </div>
 </header>
