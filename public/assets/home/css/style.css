@@ -2701,6 +2701,8 @@ span.relative.z-0.inline-flex.shadow-sm.rounded-md {
 span.relative.z-0.inline-flex.shadow-sm.rounded-md span span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5 {
   padding-top: 11px !important;
   padding-bottom: 12px !important;
+  background: #43aef0 !important;
+  color: #fff;
 }
 /*Testimonial section 2*/
 /*-----------------------------*/
