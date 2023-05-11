@@ -2689,6 +2689,19 @@ select:visited {
   align-items: center;
   justify-content: center;
 }
+span.relative.z-0.inline-flex.shadow-sm.rounded-md {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none !important;
+  gap: 15px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+span.relative.z-0.inline-flex.shadow-sm.rounded-md span span.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5 {
+  padding-top: 11px !important;
+  padding-bottom: 12px !important;
+}
 /*Testimonial section 2*/
 /*-----------------------------*/
 .yl-testimonial-section-2 {
