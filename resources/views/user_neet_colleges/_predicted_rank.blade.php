@@ -10,7 +10,7 @@
         </span>
     </div>
     <div class="align_markds">
-        <label class="fw-bold text-muted">{{ __('Minimum Rank:') }}</label>
+        <label class="fw-bold text-muted">{{ __('Min. Rank:') }}</label>
         <span class="fw-bold fs-6" id="minimum_rank">
             @if(isset($markRank) && !is_null($markRank))
             {{ $markRank->min_rank }}
@@ -21,7 +21,7 @@
     </div>
     <div class="align_markds">
         <label class="fw-bold text-muted">
-            {{ __('Maximum Rank:') }}
+            {{ __('Max. Rank:') }}
         </label>
         <span class="fw-bolder fs-6 me-2" id="maximum_rank">
             @if(isset($markRank) && !is_null($markRank))

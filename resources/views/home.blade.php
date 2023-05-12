@@ -724,4 +724,5 @@ return $num;
 @endsection
 @section('scripts')
     <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/custom.js') }}"></script>
 @endsection

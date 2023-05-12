@@ -23,7 +23,8 @@
               </button>
             </div>
             @endif
-            <h4></h4>
+              @if(auth()->user()->user_neet_info->count() == 0)
+              <h4></h4>
               <section>
                 {{-- <div class="form-row"> --}}
                   @include('user_neet_colleges._domicile', ['class'=>'','states' => $states])
@@ -35,6 +36,7 @@
                   @include('user_neet_colleges._category', array('class' => ''))
                 {{-- </div> --}}
               </section>
+              @endif
             </form>
             <h4></h4>
             <section>
@@ -113,7 +115,7 @@ onStepChanging:function(event,currentIndex,newIndex){
       }else{
         $('.steps ul').removeClass('step-3');
       }
-      if(newIndex===3){
+      if(newIndex=== @if(auth()->user()->user_neet_info->count() == 0) 3 @else 1 @endif ){
         //kt_account_profile_details_form
         var url = $('#kt_account_profile_details_form').attr('action');
         var method = $('#kt_account_profile_details_form').attr('method');
@@ -144,6 +146,7 @@ onStepChanging:function(event,currentIndex,newIndex){
     }
 }, 
 onFinished: function (event, currentIndex){
+  alert('test');
   $('#kt_stepper_checkout_form').submit();
 },
 labels:{finish:"Save",next:"Next",previous:"Previous"}});

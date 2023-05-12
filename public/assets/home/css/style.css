@@ -513,7 +513,13 @@ select:visited {
   position: relative;
   display: inline-block;
 }
-.yl-header-cart-login .yl-top-cart-login:after {
+.yl-header-cart-login .yl-top-cart-login .btn-primary{
+ background-color: #43aef0;
+ border-color:#43aef0; 
+ color:white;
+ border-radius: 40px;
+}
+/* .yl-header-cart-login .yl-top-cart-login:after {
   top: 3px;
   right: -3px;
   width: 2px;
@@ -521,7 +527,7 @@ select:visited {
   height: 18px;
   position: absolute;
   background-color: #d9d9d9;
-}
+} */
 .yl-header-cart-login .yl-top-cart-login:last-child:after {
   display: none;
 }

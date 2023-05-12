@@ -81,51 +81,56 @@ Author:
 						$('body').removeClass('search-active');
 					});
 				};
-				jQuery('#yl-main-slider-3').owlCarousel({
-					items: 1,
-					loop: true,
-					nav: true,
-					dots: false,
-					autoplay: true,
-					navSpeed: 1000,
-					smartSpeed: 2000,
-					navText:["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
-				});
-				$(window).on('load',function(){
-					$('.yl-top-category-slider').owlCarousel({
-						margin:30,
-						responsiveClass:true,
+				if(jQuery('#yl-main-slider-3').length > 0) {
+					jQuery('#yl-main-slider-3').owlCarousel({
+						items: 1,
+						loop: true,
 						nav: true,
 						dots: false,
-						navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
-						loop:true,
-						responsive:{
-							0:{
-								items:1,
-							},
-							400:{
-								items:1,
-							},
-							600:{
-								items:2,
-							},
-							700:{
-								items:2,
-							},
-							1000:{
-								items:3,
+						autoplay: true,
+						navSpeed: 1000,
+						smartSpeed: 2000,
+						navText:["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
+					});
+				}
+				$(window).on('load',function(){
+					if($('.yl-top-category-slider').length > 0){
+						$('.yl-top-category-slider').owlCarousel({
+							margin:30,
+							responsiveClass:true,
+							nav: true,
+							dots: false,
+							navText:["<i class='fas fa-chevron-left'></i>","<i class='fas fa-chevron-right'></i>"],
+							loop:true,
+							responsive:{
+								0:{
+									items:1,
+								},
+								400:{
+									items:1,
+								},
+								600:{
+									items:2,
+								},
+								700:{
+									items:2,
+								},
+								1000:{
+									items:3,
 
-							},
-							1300:{
-								items:4,
+								},
+								1300:{
+									items:4,
 
+								},
+								1900:{
+									items:4,
+								},
 							},
-							1900:{
-								items:4,
-							},
-						},
-					})
+						})
+					}
 				});
+				
 				if ($(".odometer").length) {
 					$('.odometer').appear();
 					$(document.body).on('appear', '.odometer', function(e) {

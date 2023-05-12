@@ -11,4 +11,3 @@
 <script src="{{ asset('assets/home/js/odometer.js') }}"></script>
 {{-- <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script> --}}
 <script src="{{ asset('assets/home/js/typer.js') }}"></script>
-<script src="{{ asset('assets/home/js/custom.js') }}"></script>

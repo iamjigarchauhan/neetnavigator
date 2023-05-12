@@ -20,7 +20,7 @@
             </li>
             @auth
             {{-- <li class="dropdown">
-                    <a href="{{ route('register-user')}}">Predict </a>
+                <a href="{{ route('register-user')}}">Predict </a>
             </li> --}}
             <li class="dropdown float-right">
               <a href="#"><i class="fas fa-user"></i></a>
@@ -39,7 +39,11 @@
             </li>
             @endauth
           </ul>
-        </nav>
+           </nav>
+          {{-- <div class="float-right btn float-right yl-banner-btn">
+            <a href="http://localhost/keytech/jigar/neetnavigator-master/public/register">Predict </a>
+          </div> --}}
+        
         <div class="yl-mobile-menu-wrap">
           <div class="yl-mobile_menu position-relative">
             <div class="yl-mobile_menu_button yl-open_mobile_menu">
@@ -87,6 +91,19 @@
             </div>
           </div>
         </div>
+        @auth
+      
+        <div class="yl-header-cart-login float-right">
+          <div class="yl-top-cart-login">
+             <a href="{{ route('register-user',['predict'=>'true'])}}" class="btn-primary btn">Predict Now</a>
+          </div>
+          {{-- <div class="yl-top-cart-login">
+             <button data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user"></i></button>
+          </div> --}}
+       </div>
+       @endauth
+        
+    </div>
       </div>
     </div>
   </div>
