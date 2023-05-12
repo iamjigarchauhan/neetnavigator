@@ -31,7 +31,7 @@
                          <a href="#"><i class="fas fa-th"></i></a>
                          <a href="#"><i class="fas fa-list"></i></a>
                       </div>
-                      <span class="show-result-text">Showing {{ $colleges->firstItem() }} - {{ $colleges->currentPage() * $colleges->perPage() }} of {{ $totalcolleges }} results</span>
+                      <span class="show-result-text">Showing {{ $colleges->firstItem() }} - {{ $totalcolleges > $colleges->perPage() ?  $colleges->currentPage() * $colleges->perPage() : $totalcolleges }} of {{ $totalcolleges }} results</span>
                    </div>
                 </div>
              </div>
