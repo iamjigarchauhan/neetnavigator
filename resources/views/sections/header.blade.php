@@ -87,6 +87,14 @@
                     @endauth
                   </ul>
                 </nav>
+                <div class="yl-header-cart-login float-right">
+                  <div class="yl-top-cart-login">
+                     <a href="{{ route('register-user',['predict'=>'true'])}}" class="btn-primary btn">Predict Now</a>
+                  </div>
+                  {{-- <div class="yl-top-cart-login">
+                     <button data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user"></i></button>
+                  </div> --}}
+               </div>
               </div>
             </div>
           </div>

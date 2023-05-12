@@ -7267,7 +7267,14 @@ section#white_img {
   }
 
   .header-style-two .yl-header-cart-login {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    right: -3.5rem;
+    z-index: 0;
+    top: 6px;
+  }
+  .header-style-two .yl-mobile_menu_content .yl-header-cart-login {
+    display: block;
   }
 
   .yl-registration-content-2 .registration-side-img {
@@ -8490,4 +8497,14 @@ span[aria-current="page"]{
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 1.5em;
+}
+
+.field-icon {
+  float: right;
+  margin-left: -50px;
+  margin-top: 2px;
+  position: absolute;
+  z-index: 2;
+  padding: 15px;
+  cursor: pointer;
 }

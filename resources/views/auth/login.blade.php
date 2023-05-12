@@ -26,7 +26,8 @@
                         @if ($errors->has('email'))
                             <span class="text-danger">{{ $errors->first('email') }}</span>
                         @endif
-                        <input type="text" name="password" placeholder="Password">
+                        <input id="password-field" type="password" name="password" placeholder="Password">
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         @if ($errors->has('password'))
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                         @endif
@@ -43,6 +44,29 @@
     </div>
 </section>
 @include('auth.terms_and_condition_modal')
+@endsection
+@section('scripts')
+<script>
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+        input.attr("type", "text");
+        } else {
+        input.attr("type", "password");
+        }
+    });
+</script>
+<script>
+    $(document).on('change', '#agree_checkbox_user', function() {
+        if ($(this).prop('checked') == true) {
+            $('#terms_and_condition').removeClass('d-none');
+            $('#terms_and_condition').modal('show');
+        } else {
+            $('#terms_and_condition').addClass('d-none');
+        }
+    })
+</script>
 @endsection
 <!-- Page Content -->
 <!--begin::Card-->
@@ -116,15 +140,3 @@
 
     </div> --}}
     <!-- /Page Content -->
-@section('scripts')
-<script>
-    $(document).on('change', '#agree_checkbox_user', function() {
-        if ($(this).prop('checked') == true) {
-            $('#terms_and_condition').removeClass('d-none');
-            $('#terms_and_condition').modal('show');
-        } else {
-            $('#terms_and_condition').addClass('d-none');
-        }
-    })
-</script>
-@endsection
