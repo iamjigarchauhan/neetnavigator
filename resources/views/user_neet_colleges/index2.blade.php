@@ -131,8 +131,8 @@ onStepChanging:function(event,currentIndex,newIndex){
             })
            table.html(html);
            $('.predicted-marks').html(data.marks);
-           $('#minimum_rank').html(data.markRank.min_rank);
-           $('#maximum_rank').html(data.markRank.max_rank);
+           $('#minimum_rank').html(data.min_rank);
+           $('#maximum_rank').html(data.max_rank);
           }
         });
         $('.steps ul').addClass('step-4');
