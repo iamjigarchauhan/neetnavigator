@@ -377,7 +377,6 @@
           <div class="yl-course-pagination text-center ul-li">
              <ul>
                {{ $colleges->links() }}
-               
              </ul>
           </div>
        </div>

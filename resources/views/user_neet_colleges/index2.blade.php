@@ -167,7 +167,6 @@ onStepChanging:function(event,currentIndex,newIndex){
     }
 }, 
 onFinished: function (event, currentIndex){
-  alert(currentIndex);
   $('#kt_stepper_checkout_form').submit();
 },
 labels:{finish:"Save",next:"Next",previous:"Previous"}});
