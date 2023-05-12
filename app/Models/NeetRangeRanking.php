@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class NeetRangeRanking extends Model
 {
     use HasFactory;
@@ -12,8 +12,9 @@ class NeetRangeRanking extends Model
     public static function getRankByMark($marks, $category)
     {
         return NeetRangeRanking::where('min_mark', '<=', $marks)
-            ->whereNotNull('min_mark')
+            ->where('min_mark','>',0)
+            ->where('min_rank','>',0)
             ->where('category', strtoupper($category))
-            ->pluck('college_id');
+            ->select('college_id','min_rank','max_rank')->get();
     }
 }

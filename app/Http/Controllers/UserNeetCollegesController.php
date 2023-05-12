@@ -52,13 +52,14 @@ class UserNeetCollegesController extends Controller
         $marks = session('user_mark');
         $category = auth()->user()->user_neet_info->state_category;
         $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
-        $this->totalcolleges = College::whereIn('id',$this->markRank->unique())
+        // dd($this->markRank);
+        $this->totalcolleges = College::whereIn('id',$this->markRank->pluck('college_id'))
         ->where(function($query){
             $states = session('states');
             if(!empty($states))
             $query->whereIn('state_id',$states);
         })->count();
-        $this->colleges = College::whereIn('id',$this->markRank->unique())
+        $this->colleges = College::whereIn('id',$this->markRank->pluck('college_id')    )
         ->where(function($query){
             $states = session('states');
             if(!empty($states))
@@ -133,9 +134,14 @@ class UserNeetCollegesController extends Controller
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
+            $this->min_rank = $this->markRank->pluck('min_rank')->min();
+            $this->max_rank = $this->markRank->pluck('min_rank')->max(); 
+            // dd($this->markRank);
             $this->marks = $request->marks;
-            $collegestates = College::whereIn('id',$this->markRank)->pluck('state_id');
-            $this->states = State::getCollegeCountByState($collegestates);
+            $collegestates = College::whereIn('id',$this->markRank->pluck('college_id'))->pluck('state_id','id')->toArray();
+            $statesids = array_unique(array_values($collegestates));
+            $collegeids = array_unique(array_keys($collegestates));
+            $this->states = State::getCollegeCountByState($statesids,$collegeids);
             return response()->json($this->data);
             // return redirect()->route('neet-college.mark-rank');
         } else {

@@ -40,7 +40,6 @@ class AddCollegesSeeder extends Seeder
                     'status'=>'active',
                     'total_fee' => $line['Management of College'] == 'Govt.' ? $line['GOVTFEE'] : $line['MQ_FEE']
                 ];
-                if($college['name'] == 'Banas Medical College and Research Institute, Palanpur, Gujarat	');
                 $college = DB::table('colleges')->insertGetId($college);
                 // dd($college);
                 $marks[] = [

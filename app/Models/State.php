@@ -37,10 +37,13 @@ class State extends Model
         return $this->hasMany(College::class);
     }
 
-    public static function getCollegeCountByState($stateIds = [])
+    public static function getCollegeCountByState($stateIds = [],$collgeIds = [])
     {
-        return State::withCount(['colleges' => function ($q) {
+        return State::withCount(['colleges' => function ($q) use ($collgeIds) {
                 $q->where('status', 'active');
+                $q->when(!empty($collgeIds), function ($q) use ($collgeIds) {
+                    $q->whereIn('id', $collgeIds);
+                });
             }])->where('status', 'active')
             ->when(!empty($stateIds), function ($q) use ($stateIds) {
                 $q->whereIn('id', $stateIds);
