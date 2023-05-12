@@ -15,6 +15,7 @@ class AddCollegesSeeder extends Seeder
     public function run()
     {
         DB::table('colleges')->truncate();
+        // dd('test');
         DB::table('neet_range_rankings')->truncate();
         $users = (new FastExcel)->import(public_path('collegelist.xlsx'), function ($line) {
             $state = DB::table('states')->whereName($line['State'])->first();
@@ -28,17 +29,18 @@ class AddCollegesSeeder extends Seeder
             }
             if($state != null){
                 $college = [
-                    'name'=>$line['Name and Address of Medical College/Medical Institution'],
+                    'name'=>trim($line['Name and Address of Medical College/Medical Institution']),
                     'state_id'=>$state->id,
                     'city_id'=>$city->id ?? $city,
                     'university'=>$line['University Name'],
                     'institution_type'=>$line['Management of College'],
                     'year_inspection'=>$line['Year of Inspection of College'],
-                    'annual_seat'=> !empty($line['Annual Intake (Seats)']) && $line['Annual Intake (Seats)'] > 0  ? $line['Annual Intake (Seats)'] : 0,
+                    'annual_seat'=> $line['Annual Intake (Seats)'] != '' && $line['Annual Intake (Seats)'] > 0  ? $line['Annual Intake (Seats)'] : 0,
                     'lop_date'=> !empty($line['Date of LOP']) && $line['Date of LOP'] != 'N/A' ? $line['Date of LOP'] : null,
                     'status'=>'active',
                     'total_fee' => $line['Management of College'] == 'Govt.' ? $line['GOVTFEE'] : $line['MQ_FEE']
                 ];
+                if($college['name'] == 'Banas Medical College and Research Institute, Palanpur, Gujarat	');
                 $college = DB::table('colleges')->insertGetId($college);
                 // dd($college);
                 $marks[] = [

@@ -58,14 +58,13 @@ class UserNeetCollegesController extends Controller
             if(!empty($states))
             $query->whereIn('state_id',$states);
         })->count();
-        $this->colleges = College::whereIn('id',$this->markRank->unique())->where(function($query){
+        $this->colleges = College::whereIn('id',$this->markRank->unique())
+        ->where(function($query){
             $states = session('states');
             if(!empty($states))
             $query->whereIn('state_id',$states);
         })
         ->paginate(12);
-        // dd($this->colleges);
-        // $this->colleges = State::getCollegeCountByState($collegestates);
         return view('user_neet_colleges.result', $this->data);
     }
 

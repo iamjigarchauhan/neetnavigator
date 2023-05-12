@@ -12,6 +12,7 @@ class NeetRangeRanking extends Model
     public static function getRankByMark($marks, $category)
     {
         return NeetRangeRanking::where('min_mark', '<=', $marks)
+            ->whereNotNull('min_mark')
             ->where('category', strtoupper($category))
             ->pluck('college_id');
     }
