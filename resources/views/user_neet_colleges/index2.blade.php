@@ -110,11 +110,13 @@ onStepChanging:function(event,currentIndex,newIndex){
             // $('#ssc_marks').html(data.state_10th.name);
         });
         $('.steps ul').addClass('step-3');
+        form = $('#kt_account_profile_details_form');
       }else{
         $('.steps ul').removeClass('step-3');
       }
       if(newIndex===3){
         //kt_account_profile_details_form
+        form = $('#kt_account_profile_details_form');
         var url = $('#kt_account_profile_details_form').attr('action');
         var method = $('#kt_account_profile_details_form').attr('method');
         var formData = $('#kt_account_profile_details_form').serialize();
@@ -136,7 +138,7 @@ onStepChanging:function(event,currentIndex,newIndex){
           }
         });
         $('.steps ul').addClass('step-4');
-        $('.actions ul').addClass('step-last');
+        // $('.actions ul').addClass('step-last');
       } else { 
         $('.steps ul').removeClass('step-4');$('.actions ul').removeClass('step-last');
       }

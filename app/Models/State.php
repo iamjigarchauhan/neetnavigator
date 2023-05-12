@@ -40,13 +40,30 @@ class State extends Model
     public static function getCollegeCountByState($stateIds = [])
     {
         return State::withCount(['colleges' => function ($q) {
-                $q->where('status', 'active');
-            }])->where('status', 'active')
+            $q->where('status', 'active');
+        }])->where('status', 'active')
             ->when(!empty($stateIds), function ($q) use ($stateIds) {
                 $q->whereIn('id', $stateIds);
             })
             ->having('colleges_count', '>', 0)
-            ->orderby('colleges_count','desc')
+            ->orderby('colleges_count', 'desc')
+            ->get();
+    }
+
+    public static function getUserCollegeCountByMarkAndCategory($marks, $category, $stateName)
+    {
+        return State::withCount(['colleges' => function ($q) use($marks, $category){
+            $q->where('status', 'active')
+                ->whereHas('neet_range_rankings', function ($q1) use($marks, $category){
+                    $q1->where('category', strtoupper($category))
+                    ->where('min_mark', '<=', $marks)
+                    ->where('min_mark', '!=', '')
+                    ->whereNotNull('min_mark');
+                });
+        }])->where('status', 'active')
+            ->where('name', 'like', trim($stateName))
+            ->having('colleges_count', '>', 0)
+            ->orderby('colleges_count', 'desc')
             ->get();
     }
 }

@@ -51,7 +51,7 @@ class UserNeetCollegesController extends Controller
         // $this->colleges = College::paginate(12);
         $marks = session('user_mark');
         $category = auth()->user()->user_neet_info->state_category;
-        $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
+        $this->markRank = NeetRangeRanking::getCollegeIdsByMark($marks, $category);
         $this->totalcolleges = College::whereIn('id',$this->markRank->unique())
         ->where(function($query){
             $states = session('states');
@@ -133,10 +133,10 @@ class UserNeetCollegesController extends Controller
         if ($request->marks > 0) {
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
+            $stateName = auth()->user()->user_neet_info->state_by_pincode;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
             $this->marks = $request->marks;
-            $collegestates = College::whereIn('id',$this->markRank)->pluck('state_id');
-            $this->states = State::getCollegeCountByState($collegestates);
+            $this->states = State::getUserCollegeCountByMarkAndCategory($request->marks, $category, $stateName);
             return response()->json($this->data);
             // return redirect()->route('neet-college.mark-rank');
         } else {
@@ -182,10 +182,12 @@ class UserNeetCollegesController extends Controller
     public function rankByMark()
     {
         $marks = session('user_mark');
-        $this->markRank = NeetRangeRanking::getRankByMark($marks);
+        $category = auth()->user()->user_neet_info->state_category;
+        $stateName = auth()->user()->user_neet_info->state_by_pincode;
+        $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
         if ($this->markRank != null) {
             $this->marks = $marks;
-            $this->states = State::getCollegeCountByState();
+            $this->states = State::getUserCollegeCountByMarkAndCategory($marks, $category, $stateName);
             return view('user_neet_colleges.index', $this->data);
         } else {
             return redirect()->route('neet-college.user.index')->withError('Your marks did not match with ranking.');

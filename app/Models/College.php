@@ -16,4 +16,9 @@ class College extends Model
     public function city() {
         return $this->belongsTo(City::class);
     }
+
+    public function neet_range_rankings()
+    {
+        return $this->hasMany(NeetRangeRanking::class);
+    }
 }

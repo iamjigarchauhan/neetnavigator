@@ -24,7 +24,7 @@ class CheckUserMark extends FormRequest
     public function rules()
     {
         return [
-            'marks' => 'required|numeric'
+            'marks' => 'required|numeric|max:720'
         ];
     }
 }

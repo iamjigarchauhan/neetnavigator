@@ -26,7 +26,7 @@
                         @if ($errors->has('email'))
                             <span class="text-danger">{{ $errors->first('email') }}</span>
                         @endif
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                         @if ($errors->has('password'))
                         <span class="text-danger">{{ $errors->first('password') }}</span>
                         @endif

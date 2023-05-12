@@ -12,7 +12,7 @@
                   <div class="col-lg-12 fv-row">
                       <div class="form-floating">
                       <label for="floatingMarks">Enter Your Marks</label>
-                      <input name="marks" type="number" max="999" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" value="" required="">
+                      <input name="marks" type="number" max="720" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" value="" required="">
                       </div>
                   </div>
               </div>
