@@ -519,6 +519,10 @@ select:visited {
  color:white;
  border-radius: 40px;
 }
+.header-style-two .yl-header-cart-login {
+  padding-top: 10px !important;
+  padding-right: 9rem;
+}
 /* .yl-header-cart-login .yl-top-cart-login:after {
   top: 3px;
   right: -3px;
