@@ -23,7 +23,7 @@
               </button>
             </div>
             @endif
-              @if(auth()->user()->user_neet_info->count() == 0)
+              @if(auth()->user()->user_neet_info == null)
               <h4></h4>
               <section>
                 {{-- <div class="form-row"> --}}
@@ -79,6 +79,12 @@
 $('.multiple').select2();
 var form = $("#kt_stepper_example_basic_form");
 form.validate({
+    rules: {
+      marks: {
+         max: 720,
+         digits:true
+      }
+    },
     errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
 });
 
@@ -115,38 +121,53 @@ onStepChanging:function(event,currentIndex,newIndex){
       }else{
         $('.steps ul').removeClass('step-3');
       }
-      if(newIndex=== @if(auth()->user()->user_neet_info->count() == 0) 3 @else 1 @endif ){
+      if(newIndex == @if(auth()->user()->user_neet_info == null) 3 @else 1 @endif ){
         //kt_account_profile_details_form
-        var url = $('#kt_account_profile_details_form').attr('action');
-        var method = $('#kt_account_profile_details_form').attr('method');
-        var formData = $('#kt_account_profile_details_form').serialize();
-        $.ajax({
-          type: "POST",
-          url: url,
-          data: formData,
-        }).done(function (data) {
-           if(data.states.length >0 ){
-            table = $('table.statelist tbody');
-            html = '';
-            $.each(data.states,function(index, value){
-              html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
-            })
-           table.html(html);
-           $('.predicted-marks').html(data.marks);
-           $('#minimum_rank').html(data.min_rank);
-           $('#maximum_rank').html(data.max_rank);
-          }
+        var form2 = $("#kt_account_profile_details_form");
+        form2.validate({
+            rules: {
+              marks: {
+                max: 720,
+                required:true,
+                digits:true
+              }
+            }
+            // errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
         });
-        $('.steps ul').addClass('step-4');
-        $('.actions ul').addClass('step-last');
-      } else { 
-        $('.steps ul').removeClass('step-4');$('.actions ul').removeClass('step-last');
-      }
-      return true;
+        if(form2.valid()) {
+          var url = $('#kt_account_profile_details_form').attr('action');
+          var method = $('#kt_account_profile_details_form').attr('method');
+          var formData = $('#kt_account_profile_details_form').serialize();
+            $.ajax({
+              type: "POST",
+              url: url,
+              data: formData,
+            }).done(function (data) {
+              if(data.states.length >0 ){
+                table = $('table.statelist tbody');
+                html = '';
+                $.each(data.states,function(index, value){
+                  html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
+                })
+              table.html(html);
+              $('.predicted-marks').html(data.marks);
+              $('#minimum_rank').html(data.min_rank);
+              $('#maximum_rank').html(data.max_rank);
+              }
+            });
+            $('.steps ul').addClass('step-4');
+            $('.actions ul').addClass('step-last');
+            return true;
+        }
+      } 
+      // else { 
+      //   $('.steps ul').removeClass('step-4');$('.actions ul').removeClass('step-last');
+      // }
+      return false;
     }
 }, 
 onFinished: function (event, currentIndex){
-  alert('test');
+  alert(currentIndex);
   $('#kt_stepper_checkout_form').submit();
 },
 labels:{finish:"Save",next:"Next",previous:"Previous"}});

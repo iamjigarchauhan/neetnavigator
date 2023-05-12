@@ -48,6 +48,7 @@ class State extends Model
             ->when(!empty($stateIds), function ($q) use ($stateIds) {
                 $q->whereIn('id', $stateIds);
             })
+            ->where('name','<>','')
             ->having('colleges_count', '>', 0)
             ->orderby('colleges_count','desc')
             ->get();

@@ -130,12 +130,17 @@ class UserNeetCollegesController extends Controller
      */
     public function update(CheckUserMark $request, string $id)
     {
+        // dd($request->all());
         if ($request->marks > 0) {
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
-            $this->min_rank = $this->markRank->pluck('min_rank')->min();
-            $this->max_rank = $this->markRank->pluck('min_rank')->max(); 
+            $rank = \DB::table('range_rankings')
+            ->where('min_mark','<=',$request->marks)
+            ->where('max_mark','>=',$request->marks)->first();
+            // dd($rank);
+            $this->min_rank = $rank->max_rank;
+            $this->max_rank = $rank->min_rank; 
             // dd($this->markRank);
             $this->marks = $request->marks;
             $collegestates = College::whereIn('id',$this->markRank->pluck('college_id'))->pluck('state_id','id')->toArray();
