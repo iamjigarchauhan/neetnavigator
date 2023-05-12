@@ -116,7 +116,6 @@ onStepChanging:function(event,currentIndex,newIndex){
       }
       if(newIndex===3){
         //kt_account_profile_details_form
-        form = $('#kt_account_profile_details_form');
         var url = $('#kt_account_profile_details_form').attr('action');
         var method = $('#kt_account_profile_details_form').attr('method');
         var formData = $('#kt_account_profile_details_form').serialize();
@@ -138,7 +137,7 @@ onStepChanging:function(event,currentIndex,newIndex){
           }
         });
         $('.steps ul').addClass('step-4');
-        // $('.actions ul').addClass('step-last');
+        $('.actions ul').addClass('step-last');
       } else { 
         $('.steps ul').removeClass('step-4');$('.actions ul').removeClass('step-last');
       }
