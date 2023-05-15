@@ -1,12 +1,11 @@
 @extends('backend.layouts.app')
 @section('title')
-    Events
+    Event Categories
 @endsection
 @section('page_css')
 <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-
 @endsection
 @section('content')
     <div class="content-wrapper">
@@ -14,8 +13,8 @@
                 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Events
-                            <a href="{{  route('admin.blog.create') }}" class="btn btn-sm btn-primary float-right">Add Event</a>
+                        <h4 class="card-title">Event Categories
+                            <a href="{{  route('admin.category.create') }}" class="btn btn-sm btn-primary float-right">Add Category</a>
                         </h4>
                         <hr>
                         <div class="form-group d-inline-flex">
@@ -27,17 +26,13 @@
                                     <tr>
                                     <th> # </th>    
                                         <th> No </th>
-                                        <th> Title </th>
-                                        <th> Category </th>
-                                        <th> Featured Image </th>
-                                        <th> Author </th>
+                                        <th> Name </th>
                                         <th> Status </th>
                                         <th> Created At </th>
                                         <th> Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
                                 </tbody>
                             </table>
                         </div>
@@ -55,14 +50,11 @@
 $(function () {
 var table = $('.table-bordered').DataTable({
     processing: true, "ordering": false, serverSide: true,
-    ajax: "{{ route('admin.blogs') }}",
+    ajax: "{{ route('admin.categories') }}",
         columns: [
             {data: 'checkbox', name: 'checkbox'},
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'title', name: 'title'},
-            {data: 'category', name: 'category'},
-            {data: 'featured_image', name: 'featured_image'},
-            {data: 'author', name: 'author'},
+            {data: 'name', name: 'name'},
             {data: 'status', name: 'status'},
             {data: 'created_at', name: 'created_at'},
             {

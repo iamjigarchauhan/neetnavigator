@@ -22,7 +22,7 @@ class CreateBlogsTable extends Migration
             $table->string('description')->nullable();
             $table->longtext('content')->nullable();
             $table->date('published_at')->nullable();
-            $table->enum('status',['active','inactive'])->nullable();
+            $table->enum('status',['active','inactive'])->nullable()->default('active');
             $table->timestamps();
         });
     }
