@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "*",
+        "plank/laravel-mediable": "^5.9",
         "rap2hpoutre/fast-excel": "^5.2",
         "yajra/laravel-datatables-buttons": "*",
         "yajra/laravel-datatables-html": "^4.36",

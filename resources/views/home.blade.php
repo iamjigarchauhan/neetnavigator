@@ -536,157 +536,42 @@ return $num;
 <section id="yl-blog-2" class="yl-blog-section-2">
   <div class="container">
     <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
-      <p class="title-watermark">Latest News</p>
-      <span>Latest News </span>
+      <p class="title-watermark">Events</p>
+      <span>Events </span>
       <h2>We have many courses in our
         top Categories
       </h2>
     </div>
-    <div class="yl-blog-content-2">
+    @php
+      $events = \App\Models\Blog::take(4)->get();
+    @endphp
+    <div class="yl-blog-content-2 pt-5">
+      @foreach ($events as $item)
       <div id="yl-blog-slider-2" class="yl-blog-slide-2 owl-carousel">
         <div class="yl-blog-img-text-2 yl-headline pera-content wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
           <div class="yl-blog-img-2 position-relative">
             <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.1.jpg" alt="">
+              <img src="{{ asset("assets/home/img/blg-2.4.jpg")}}" alt="">
             </div>
             <div class="yl-blog-date-2 text-center">
-              <a href="#">10<span>Feb/20</span></a>
+              <a href="#">{{ date('d', strtotime($item->created_at)) }}<span>{{ date('M / y', strtotime($item->created_at)) }}</span></a>
             </div>
           </div>
           <div class="yl-blog-text-2">
             <div class="yl-blog-meta-2 text-uppercase">
               <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
+              {{-- <a href="#">0 comments</a> --}}
             </div>
             <div class="yl-blog-title-text-2">
-              <h3><a href="#">We would love to share a
-                  similar experience</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
+              <h3><a href="{{ route('single',['slug'=>$item->slug])}}">{{ $item->title ?? '' }}</a></h3>
+              <p> {{ $item->description ?? ''}}
               </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="yl-blog-img-text-2 yl-headline pera-content wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-          <div class="yl-blog-img-2 position-relative">
-            <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.2.jpg" alt="">
-            </div>
-            <div class="yl-blog-date-2 text-center">
-              <a href="#">12<span>Oct/20</span></a>
-            </div>
-          </div>
-          <div class="yl-blog-text-2">
-            <div class="yl-blog-meta-2 text-uppercase">
-              <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
-            </div>
-            <div class="yl-blog-title-text-2">
-              <h3><a href="#">New study reveals flaws in
-                  UK Coronavirus testing...</a> </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
-              </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="yl-blog-img-text-2 yl-headline pera-content wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-          <div class="yl-blog-img-2 position-relative">
-            <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.3.jpg" alt="">
-            </div>
-            <div class="yl-blog-date-2 text-center">
-              <a href="#">15<span>Nov/20</span></a>
-            </div>
-          </div>
-          <div class="yl-blog-text-2">
-            <div class="yl-blog-meta-2 text-uppercase">
-              <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
-            </div>
-            <div class="yl-blog-title-text-2">
-              <h3><a href="#">Engineers ready to supply local business...</a> </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
-              </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="yl-blog-img-text-2 yl-headline pera-content">
-          <div class="yl-blog-img-2 position-relative">
-            <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.1.jpg" alt="">
-            </div>
-            <div class="yl-blog-date-2 text-center">
-              <a href="#">12<span>Oct/20</span></a>
-            </div>
-          </div>
-          <div class="yl-blog-text-2">
-            <div class="yl-blog-meta-2 text-uppercase">
-              <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
-            </div>
-            <div class="yl-blog-title-text-2">
-              <h3><a href="#">We would love to share a
-                  similar experience</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
-              </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="yl-blog-img-text-2 yl-headline pera-content">
-          <div class="yl-blog-img-2 position-relative">
-            <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.2.jpg" alt="">
-            </div>
-            <div class="yl-blog-date-2 text-center">
-              <a href="#">18<span>Mar/20</span></a>
-            </div>
-          </div>
-          <div class="yl-blog-text-2">
-            <div class="yl-blog-meta-2 text-uppercase">
-              <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
-            </div>
-            <div class="yl-blog-title-text-2">
-              <h3><a href="#">New study reveals flaws in
-                  UK Coronavirus testing...</a> </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
-              </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="yl-blog-img-text-2 yl-headline pera-content">
-          <div class="yl-blog-img-2 position-relative">
-            <div class="yl-blog-img-warap-2 position-relative">
-              <img src="assets/img/blg-2.3.jpg" alt="">
-            </div>
-            <div class="yl-blog-date-2 text-center">
-              <a href="#">12<span>Oct/20</span></a>
-            </div>
-          </div>
-          <div class="yl-blog-text-2">
-            <div class="yl-blog-meta-2 text-uppercase">
-              <a href="#">BY admin</a>
-              <a href="#">0 comments</a>
-            </div>
-            <div class="yl-blog-title-text-2">
-              <h3><a href="#">Engineers ready to supply local business...</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do...
-              </p>
-              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
+              <a class="yl-blog-more text-uppercase" href="{{ route('single',['slug'=>$item->slug])}}">Read more <span>+</span></a>
             </div>
           </div>
         </div>
       </div>
+      @endforeach      
     </div>
   </div>
 </section>

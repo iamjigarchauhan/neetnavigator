@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\UserNeetCollegesController;
-
+use App\Http\Controllers\Admin\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +55,5 @@ Route::prefix('neet-college')->name('neet-college.')->group(function () {
     Route::get('profile', [UserNeetCollegesController::class, 'show'])->name('profile');
     Route::resource('user', UserNeetCollegesController::class)->only(['index', 'store', 'update', 'destroy','new'])->middleware('auth:web');
 });
+Route::get('events', [BlogController::class, 'archive'])->name('events');
+Route::get('event/{slug}', [BlogController::class, 'single'])->name('single');
