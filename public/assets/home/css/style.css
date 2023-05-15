@@ -8552,12 +8552,25 @@ span[aria-current="page"]{
   }
   div#wizard {
     margin: 0px 15% !important;
-}
+  }
 
 }
 
 @media (max-width: 991px) {
   div#wizard {
     margin: 0px 15% !important;
+    min-height: auto;
+}
+.yl-popular-course-img-text .popular-course-fee span, .yl-popular-course-img-text .popular-course-fee del {
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+}
+.yl-popular-course-img-text {
+  padding: 25px 15px;
+  height: 92%;
+}
+.course-page-course-content-top .course-grid-top-bar .course-grid-showing-result .show-result-text {
+  font-size: 14px;
 }
 }
