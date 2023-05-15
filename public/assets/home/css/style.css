@@ -7619,6 +7619,37 @@ section#white_img {
     font-size: 20px;
   }
 
+  .yl-category-img-text.yl-headline.position-relative.wow.fadeInUp.animated .yl-category-img.text-center {
+    display: none;
+  }
+
+  .yl-category-img-text {
+    padding-bottom: 5px;
+  }
+
+  .yl-popular-course-img-text {
+    padding: 0px 5px;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .yl-popular-course-img-text .yl-popular-course-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .yl-popular-course-img-text .yl-popular-course-text h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .yl-popular-course-img-text .yl-popular-course-text span {
+    margin: 0;
+  }
+
   .yl-newslatter-content .yl-newslatter-form input {
     padding-left: 10px;
   }

@@ -48,7 +48,7 @@
 													360 001, Gujarat.</a>
 												</li>
 												<li>
-													<i class="fas fa-phone"></i><a href="#">1-888-452-1505</a>
+													<i class="fas fa-phone"></i><a href="#">+91-8866652333</a>
 													<p>(Talk to one of our Expert Counsellor)</p>
 												</li>
 										</ul>
