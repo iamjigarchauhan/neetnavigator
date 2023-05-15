@@ -5,12 +5,12 @@
 <section class="course-page-course-section">
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-lg-5 col-md-12 col-12">
       <div class="image-holder">
         <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
       </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-lg-7 col-md-12 col-12">
         <form class="form mx-auto" id="kt_stepper_example_basic_form" method="post"
           action="{{route('neet-college.user.store')}}">
           @csrf

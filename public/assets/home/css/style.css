@@ -8539,3 +8539,25 @@ span[aria-current="page"]{
   padding: 15px;
   cursor: pointer;
 }
+
+@media(min-width: 992px) {
+
+  .yl-category-img.text-center {
+    display: none;
+  }
+
+  .yl-category-img-text {
+      padding: 19px 28px 0px;
+      display: flow-root;
+  }
+  div#wizard {
+    margin: 0px 15% !important;
+}
+
+}
+
+@media (max-width: 991px) {
+  div#wizard {
+    margin: 0px 15% !important;
+}
+}
