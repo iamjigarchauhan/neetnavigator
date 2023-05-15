@@ -18,12 +18,25 @@ $logoicon = App\Models\Setting::where('key','logo')->first();
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             @auth('admin')
+            <a class="dropdown-item" href="{{ route('admin.profile')}}">
+              <i class="icon-head menu-icon"></i>
+              Profile
+            </a>
+            <a class="dropdown-item" href="{{ route('admin.change-password')}}">
+              <i class="icon-lock menu-icon"></i>
+              Change Password
+            </a>
+            <a class="dropdown-item" href="{{ route('admin.settings')}}">
+              <i class="icon-cog menu-icon"></i> 
+              Settings
+            </a>
             <a class="dropdown-item" title="Logout" href="{{ route('admin.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
                 <i class="ti-power-off text-primary"></i> Logout
             </a>
+            
             @endauth
           </div>
         </li>

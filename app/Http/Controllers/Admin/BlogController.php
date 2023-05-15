@@ -8,6 +8,7 @@ use App\Http\Requests\CreateBlogRequest;
 use Str;
 use Yajra\Datatables\Datatables;
 use App\Models\Blog;
+use App\Models\BlogCategory;
 use MediaUploader;
 
 class BlogController extends Controller
@@ -20,6 +21,9 @@ class BlogController extends Controller
                 ->addColumn('checkbox', '<input type="checkbox" name="slider[]" class="sliders" value="{{$id}}" />')
                 ->addColumn('created_at', function ($row) {
                     return date('d/m/Y @ h:i',strtotime($row->created_at));
+                })
+                ->addColumn('category', function ($row) {
+                    return BlogCategory::find($row->category_id)->name ?? '';
                 })
                 ->addColumn('featured_image', function ($row) {
                     return $row->hasMedia('Featured') ? '<img src="'.$row->firstMedia('Featured')->getUrl().'" alt="'.$row->title.'">' : 'N/A';
@@ -36,7 +40,8 @@ class BlogController extends Controller
         return view('backend.blogs.index');
     }
     public function create(Request $request){
-        return view('backend.blogs.edit');
+        $categories = BlogCategory::pluck('name','id');
+        return view('backend.blogs.edit',compact('categories'));
     }
     public function edit(Request $request, $id){
         $blog = Blog::find($id);

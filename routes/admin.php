@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController,BlogController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
+use App\Http\Controllers\Admin\{DashboardController,BlogController,CategoryController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
 use App\Http\Controllers\{UsersController,CustomerController,WalletController,TransactionsController,PartnersController};
 use App\DataTables\{StudentsDataTable};
 
@@ -32,6 +32,16 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::get('/event/view/{id}', [BlogController::class, 'view'])->name('admin.blog.view');
             Route::get('/event/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blog.delete');
             Route::post('/event/massremove', [BlogController::class, 'massremove'])->name('admin.blog.massremove');
+
+
+            Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
+            Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
+            Route::post('/category/save', [CategoryController::class, 'store'])->name('admin.category.save');
+            Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
+            Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
+            Route::get('/category/view/{id}', [CategoryController::class, 'view'])->name('admin.category.view');
+            Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
+            Route::post('/category/massremove', [CategoryController::class, 'massremove'])->name('admin.category.massremove');
         });
     });    
 });
