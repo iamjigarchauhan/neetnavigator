@@ -4,12 +4,12 @@
 <section class="course-page-course-section">
     <div class="container mt-5">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-lg-5 col-md-12 col-12">
             <div class="image-holder">
                 <img src="{{ asset('assets/wizard/images/form-wizard.webp')}}" alt="">
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-lg-7 col-md-12 col-12">
             <div id="wizard">
                 <h4 class="bold">Student Registration</h4>
                 @if(session()->has('error'))

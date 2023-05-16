@@ -2,8 +2,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('Name') }}</label>
-            <div class="col-lg-7">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('Name') }}</label>
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bolder fs-6 text-dark">
                     {{ ucwords(auth()->user()->name) }}
                 </span>
@@ -12,8 +12,8 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('12th Passign State') }}</label>
-            <div class="col-lg-7 fv-row">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('12th Passign State') }}</label>
+            <div class="col-lg-7 col-md-6 fv-row">
                 <span class="fw-bold fs-6" id="hsc_marks">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->state_12th))
@@ -30,10 +30,10 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">
                 {{ __('10th Passing State') }}
             </label>
-            <div class="col-lg-7 d-flex align-items-center">
+            <div class="col-lg-7 col-md-6 d-flex align-items-center">
                 <span class="fw-bolder fs-6 me-2" id="ssc_marks">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->state_10th))
@@ -50,8 +50,8 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('Domicile State') }}</label>
-            <div class="col-lg-7">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('Domicile State') }}</label>
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bolder fs-6 text-dark" id="domicile_state">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->neet_category))
@@ -68,10 +68,10 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">
                 {{ __('NEET Category') }}
             </label>
-            <div class="col-lg-7">
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bolder fs-6 text-dark" id="neet_category">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->neet_category))
@@ -88,8 +88,8 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-7">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('State Category') }}</label>
-            <div class="col-lg-7">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('State Category') }}</label>
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bolder fs-6 text-dark" id="state_category">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->state_category))
@@ -106,8 +106,8 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-10">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('Minority') }}</label>
-            <div class="col-lg-7">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('Minority') }}</label>
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bold fs-6" id="minority">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->minority))
@@ -124,8 +124,8 @@
     </div>
     <div class="col-md-12">
         <div class="row mb-10">
-            <label class="col-lg-5 fw-bold text-muted">{{ __('Quota') }}</label>
-            <div class="col-lg-7">
+            <label class="col-lg-5 col-md-6 fw-bold text-muted">{{ __('Quota') }}</label>
+            <div class="col-lg-7 col-md-6">
                 <span class="fw-bold fs-6" id="quota">
                     @if(!is_null(auth()->user()->user_neet_info))
                     @if(!is_null(auth()->user()->user_neet_info->eligible_quota))
