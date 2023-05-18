@@ -520,8 +520,12 @@ select:visited {
  border-radius: 40px;
 }
 .header-style-two .yl-header-cart-login {
+  /* padding-top: 10px !important;
+  padding-right: 9rem; */
   padding-top: 10px !important;
-  padding-right: 9rem;
+    padding-right: 5rem;
+    position: absolute;
+    right: 21rem;
 }
 /* .yl-header-cart-login .yl-top-cart-login:after {
   top: 3px;
@@ -7269,7 +7273,7 @@ section#white_img {
   .header-style-two .yl-header-cart-login {
     /* display: none; */
     position: absolute;
-    right: -3.5rem;
+    right: 0;
     z-index: 0;
     top: 6px;
   }

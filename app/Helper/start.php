@@ -1,10 +1,5 @@
 <?php
-
 if (!function_exists('formatNumber')) {
-
-    /**
-     * Return curreny format number
-     */
     function formatNumber($num)
     {
         if ($num >= 10000000) {

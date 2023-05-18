@@ -46,7 +46,6 @@
                     <label for="email">Email ID *</label>
                     <input placeholder="" id="email" name="email" type="email" readonly disabled value="{{ auth()->user()->email }}" class="form-control" required="" value="">
                   </div>
-                 
                 </div>
                 <div class="col-lg-6 fv-row">
                    <div class="form-floating">
@@ -61,7 +60,7 @@
                   <select name="ssc_state" class="form-select js-example-basic-single" id="floatingSscState" aria-label="{{ __('10th Passing State') }}" data-control="select2" data-placeholder="{{ __('10th Passing State') }}" required>
                     <option value="">{{ __('Select 10th Passing State') }}</option>
                     @foreach($states as $value)
-                    <option data-kt-flag="{{ $value['id'] }}" value="{{ $value['id'] }}" {{ $value['id'] == auth()->user()->user_neet_info->state_id_10th ? 'selected' :'' }}>{{ $value['name'] }}</option>
+                    <option data-kt-flag="{{ $value['id'] }}" value="{{ $value['id'] }}" {{ $value['id'] == (auth()->user()->user_neet_info->state_id_10th ?? '') ? 'selected' :'' }}>{{ $value['name'] }}</option>
                     @endforeach
                   </select>
                   @if ($errors->has('ssc_state'))
@@ -73,7 +72,7 @@
                   <select name="hsc_state" class="form-select" id="floatingHscState" aria-label="{{ __('12th Passing State') }}" data-control="select2" data-placeholder="{{ __('12th Passing State') }}" required>
                       <option value="">{{ __('Select 12th Passing State') }}</option>
                       @foreach($states as $value)
-                      <option data-kt-flag="{{ $value['id'] }}" value="{{ $value['id'] }}" {{ $value['id'] == auth()->user()->user_neet_info->state_id_12th ? 'selected' :'' }}>{{ $value['name'] }}</option>
+                      <option data-kt-flag="{{ $value['id'] }}" value="{{ $value['id'] }}" {{ $value['id'] == (auth()->user()->user_neet_info->state_id_12th ?? '') ? 'selected' :'' }}>{{ $value['name'] }}</option>
                       @endforeach
                   </select>
                   @if ($errors->has('hsc_state'))
@@ -82,7 +81,7 @@
               </div>
               <div class="form-floating">
                   <label for="floatingPincode">{{ __('Pincodes Based on Aadhaar *') }}</label>
-                  <input name="pincode" type="number" minlength="6" maxlength="6" class="form-control" id="floatingPincode" placeholder="Enter Pincode" value="{{ auth()->user()->user_neet_info->pincode }}" required />
+                  <input name="pincode" type="number" minlength="6" maxlength="6" class="form-control" id="floatingPincode" placeholder="Enter Pincode" value="{{ (auth()->user()->user_neet_info->pincode ?? '') }}" required />
                   @if ($errors->has('pincode'))
                   <span class="text-danger">{{ $errors->first('pincode') }}</span>
                   @endif
@@ -91,7 +90,7 @@
               <div class="col-lg-6 fv-row">
                   <div class="form-floating">
                       <label for="floatingState">{{ __('State *') }}</label>
-                      <input name="state" type="text" class="form-control mb-3 mb-lg-0" id="floatingState" placeholder="Enter State" value="{{ auth()->user()->user_neet_info->state_by_pincode }}" required />
+                      <input name="state" type="text" class="form-control mb-3 mb-lg-0" id="floatingState" placeholder="Enter State" value="{{ (auth()->user()->user_neet_info->state_by_pincode ?? '') }}" required />
                       @if ($errors->has('state'))
                       <span class="text-danger">{{ $errors->first('state') }}</span>
                       @endif
@@ -119,7 +118,7 @@
                         <select name="neet_category" id="floatingNeetCategory" aria-label="{{ __('NEET Category') }}" data-control="select2" data-placeholder="{{ __('NEET Category') }}" class="form-select" required>
                             <option value="">{{ __('Select NEET Category') }}</option>
                             @foreach(App\Models\CategoryRoundCutoffCollege::NEET_CATEGORY as $key => $value)
-                            <option data-kt-flag="{{ $value }}" value="{{ $value }}" {{ $value == auth()->user()->user_neet_info->neet_category ? 'selected' :'' }}>{{ $value }}</option>
+                            <option data-kt-flag="{{ $value }}" value="{{ $value }}" {{ $value == (auth()->user()->user_neet_info->neet_category ?? '') ? 'selected' :'' }}>{{ $value }}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('neet_category'))
@@ -134,7 +133,7 @@
                         <select name="state_category" id="floatingStateCategory" aria-label="{{ __('State Category') }}" data-control="select2" data-placeholder="{{ __('State Category') }}" class="form-select" required>
                             <option value="">{{ __('Select State Category') }}</option>
                             @foreach(App\Models\CategoryRoundCutoffCollege::STATE_CATEGORY as $key => $value)
-                            <option data-kt-flag="{{ $value }}" value="{{ $value }}" {{ $value == auth()->user()->user_neet_info->state_category ? 'selected' :'' }}>{{ $value }}</option>
+                            <option data-kt-flag="{{ $value }}" value="{{ $value }}" {{ $value == (auth()->user()->user_neet_info->state_category ?? '') ? 'selected' :'' }}>{{ $value }}</option>
                             @endforeach
                         </select>
                         @if ($errors->has('state_category'))
@@ -160,8 +159,8 @@
                         <label for="floatingGender">Gender *</label>
                         <select name="gender" id="floatingGender" aria-label="{{ __('Select Gender') }}" data-control="select2" data-placeholder="{{ __('Select Gender') }}" class="form-select" required>
                             <option value="">{{ __('Select Gender') }}</option>
-                            <option {{ 'male' == auth()->user()->user_neet_info->gender ? 'selected' :'' }} value="male">Male</option>
-                            <option {{ 'female' == auth()->user()->user_neet_info->gender ? 'selected' :'' }} value="female">Female</option>
+                            <option {{ 'male' == (auth()->user()->user_neet_info->gender ?? '') ? 'selected' :'' }} value="male">Male</option>
+                            <option {{ 'female' == (auth()->user()->user_neet_info->gender ?? '') ? 'selected' :'' }} value="female">Female</option>
                         </select>
                         @if ($errors->has('gender'))
                         <span class="text-danger">{{ $errors->first('gender') }}</span>
@@ -180,8 +179,8 @@
                         <label for="floatingPhysicalHandicap">Whether Physically Handicapped Candidate? *</label>
                         <select name="physical_handicap" id="floatingPhysicalHandicap" aria-label="{{ __('Whether Physically Handicapped Candidate?') }}" data-control="select2" data-placeholder="{{ __('Whether Physically Handicapped Candidate?') }}" class="form-select" required>
                             <option value="">{{ __('Select Candidate') }}</option>
-                            <option {{ 'yes' == auth()->user()->user_neet_info->physical_handicap ? 'selected' :'' }} value="yes">Yes</option>
-                            <option {{ 'no' == auth()->user()->user_neet_info->physical_handicap ? 'selected' :'' }} value="no">No</option>
+                            <option {{ 'yes' == (auth()->user()->user_neet_info->physical_handicap ?? '') ? 'selected' :'' }} value="yes">Yes</option>
+                            <option {{ 'no' == (auth()->user()->user_neet_info->physical_handicap ?? '') ? 'selected' :'' }} value="no">No</option>
                         </select>
                         @if ($errors->has('physical_handicap'))
                         <span class="text-danger">{{ $errors->first('physical_handicap') }}</span>
@@ -200,8 +199,8 @@
                         <label for="floatingArmedForce">Whether Belongs To Armed Force? *</label>
                         <select name="armed_force" id="floatingArmedForce" aria-label="{{ __('Whether Belongs To Armed Force?') }}" data-control="select2" data-placeholder="{{ __('Whether Belongs To Armed Force?') }}" class="form-select" required>
                             <option value="">{{ __('Select Armed Force') }}</option>
-                            <option {{ 'yes' == auth()->user()->user_neet_info->armed_force ? 'selected' :'' }} value="yes">Yes</option>
-                            <option {{ 'no' == auth()->user()->user_neet_info->armed_force ? 'selected' :'' }} value="no">No</option>
+                            <option {{ 'yes' == (auth()->user()->user_neet_info->armed_force ?? '') ? 'selected' :'' }} value="yes">Yes</option>
+                            <option {{ 'no' == (auth()->user()->user_neet_info->armed_force ?? '') ? 'selected' :'' }} value="no">No</option>
                         </select>
                         @if ($errors->has('armed_force'))
                         <span class="text-danger">{{ $errors->first('armed_force') }}</span>
@@ -220,8 +219,8 @@
                         <label for="floatingMinority">Whether Belongs To Minority? *</label>
                         <select name="minority" id="floatingMinority" aria-label="{{ __('Whether Belongs To Minority?') }}" data-control="select2" data-placeholder="{{ __('Whether Belongs To Minority?') }}" class="form-select" required>
                             <option value="">{{ __('Select Minority') }}</option>
-                            <option {{ 'yes' == auth()->user()->user_neet_info->minority ? 'selected' :'' }} value="yes">Yes</option>
-                            <option {{ 'no' == auth()->user()->user_neet_info->minority ? 'selected' :'' }} value="no">No</option>
+                            <option {{ 'yes' == (auth()->user()->user_neet_info->minority ?? '') ? 'selected' :'' }} value="yes">Yes</option>
+                            <option {{ 'no' == (auth()->user()->user_neet_info->minority ?? '') ? 'selected' :'' }} value="no">No</option>
                         </select>
                         @if ($errors->has('minority'))
                         <span class="text-danger">{{ $errors->first('minority') }}</span>
@@ -240,8 +239,8 @@
                         <label for="floatingEligibleQuota">Whether You Are Eligible For Any Quota? *</label>
                         <select name="eligible_quota" id="floatingEligibleQuota" aria-label="{{ __('Whether You Are Eligible For Any Quota?') }}" data-control="select2" data-placeholder="{{ __('Whether You Are Eligible For Any Quota?') }}" class="form-select" required>
                             <option value="">{{ __('Select Quota') }}</option>
-                            <option {{ 'yes' == auth()->user()->user_neet_info->eligible_quota ? 'selected' :'' }} value="yes">Yes</option>
-                            <option {{ 'no' == auth()->user()->user_neet_info->eligible_quota ? 'selected' :'' }} value="no">No</option>
+                            <option {{ 'yes' == (auth()->user()->user_neet_info->eligible_quota ?? '') ? 'selected' :'' }} value="yes">Yes</option>
+                            <option {{ 'no' == (auth()->user()->user_neet_info->eligible_quota ?? '') ? 'selected' :'' }} value="no">No</option>
                         </select>
                         @if ($errors->has('eligible_quota'))
                         <span class="text-danger">{{ $errors->first('eligible_quota') }}</span>

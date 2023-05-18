@@ -9,6 +9,8 @@ class College extends Model
 {
     use HasFactory;
 
+    protected $fillable = [ 'name', 'university', 'city_id', 'state_id', 'institution_type', 'annual_seat', 'status'];
+
     public function state() {
         return $this->belongsTo(State::class);
     }
