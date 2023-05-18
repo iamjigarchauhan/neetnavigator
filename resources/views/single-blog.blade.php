@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 <section id="yl-breadcrumb" class="yl-breadcrumb-section position-relative" data-background="{{ asset('assets/home/img/banner/bn-bg1.jpg')}}">
   <span class="breadcrumb-overlay position-absolute"></span>
   <div class="container">
@@ -66,7 +67,7 @@
               </div> --}}
            </div>
         </div>
-        @include('sections.blog_sidebar')
+        @include('sections.blog_sidebar',['blog' => $blog])
      </div>
   </div>
 </section>   

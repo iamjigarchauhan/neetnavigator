@@ -14,7 +14,10 @@ class AddColsEvent extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            //
+            $table->text('location');
+            $table->string('from_time');
+            $table->string('to_time');
+            $table->double('fee');
         });
     }
 
