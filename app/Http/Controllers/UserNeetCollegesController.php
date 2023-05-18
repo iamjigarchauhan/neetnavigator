@@ -7,6 +7,7 @@ use App\Http\Requests\CheckUserMark;
 use App\Http\Requests\StoreUserNeetInfo;
 use App\Models\City;
 use App\Models\NeetRangeRanking;
+use App\Models\RangeRanking;
 use App\Models\State;
 use App\Models\College;
 use App\Models\UserNeetInfo;
@@ -33,39 +34,29 @@ class UserNeetCollegesController extends Controller
         session()->forget('user_mark');
         return view('user_neet_colleges.index2', $this->data);
     }
-    public function new()
-    {
-        $this->states = State::allState('active');
-        session()->forget('user_mark');
-        return view('user_neet_colleges.index', $this->data);
-    }
+    // public function new()
+    // {
+    //     $this->states = State::allState('active');
+    //     session()->forget('user_mark');
+    //     return view('user_neet_colleges.index', $this->data);
+    // }
 
     /**
      * Display a listing of the resource.
      */
     public function collegeList(EstimatedNeetCollegeDataTable $dataTable)
     {
-        // if (!request()->ajax()) {
-        //     $this->states = State::allState('active');
-        // }
-        // $this->colleges = College::paginate(12);
         $marks = session('user_mark');
         $category = auth()->user()->user_neet_info->state_category;
         $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
-        // dd($this->markRank);
-        $this->totalcolleges = College::whereIn('id',$this->markRank->pluck('college_id'))
-        ->where(function($query){
-            $states = session('states');
-            if(!empty($states))
-            $query->whereIn('state_id',$states);
-        })->count();
-        $this->colleges = College::whereIn('id',$this->markRank->pluck('college_id')    )
-        ->where(function($query){
-            $states = session('states');
-            if(!empty($states))
-            $query->whereIn('state_id',$states);
-        })
-        ->paginate(12);
+        $collegeQuery = College::whereIn('id',$this->markRank->pluck('college_id'))
+                                ->where(function($query){
+                                    $states = session('states');
+                                    if(!empty($states))
+                                    $query->whereIn('state_id',$states);
+                                });
+        $this->totalcolleges = $collegeQuery->count();
+        $this->colleges = $collegeQuery->paginate(12);
         return view('user_neet_colleges.result', $this->data);
     }
 
@@ -113,7 +104,6 @@ class UserNeetCollegesController extends Controller
     public function show()
     {
         $this->states = State::allState('active');
-
         return view('user_neet_colleges.profile',$this->data);
     }
 
@@ -135,13 +125,10 @@ class UserNeetCollegesController extends Controller
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
-            $rank = \DB::table('range_rankings')
-            ->where('min_mark','<=',$request->marks)
+            $rank = NeetRangeRanking::where('min_mark','<=',$request->marks)
             ->where('max_mark','>=',$request->marks)->first();
-            // dd($rank);
             $this->min_rank = $rank->max_rank;
             $this->max_rank = $rank->min_rank; 
-            // dd($this->markRank);
             $this->marks = $request->marks;
             $collegestates = College::whereIn('id',$this->markRank->pluck('college_id'))->pluck('state_id','id')->toArray();
             $statesids = array_unique(array_values($collegestates));
