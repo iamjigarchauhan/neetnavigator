@@ -43,8 +43,8 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::post('/category/massremove', [CategoryController::class, 'massremove'])->name('admin.category.massremove');
 
             Route::get('/colleges', [CollegeController::class, 'index'])->name('admin.colleges');
-            // Route::get('/collge/create', [CollegeController::class, 'create'])->name('admin.blog.create');
-            // Route::post('/collge/save', [CollegeController::class, 'store'])->name('admin.blog.save');
+            Route::get('/collge/import', [CollegeController::class, 'import'])->name('admin.college.import');
+            Route::post('/collge/do-import', [CollegeController::class, 'doImport'])->name('admin.college.doimport');
             Route::get('/college/edit/{id}', [CollegeController::class, 'edit'])->name('admin.college.edit');
             Route::post('/college/update/{id}', [CollegeController::class, 'update'])->name('admin.college.update');
             Route::get('/college/view/{id}', [CollegeController::class, 'view'])->name('admin.college.view');

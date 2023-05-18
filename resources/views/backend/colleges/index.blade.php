@@ -23,7 +23,7 @@ table.table-bordered.dataTable tbody tr td:nth-child(2) {
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Colleges
-                        {{-- <a href="{{  route('admin.college.create') }}" class="btn btn-sm btn-primary float-right">Add Event</a> --}}
+                        <a href="{{  route('admin.college.import') }}" class="btn btn-sm btn-primary float-right">Import</a>
                     </h4>
                     <hr>
                     {{-- <div class="form-group d-inline-flex">
