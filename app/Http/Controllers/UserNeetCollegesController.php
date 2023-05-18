@@ -9,6 +9,7 @@ use App\Models\City;
 use App\Models\NeetRangeRanking;
 use App\Models\State;
 use App\Models\College;
+use App\Models\RangeRanking;
 use App\Models\UserNeetInfo;
 use Http;
 use Illuminate\Contracts\Session\Session;
@@ -43,29 +44,33 @@ class UserNeetCollegesController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function collegeList(EstimatedNeetCollegeDataTable $dataTable)
+    public function collegeList()
     {
-        // if (!request()->ajax()) {
-        //     $this->states = State::allState('active');
-        // }
-        // $this->colleges = College::paginate(12);
+        $limit = 12;
         $marks = session('user_mark');
         $category = auth()->user()->user_neet_info->state_category;
         $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
-        // dd($this->markRank);
-        $this->totalcolleges = College::whereIn('id',$this->markRank->pluck('college_id'))
-        ->where(function($query){
-            $states = session('states');
-            if(!empty($states))
-            $query->whereIn('state_id',$states);
-        })->count();
-        $this->colleges = College::whereIn('id',$this->markRank->pluck('college_id')    )
-        ->where(function($query){
-            $states = session('states');
-            if(!empty($states))
-            $query->whereIn('state_id',$states);
-        })
-        ->paginate(12);
+        
+        $collegeIds = $this->markRank->pluck('college_id')->toArray();
+        $stateIds = session('states');
+        $this->totalcolleges = College::getCollegeCount($collegeIds, $stateIds);
+        $this->colleges = College::getPaginateColleges($limit,  $collegeIds, $stateIds);
+
+        // filter options
+        $filterOptions = [
+            'collegeType' => [
+                'label' => 'College Type',
+                'valueType' => 'value', // key or value
+                'items' =>College::getCollegeInstitutionType($collegeIds, $stateIds),
+            ],
+            'stateFilter' => [
+                'label' => 'State',
+                'valueType' => 'key', // key or value
+                'items' => State::whereIn('id', $stateIds)->pluck('name', 'id')->toArray(),
+            ],
+        ];
+        $this->filterOptions = $filterOptions;
+        
         return view('user_neet_colleges.result', $this->data);
     }
 
@@ -135,18 +140,14 @@ class UserNeetCollegesController extends Controller
             session()->put('user_mark', $request->marks);
             $category = auth()->user()->user_neet_info->state_category;
             $this->markRank = NeetRangeRanking::getRankByMark($request->marks, $category);
-            $rank = \DB::table('range_rankings')
-            ->where('min_mark','<=',$request->marks)
-            ->where('max_mark','>=',$request->marks)->first();
+            $rank = RangeRanking::getRangeByMarks($request->marks);
             // dd($rank);
             $this->min_rank = $rank->max_rank;
             $this->max_rank = $rank->min_rank; 
             // dd($this->markRank);
             $this->marks = $request->marks;
-            $collegestates = College::whereIn('id',$this->markRank->pluck('college_id'))->pluck('state_id','id')->toArray();
-            $statesids = array_unique(array_values($collegestates));
-            $collegeids = array_unique(array_keys($collegestates));
-            $this->states = State::getCollegeCountByState($statesids,$collegeids);
+            $collegeStates = College::getCollegeAndStateIds($this->markRank->pluck('college_id')->toArray());
+            $this->states = State::getCollegeCountByState($collegeStates['stateIds'],$collegeStates['collegeIds']);
             return response()->json($this->data);
             // return redirect()->route('neet-college.mark-rank');
         } else {
@@ -192,7 +193,8 @@ class UserNeetCollegesController extends Controller
     public function rankByMark()
     {
         $marks = session('user_mark');
-        $this->markRank = NeetRangeRanking::getRankByMark($marks);
+        $category = auth()->user()->user_neet_info->state_category;
+        $this->markRank = NeetRangeRanking::getRankByMark($marks, $category);
         if ($this->markRank != null) {
             $this->marks = $marks;
             $this->states = State::getCollegeCountByState();
