@@ -11,6 +11,7 @@
 <style>
 .header-style-two .yl-main-navigation .dropdown:after {content: '';}
 </style>
+@yield('styles')
 </head>
 <body class="yl-home">
 <div id="yl-preloader"></div>

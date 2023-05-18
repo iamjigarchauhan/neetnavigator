@@ -155,7 +155,7 @@
                 <div class="col-lg-12 fv-row">
                     <div class="form-floating">
                     <label for="floatingMarks">{{ __('Enter Your Marks') }}</label>
-                    <input name="marks" required type="number" max="720" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" />
+                    <input name="marks" required type="number" max="720" step="1" class="form-control mb-3 mb-lg-0" id="floatingMarks" placeholder="" value="{{ isset($marks) ? $marks : '' }}"/>
                     @if ($errors->has('marks'))
                     <span class="text-danger">{{ $errors->first('marks') }}</span>
                     @endif

@@ -28,6 +28,7 @@ class College extends Model
         if (!empty($stateFilter)) {
             $stateIds = $stateFilter;
         }
+        $cityFilter = request()->get('cityFilter');
 
         return self::when(!empty($collegeIds), function($q) use($collegeIds){
             $q->whereIn('id', array_unique($collegeIds));
@@ -42,6 +43,9 @@ class College extends Model
         ->when(!empty($collegeType), function($q) use($collegeType) {
             $q->whereIn('institution_type', $collegeType);
         })
+        ->when(!empty($cityFilter), function($q) use($cityFilter) {
+            $q->whereIn('city_id', $cityFilter);
+        })
         ->count();
     }
 
@@ -54,6 +58,7 @@ class College extends Model
         if (!empty($stateFilter)) {
             $stateIds = $stateFilter;
         }
+        $cityFilter = request()->get('cityFilter');
 
         return self::when(!empty($collegeIds), function($q) use($collegeIds){
             $q->whereIn('id',array_unique($collegeIds));
@@ -70,6 +75,9 @@ class College extends Model
         })
         ->when(in_array($topFilterFee, ['asc', 'desc']), function($q) use($topFilterFee) {
             $q->orderBy('total_fee', $topFilterFee);
+        })
+        ->when(!empty($cityFilter), function($q) use($cityFilter) {
+            $q->whereIn('city_id', $cityFilter);
         })
         ->paginate($limit);
     }
@@ -100,6 +108,7 @@ class College extends Model
         if (!empty($stateFilter)) {
             $stateIds = $stateFilter;
         }
+        $cityFilter = request()->get('cityFilter');
 
         return self::when(!empty($collegeIds), function($q) use($collegeIds){
             $q->whereIn('id',array_unique($collegeIds));
@@ -113,12 +122,46 @@ class College extends Model
         ->when(!empty($collegeType), function($q) use($collegeType) {
             $q->whereIn('institution_type', $collegeType);
         })
+        ->when(!empty($cityFilter), function($q) use($cityFilter) {
+            $q->whereIn('city_id', $cityFilter);
+        })
         ->whereNotNull('institution_type')
         ->where('institution_type', '!=', '')
         ->select('institution_type')
         ->groupBy('institution_type')
         ->orderBy('institution_type', 'asc')
         ->pluck('institution_type')
+        ->toArray();
+    }
+
+    public static function getCollegeCities($collegeIds = [], $stateIds = [])
+    {
+        // filters
+        $topFilterSearch = (request()->get('topFilterSearch'));
+        $collegeType = request()->get('collegeType');
+        $stateFilter = request()->get('stateFilter');
+        if (!empty($stateFilter)) {
+            $stateIds = $stateFilter;
+        }
+
+        return College::join('cities', 'cities.id', '=', 'colleges.city_id')
+        ->select('cities.id', 'cities.name')
+        ->when(!empty($collegeIds), function($q) use($collegeIds){
+            $q->whereIn('colleges.id', array_unique($collegeIds));
+        })
+        ->when(!empty($stateIds), function($q) use($stateIds){
+            $q->whereIn('colleges.state_id',array_unique($stateIds));
+        })
+        ->when(!empty($topFilterSearch), function($q) use($topFilterSearch) {
+            $q->where('colleges.name', 'like', '%'.$topFilterSearch.'%');
+        })
+        ->when(!empty($collegeType), function($q) use($collegeType) {
+            $q->whereIn('colleges.institution_type', $collegeType);
+        })
+        ->where('colleges.status', 'active')
+        ->where('cities.status', 'active')
+        ->orderBy('cities.name', 'asc')
+        ->pluck('name', 'id')
         ->toArray();
     }
 }

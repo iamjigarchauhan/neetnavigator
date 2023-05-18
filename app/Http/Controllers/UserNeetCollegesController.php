@@ -10,7 +10,6 @@ use App\Models\NeetRangeRanking;
 use App\Models\RangeRanking;
 use App\Models\State;
 use App\Models\College;
-use App\Models\RangeRanking;
 use App\Models\UserNeetInfo;
 use Http;
 use Illuminate\Contracts\Session\Session;
@@ -33,6 +32,7 @@ class UserNeetCollegesController extends Controller
     {
         $this->states = State::allState('active');
         session()->forget('user_mark');
+        $this->marks = request()->get('marks');
         return view('user_neet_colleges.index2', $this->data);
     }
     // public function new()
@@ -55,19 +55,24 @@ class UserNeetCollegesController extends Controller
         $collegeIds = $this->markRank->pluck('college_id')->toArray();
         $stateIds = session('states');
         $this->totalcolleges = College::getCollegeCount($collegeIds, $stateIds);
-        $this->colleges = College::getPaginateColleges($limit,  $collegeIds, $stateIds);
+        $this->colleges = College::getPaginateColleges($limit, $collegeIds, $stateIds);
 
         // filter options
         $filterOptions = [
             'collegeType' => [
                 'label' => 'College Type',
                 'valueType' => 'value', // key or value
-                'items' =>College::getCollegeInstitutionType($collegeIds, $stateIds),
+                'items' => College::getCollegeInstitutionType($collegeIds, $stateIds),
             ],
             'stateFilter' => [
                 'label' => 'State',
                 'valueType' => 'key', // key or value
                 'items' => State::whereIn('id', $stateIds)->pluck('name', 'id')->toArray(),
+            ],
+            'cityFilter' => [
+                'label' => 'City',
+                'valueType' => 'key', // key or value
+                'items' => College::getCollegeCities($collegeIds, $stateIds),
             ],
         ];
         $this->filterOptions = $filterOptions;

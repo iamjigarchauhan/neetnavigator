@@ -25,9 +25,7 @@ Route::get('register', [CustomAuthController::class, 'register'])->name('registe
 Route::post('custom-register', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', [CustomAuthController::class, 'home'])->name('home');
 
 
 Route::get('/overview', function () {

@@ -4,7 +4,7 @@
         <div class="course-widget-wrap">
             <div class="cd-course-news-widget yl-headline">
                 <h3 class="cd-widget-title">{{ $fValue['label'] }}:</h3>
-                <div class="cd-course-news-item">
+                <div class="cd-course-news-item" style="max-height: 300px; overflow-y:auto;">
                     @isset($fValue['items'])
                     @foreach($fValue['items'] as $fItemKey => $fItem)
                     <div class="cd-course-news-img-text border-0 pb-0">
@@ -15,7 +15,7 @@
                             <input value="{{ $fItemKey }}" type="checkbox" name="{{ $fKey.'['.$fItemKey.']' }}" id="chkFilter_{{ $fKey . $fItemKey }}" onchange="$('#sidebarFilterForm').submit();" @if(isset(request()->get($fKey)[$fItemKey]) && request()->get($fKey)[$fItemKey]) == fItemKey) checked @endif>
                             @endif
                         </div>
-                        <div class="cd-course-news-text ml-4">
+                        <div class="cd-course-news-text ml-4 text-capitalize">
                             <label for="chkFilter_{{ $fKey . $fItemKey }}">{{ $fItem }}</label>
                         </div>
                     </div>

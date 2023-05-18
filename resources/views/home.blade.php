@@ -1,24 +1,39 @@
 @extends('layouts.app')
+@section('styles')
+<style>
+  .banner-select-option input {
+    color: #000;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #e8e8e8;
+    box-sizing: border-box;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    height: 42px;
+    line-height: 40px;
+    outline: none;
+    padding-left: 18px;
+    padding-right: 30px;
+    position: relative;
+    text-align: left !important;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    width: auto;
+  }
+</style>
+@endsection
 @section('content')
-@php
-function formatNumber($num) {
-if($num >= 10000000) {
-// convert to Crores and round to 2 decimal places
-return round($num/10000000, 2) . ' Cr';
-}
-elseif($num >= 100000) {
-// convert to Lakhs and round to 2 decimal places
-return round($num/100000, 2) . 'L';
-}
-elseif($num >= 1000) {
-// convert to Lakhs and round to 2 decimal places
-return round($num/1000, 2) . 'K';
-}else {
-// return the number as is
-return $num;
-}
-}
-@endphp
 
 <!-- Login-Sign Form -->
 {{-- <div class="modal yl-login-modal fade" id="exampleModal" tabindex="-1" role="dialog"  aria-hidden="true">
@@ -106,7 +121,7 @@ return $num;
         </p>
         <div class="yl-banner-btn-wrap clearfix">
           <div class="yl-banner-btn text-center">
-            <a href="{{ route('register-user')}}">PREDICT COLLEGE NOW <i class="flaticon-right-arrow"></i></a>
+            <a href="{{ route('register-user',['predict'=>'true'])}}">PREDICT COLLEGE NOW <i class="flaticon-right-arrow"></i></a>
           </div>
           <div class="yl-banner-play text-center position-relative">
             <a class="video_box" href="https://www.youtube.com/watch?v=gUYjYEGbxEY">
@@ -129,36 +144,37 @@ return $num;
     <div class="banner-search-form position-relative">
       <span class="banner-search-shape1 position-absolute" data-parallax='{"x" : 70}'><img src="{{asset('assets/home/img/cr-shape1.png')}}" alt=""></span>
       <span class="banner-search-shape2 position-absolute" data-parallax='{"x" : -70}'><img src="{{asset('assets/home/img/cr-shape2.png')}}" alt=""></span>
-      <form action="{{ route('register-user') }}" target="_blank">
+      @auth
+      <form method="get" action="{{ route('neet-college.user.index') }}">
+      @else
+      <form method="get" action="{{ route('register-user') }}">
+      @endauth
         <div class="yl-select-option-wrap">
           <div class="banner-select-option">
-            <select>
-              <option data-display="Course Type">Type of Colleges </option>
-              <option value="1">ALL INDIA QUOTA</option>
-              <option value="2">AIIMS</option>
-              <option value="4">JIPMER</option>
-              <option value="5">DEEMED UNIVERSITY</option>
-              <option value="6">AFMC</option>
-              <option value="7">BHU</option>
-              <option value="8">AMU</option>
+            <select name="college_type">
+              <option data-display="Type of Colleges" value="">Type of Colleges </option>
+              @foreach($collegeTypes as $type)
+              <option value="{{ $type }}">{{ $type }}</option>
+              @endforeach
             </select>
           </div>
           <div class="banner-select-option">
-            <select>
-              <option data-display="Language ">Category </option>
-              <option value="1">OPEN</option>
-              <option value="2">OBC</option>
-              <option value="4">EWS</option>
-              <option value="5">SC</option>
-              <option value="6">ST</option>
+            <select name="neet_category">
+              <option data-display="Language" value="">Category </option>
+              @foreach($stateCategories as $category)
+              <option value="{{ $category }}">{{ $category }}</option>
+              @endforeach
             </select>
+          </div>
+          <div class="banner-select-option">
+            <input type="number" name="marks" id="marks" min="0" max="720" step="1" placeholder="Marks" data-display="Marks" required>
           </div>
         </div>
         <button type="submit"><i class="fas fa-search"></i> PREDICT</button>
       </form>
     </div>
     <div class="select-apply-btn">
-      <p>Do you want to predict your medical college now? <a href="http://neetnavigator.atmianeet.in/neet-college/user">Predict Now</a></p>
+      <p>Do you want to predict your medical college now? <a href="{{ route('register-user') }}">Predict Now</a></p>
     </div>
   </div>
 </div>

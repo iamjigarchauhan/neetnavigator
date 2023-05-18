@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryRoundCutoffCollege;
+use App\Models\College;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
@@ -17,6 +19,13 @@ class CustomAuthController extends Controller
     {
         $this->pageTitle = 'Login';
         return view('auth.login', $this->data);
+    }
+
+    public function home()
+    {
+        $this->collegeTypes = College::getCollegeInstitutionType();
+        $this->stateCategories = CategoryRoundCutoffCollege::STATE_CATEGORY;
+        return view('home', $this->data);
     }
 
     public function customLogin(Request $request)
