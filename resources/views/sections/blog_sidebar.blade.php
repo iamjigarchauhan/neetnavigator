@@ -1,4 +1,30 @@
 <div class="col-lg-3">
+   @isset($blog)
+   <div class="yl-event-widget ul-li yl-headline">
+      <h3 class="widget-title">Event Details</h3>
+      <div class="event-details-widget-item">
+         <div class="ed-inner-widget">
+            <div class="ed-inner-title"><i class="fas fa-calendar-alt"></i> Date:</div>
+            <span>{{ $blog->published_at }}</span>
+         </div>
+         <div class="ed-inner-widget">
+            <div class="ed-inner-title"><i class="fas fa-clock"></i> Time:</div>
+            <span>{{ $blog->from_time }} {{ $blog->to_time }}</span>
+         </div>
+         <div class="ed-inner-widget">
+            <div class="ed-inner-title"><i class="fas fa-map-marker-alt"></i> Location:</div>
+            <span>{{ $blog->location }}</span>
+         </div>
+         <div class="ed-inner-widget">
+            <div class="ed-inner-title"><i class="fas fa-dollar-sign"></i> Fees:</div>
+           {{-- Free</b> --}}
+           <b>{{ $blog->fee == 0 ? 'Free' : $blog->from_time  }}</b>
+         </div>
+      </div>
+      <a class="ed-book-btn text-center" href="#">Book your seat</a>
+   </div>
+   @endisset
+
   <div class="yl-blog-sidebar">
      <div class="yl-blog-widget-wrap">
         <div class="yl-search-widget position-relative">
