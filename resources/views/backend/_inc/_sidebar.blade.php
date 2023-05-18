@@ -20,6 +20,18 @@
       </a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="{{ route('admin.colleges')}}">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">Colleges</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('admin.rankings')}}">
+        <i class="icon-star menu-icon"></i>
+        <span class="menu-title">Ranking</span>
+      </a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="icon-layout menu-icon"></i>
         <span class="menu-title">Events</span>

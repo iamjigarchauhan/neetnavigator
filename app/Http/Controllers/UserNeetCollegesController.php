@@ -7,6 +7,7 @@ use App\Http\Requests\CheckUserMark;
 use App\Http\Requests\StoreUserNeetInfo;
 use App\Models\City;
 use App\Models\NeetRangeRanking;
+use App\Models\RangeRanking;
 use App\Models\State;
 use App\Models\College;
 use App\Models\RangeRanking;
@@ -34,12 +35,12 @@ class UserNeetCollegesController extends Controller
         session()->forget('user_mark');
         return view('user_neet_colleges.index2', $this->data);
     }
-    public function new()
-    {
-        $this->states = State::allState('active');
-        session()->forget('user_mark');
-        return view('user_neet_colleges.index', $this->data);
-    }
+    // public function new()
+    // {
+    //     $this->states = State::allState('active');
+    //     session()->forget('user_mark');
+    //     return view('user_neet_colleges.index', $this->data);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -118,7 +119,6 @@ class UserNeetCollegesController extends Controller
     public function show()
     {
         $this->states = State::allState('active');
-
         return view('user_neet_colleges.profile',$this->data);
     }
 
@@ -144,7 +144,6 @@ class UserNeetCollegesController extends Controller
             // dd($rank);
             $this->min_rank = $rank->max_rank;
             $this->max_rank = $rank->min_rank; 
-            // dd($this->markRank);
             $this->marks = $request->marks;
             $collegeStates = College::getCollegeAndStateIds($this->markRank->pluck('college_id')->toArray());
             $this->states = State::getCollegeCountByState($collegeStates['stateIds'],$collegeStates['collegeIds']);
