@@ -70,7 +70,7 @@
                         @endisset
                         <div class="form-group">
                             <label for="file">Status</label>
-                            <select class="form-control" id="file" name="category_id">
+                            <select class="form-control" id="file" name="status">
                                 <option value="active" @isset($blog) {{ $blog->status == 'active' ? 'selected': ''}}@endisset >Active</option>    
                                 <option value="inactive" @isset($blog) {{ $blog->status == 'inactive' ? 'selected': ''}} @endisset>Inactive</option>    
                             </select>
