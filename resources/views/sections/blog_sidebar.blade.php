@@ -9,7 +9,7 @@
          </div>
          <div class="ed-inner-widget">
             <div class="ed-inner-title"><i class="fas fa-clock"></i> Time:</div>
-            <span>{{ $blog->from_time }} {{ $blog->to_time }}</span>
+            <span>{{ $blog->from_time }} to {{ $blog->to_time }}</span>
          </div>
          <div class="ed-inner-widget">
             <div class="ed-inner-title"><i class="fas fa-map-marker-alt"></i> Location:</div>
