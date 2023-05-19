@@ -26,7 +26,7 @@ class CreateBlogRequest extends FormRequest
         return [
             'title'=> 'required',
             'author'=> 'required',
-            'publish_at'=> 'required',
+            // 'publish_at'=> 'required',
             'featuredimage'=> 'sometimes|mimes:jpg,jpeg,png,bmp,tiff|max:4096|dimensions:min_width=1200,min_height=500'
         ];
     }
