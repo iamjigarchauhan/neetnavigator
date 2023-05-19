@@ -53,6 +53,8 @@ class BlogController extends Controller
     }
     public function store(CreateBlogRequest $request){
         $inputs = $request->except('_token');
+        $inputs['published_at'] = date('Y-m-d',strtotime($request->published_at));
+
         do {
             $slug = Str::slug($request->title);
         }while(Blog::whereSlug($slug)->count() > 0);
