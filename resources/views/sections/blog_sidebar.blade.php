@@ -21,7 +21,6 @@
            <b>{{ $blog->fee == 0 ? 'Free' : $blog->from_time  }}</b>
          </div>
       </div>
-      <a class="ed-book-btn text-center" href="#">Book your seat</a>
    </div>
    @endisset
 

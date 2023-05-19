@@ -9,6 +9,6 @@ use Plank\Mediable\Mediable;
 class Blog extends Model
 {
     use HasFactory,Mediable;
-    protected $fillable = ['title','slug','category_id','author','description','content','published_at','status'];
+    protected $fillable = ['title','slug','category_id','author','description','content','published_at','status','from_time','to_time','location'];
 }
 
