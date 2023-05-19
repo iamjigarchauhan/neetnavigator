@@ -34,7 +34,7 @@ class CreateBlogRequest extends FormRequest
     {
         return [
             'title.required'=> 'The title is required',
-            'publish_at.required'=> 'The published date is required',
+            // 'publish_at.required'=> 'The published date is required',
             'author.required'=> 'The author is required',
             'featuredimage.mimes'=> 'Please insert image only',
             'featuredimage.max'=> 'Image should be less than 4 MB',
