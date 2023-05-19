@@ -16,7 +16,7 @@ class CollegeController extends Controller
 {
     public function index(){
         if (request()->ajax()) {
-            $data = College::latest()->get();
+            $data = College::latest();
             return Datatables::of($data)
                 ->addIndexColumn()
                 // ->addColumn('checkbox', '<input type="checkbox" name="slider[]" class="sliders" value="{{$id}}" />')
