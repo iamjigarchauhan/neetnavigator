@@ -51,10 +51,9 @@ class BlogController extends Controller
         $blog = Blog::find($id);
         return view('backend.blogs.view',compact('blog'));
     }
-    public function store(CreateBlogRequest $request){
+    public function store(Request $request){
         $inputs = $request->except('_token');
         $inputs['published_at'] = date('Y-m-d',strtotime($request->published_at));
-
         do {
             $slug = Str::slug($request->title);
         }while(Blog::whereSlug($slug)->count() > 0);
@@ -68,15 +67,16 @@ class BlogController extends Controller
         return redirect()->route('admin.blogs');
     }
     public function update(Request $request, $id){
-        $inputs = $request->except('_token');
+        $inputs = $request->except('_token','published_at');
         $blog = Blog::find($id);
-        $blog->title = $request->title;
-        $blog->author = $request->author;
-        $blog->description = $request->description;
-        $blog->content = $request->content;
-        $blog->published_at = date('Y-m-d',strtotime($request->published_at));
+        // $blog->title = $request->title;
+        // $blog->author = $request->author;
+        // $blog->description = $request->description;
+        // $blog->content = $request->content;
         // $blog->is_featured = $request->is_featured ?? 0;
-        $blog->update();
+        $blog->update($inputs);
+        $blog->published_at = date('Y-m-d',strtotime($request->published_at));
+        
         // if($request->hasFile('featuredimage')) {
         //     $media = MediaUploader::fromSource($request->file('featuredimage'))->toDestination('public','blog/thumbs')->upload();
         //     $blog->syncMedia($media,'Featured');

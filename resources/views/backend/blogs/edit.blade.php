@@ -39,10 +39,10 @@
                             <label for="file">Time<span class="text-danger">*</span></label>
                             <div class="row">
                             <div class="col">
-                                <input type="text" value="{{ $blog->publish_at ?? old('publish_at') }}" class="form-control timepicker" placeholder="From " name="from_time">
+                                <input type="text" value="{{ $blog->from_time ?? old('from_time') }}" class="form-control timepicker" placeholder="From " name="from_time">
                             </div>
                             <div class="col">
-                                <input type="text" value="{{ $blog->publish_at ?? old('publish_at') }}" class="form-control timepicker" placeholder="To " name="to_time">
+                                <input type="text" value="{{ $blog->to_time ?? old('to_time') }}" class="form-control timepicker" placeholder="To " name="to_time">
                             </div>
                             </div>
                                 
