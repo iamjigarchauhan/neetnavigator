@@ -375,7 +375,7 @@ Author:
 						nav: true,
 						dots: false,
 						navText:["<i class='fas fa-arrow-left'></i>","<i class='fas fa-arrow-right'></i>"],
-						loop:true,
+						loop:false,
 						responsive:{
 							0:{
 								items:1,
@@ -483,7 +483,7 @@ Author:
 						responsiveClass:true,
 						nav: false,
 						dots: true,
-						loop:true,
+						loop:false,
 						responsive:{
 							0:{
 								items:1,

@@ -8,7 +8,8 @@
         <div class="yl-breadcrumb-item ul-li">
            <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home')}}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Events</li>
+            <li class="breadcrumb-item"><a href="{{ route('events')}}">Events</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $blog->title}}</li>
          </ul>
       </div>
    </div>

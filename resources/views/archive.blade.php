@@ -27,7 +27,7 @@
                             <img src="{{ asset("assets/home/img/blg-2.4.jpg")}}" alt="">
                           </div>
                           <div class="yl-blog-date-2 text-center">
-                            <a href="#">{{ date('d', strtotime($item->created_at)) }}<span>{{ date('M / y', strtotime($item->created_at)) }}</span></a>
+                            <a href="#">{{ date('d', strtotime($item->published_at)) }}<span>{{ date('M / y', strtotime($item->published_at)) }}</span></a>
                           </div>
                       </div>
                       <div class="yl-blog-text-2">
@@ -38,10 +38,10 @@
                           <div class="yl-blog-title-text-2">
                               <h3><a href="{{ route('single',['slug'=>$item->slug])}}">{{ $item->title ?? '' }}</a>
                               </h3>
-                              <p>{{ $item->description ?? '' }}
+                              <p> {{ print( strip_tags(substr($item->content,0, 200)) ?? '')}}
                               </p>
-                              <a class="yl-blog-more text-uppercase" href="#">Read more <span>+</span></a>
-                          </div>
+                              <a class="yl-blog-more text-uppercase" href="{{ route('single',['slug'=>$item->slug])}}">Read more <span>+</span></a>
+                            </div>
                       </div>
                     </div>
                 </div>
