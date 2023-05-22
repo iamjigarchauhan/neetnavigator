@@ -1,3 +1,6 @@
+<!-- wpp-btn-mobile -->
+<div class="phone-call cbh-phone cbh-green cbh-show  cbh-static" id="clbh_phone_div" style=""><a id="WhatsApp-button" href="https://api.whatsapp.com/send?phone=918866652333" target="_blank" class="phoneJs" title="WhatsApp 360imagem"><div class="cbh-ph-circle"></div><div class="cbh-ph-circle-fill"></div><div class="cbh-ph-img-circle1"></div></a></div>
+<!-- wpp-btn-mobile -->
 <footer id="yl-footer" class="yl-footer-section-2" data-background="assets/img/f-bg.jpg">
 	<div class="container">
 			<div class="yl-footer-content-wrap">
@@ -48,7 +51,7 @@
 													360 001, Gujarat.</a>
 												</li>
 												<li>
-													<i class="fas fa-phone"></i><a href="#">+91-8866652333</a>
+													<i class="fas fa-phone"></i><a href="tel:918866652333">+91-8866652333</a>
 													<p>(Talk to one of our Expert Counsellor)</p>
 												</li>
 										</ul>
