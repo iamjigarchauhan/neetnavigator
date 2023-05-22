@@ -39,17 +39,18 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ route('admin.blogs')}}">Manage</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('admin.events')}}">Manage</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('admin.categories')}}">Categories</a></li>
          </ul>
       </div>
     </li>
-    {{-- <li class="nav-item">
-      <a class="nav-link" href="">
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('admin.blogs')}}">
         <i class="icon-clock menu-icon"></i>
-        <span class="menu-title">Events</span>
+        <span class="menu-title">Blogs</span>
       </a>
     </li>
+    {{--
     <li class="nav-item">
       <a class="nav-link" href="">
         <i class="icon-ribbon menu-icon"></i>

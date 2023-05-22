@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController,CollegeController,RankingController,BlogController,CategoryController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
+use App\Http\Controllers\Admin\{DashboardController,CollegeController,RankingController,BlogController,EventController,CategoryController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
 use App\Http\Controllers\{UsersController,CustomerController,WalletController,TransactionsController,PartnersController};
 use App\DataTables\{StudentsDataTable};
 
@@ -24,14 +24,14 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::get('profile', [AdminController::class, 'profile'])->name('admin.profile');
             Route::post('profile-update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');
 
-            Route::get('/events', [BlogController::class, 'index'])->name('admin.blogs');
-            Route::get('/event/create', [BlogController::class, 'create'])->name('admin.blog.create');
-            Route::post('/event/save', [BlogController::class, 'store'])->name('admin.blog.save');
-            Route::get('/event/edit/{id}', [BlogController::class, 'edit'])->name('admin.blog.edit');
-            Route::post('/event/update/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
-            Route::get('/event/view/{id}', [BlogController::class, 'view'])->name('admin.blog.view');
-            Route::get('/event/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blog.delete');
-            Route::post('/event/massremove', [BlogController::class, 'massremove'])->name('admin.blog.massremove');
+            Route::get('/events', [EventController::class, 'index'])->name('admin.events');
+            Route::get('/event/create', [EventController::class, 'create'])->name('admin.event.create');
+            Route::post('/event/save', [EventController::class, 'store'])->name('admin.event.save');
+            Route::get('/event/edit/{id}', [EventController::class, 'edit'])->name('admin.event.edit');
+            Route::post('/event/update/{id}', [EventController::class, 'update'])->name('admin.event.update');
+            Route::get('/event/view/{id}', [EventController::class, 'view'])->name('admin.event.view');
+            Route::get('/event/delete/{id}', [EventController::class, 'destroy'])->name('admin.event.delete');
+            Route::post('/event/massremove', [EventController::class, 'massremove'])->name('admin.event.massremove');
 
             Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
             Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
@@ -52,13 +52,23 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::post('/college/massremove', [CollegeController::class, 'massremove'])->name('admin.college.massremove');
              
             Route::get('/rankings', [RankingController::class, 'index'])->name('admin.rankings');
-            // Route::get('/ranking/create', [RankingController::class, 'create'])->name('admin.blog.create');
-            // Route::post('/ranking/save', [RankingController::class, 'store'])->name('admin.blog.save');
+            // Route::get('/ranking/create', [RankingController::class, 'create'])->name('admin.event.create');
+            // Route::post('/ranking/save', [RankingController::class, 'store'])->name('admin.event.save');
             Route::get('/ranking/edit/{id}', [RankingController::class, 'edit'])->name('admin.ranking.edit');
             Route::post('/ranking/update/{id}', [RankingController::class, 'update'])->name('admin.ranking.update');
             Route::get('/ranking/view/{id}', [RankingController::class, 'view'])->name('admin.ranking.view');
             Route::get('/ranking/delete/{id}', [RankingController::class, 'destroy'])->name('admin.ranking.delete');
             Route::post('/ranking/massremove', [RankingController::class, 'massremove'])->name('admin.ranking.massremove');
+
+            Route::get('/blogs', [BlogController::class, 'index'])->name('admin.blogs');
+            Route::get('/event/create', [BlogController::class, 'create'])->name('admin.blog.create');
+            Route::post('/event/save', [BlogController::class, 'store'])->name('admin.blog.save');
+            Route::get('/event/edit/{id}', [BlogController::class, 'edit'])->name('admin.blog.edit');
+            Route::post('/event/update/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
+            Route::get('/event/view/{id}', [BlogController::class, 'view'])->name('admin.blog.view');
+            Route::get('/event/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blog.delete');
+            Route::post('/event/massremove', [BlogController::class, 'massremove'])->name('admin.blog.massremove');
+
         });
     });    
 });

@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('title')
-    {{ isset($blog) ? 'Edit Blog' : 'Add Blog' }}
+    {{ isset($blog) ? 'Edit Event' : 'Add Event' }}
 @endsection
 @section('page_css')
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
@@ -9,13 +9,13 @@
 @endsection
 @section('content')
 <div class="content-wrapper">
-    <form class="forms-sample" action="{{ isset($blog) ? route('admin.blog.update',$blog->id) : route('admin.blog.save') }}" method="POST" enctype="multipart/form-data">
+    <form class="forms-sample" action="{{ isset($blog) ? route('admin.event.update',$blog->id) : route('admin.event.save') }}" method="POST" enctype="multipart/form-data">
     @csrf()
     <div class="row"> 
         <div class="col-md-5 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ isset($blog) ? 'Edit Blog' : 'Add Blog' }}</h4>
+                    <h4 class="card-title">{{ isset($blog) ? 'Edit Event' : 'Add Event' }}</h4>
                     @if($errors->any())
                         <div class="alert alert-danger alert-dismissible">
                             <button type="button" class="close" data-bs-dismiss="alert"></button>
@@ -28,8 +28,24 @@
                             <input type="text" class="form-control" value="{{ $blog->title ?? old('title') }}" id="title" name="title" placeholder="Title" required>
                         </div>
                         <div class="form-group">
-                            <label for="file">Published Date<span class="text-danger">*</span></label>
-                            <input type="text" value="{{ $blog->published_at ?? old('published_at') }}" class="form-control" id="datepicker" name="published_at">
+                            <label for="file">Event Date<span class="text-danger">*</span></label>
+                            <input type="text"  value="{{ $blog->published_at ?? old('published_at') }}" class="form-control" id="datepicker" name="published_at">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Location</label>
+                            <textarea class="form-control" id="location" name="location" placeholder="Location" rows="4"> {{ $blog->location ?? old('location') }} </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file">Time<span class="text-danger">*</span></label>
+                            <div class="row">
+                            <div class="col">
+                                <input type="text" value="{{ $blog->from_time ?? old('from_time') }}" class="form-control timepicker" placeholder="From " name="from_time">
+                            </div>
+                            <div class="col">
+                                <input type="text" value="{{ $blog->to_time ?? old('to_time') }}" class="form-control timepicker" placeholder="To " name="to_time">
+                            </div>
+                            </div>
+                                
                         </div>
                         {{-- <div class="form-check form-check-flat form-check-primary">
                             <label class="form-check-label" for="featured">
@@ -42,7 +58,7 @@
                         @isset($blog)
                             {!! $blog->hasMedia('Featured') ? '<img width="300px" src="'.$blog->firstMedia('Featured')->getUrl().'">' : ''; !!}
                         @endisset
-                        {{-- @isset($categories)
+                        @isset($categories)
                         <div class="form-group">
                             <label for="file">Category</label>
                             <select class="form-control" id="file" name="category_id">
@@ -51,7 +67,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        @endisset --}}
+                        @endisset
                         <div class="form-group">
                             <label for="file">Status</label>
                             <select class="form-control" id="file" name="status">
@@ -61,7 +77,7 @@
                         </div>
                         <div class="form-group" style="display:  none">
                             <label for="author">Author Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="author" name="author" value="{{ $blog->user_id ?? auth()->user()->id }}" placeholder="Author Name" required>
+                            <input type="text" class="form-control" id="author" name="author" value="{{ $blog->author ?? auth()->user()->name }}" placeholder="Author Name" required>
                         </div>
                         
                         <button type="submit" class="btn btn-primary mr-2">Save and back</button>
@@ -103,7 +119,7 @@
         scrollbar: true
     });
     $( "#datepicker" ).datepicker({
-        minDate: "-1M",
+        minDate: +1,
         maxDate: "+1Y"
     });
 

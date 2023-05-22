@@ -55,5 +55,5 @@ Route::prefix('neet-college')->name('neet-college.')->group(function () {
     Route::get('profile', [UserNeetCollegesController::class, 'show'])->name('profile');
     Route::resource('user', UserNeetCollegesController::class)->only(['index', 'store', 'update', 'destroy','new'])->middleware('auth:web');
 });
-Route::get('events', [BlogController::class, 'archive'])->name('events');
-Route::get('event/{slug}', [BlogController::class, 'single'])->name('single');
+Route::get('events', [EventBlogController::class, 'archive'])->name('events');
+Route::get('event/{slug}', [EventController::class, 'single'])->name('single');

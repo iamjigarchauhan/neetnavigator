@@ -76,7 +76,7 @@ var table = $('.table-bordered').DataTable({
             if(id.length > 0)
             {
                 $.ajax({
-                    url:"{{ route('admin.blog.massremove')}}",
+                    url:"{{ route('admin.event.massremove')}}",
                     method:"post",
                     data:{
                         _token:"{{ csrf_token() }}",
