@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{{-- <link href="https://cdn.jsdelivr.net/npm/jquery.steps@1.0.1/dist/jquery-steps.css" rel="stylesheet" /> --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <section class="course-page-course-section">
   <div class="container mt-5">
@@ -70,7 +71,7 @@
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js" integrity="sha512-bE0ncA3DKWmKaF3w5hQjCq7ErHFiPdH2IGjXRyXXZSOokbimtUuufhgeDPeQPs51AI4XsqDZUK7qvrPZ5xboZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js" integrity="sha512-6S5LYNn3ZJCIm0f9L6BCerqFlQ4f5MwNKq+EthDXabtaJvg3TuFLhpno9pcm+5Ynm6jdA9xfpQoMz2fcjVMk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -85,99 +86,93 @@ form.validate({
          digits:true
       }
     },
-    errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
+    // errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
 });
-
-$(function(){$("#wizard").steps({headerTag:"h4",bodyTag:"section",transitionEffect:"fade",enableAllSteps:true,transitionEffectSpeed:500,
-onStepChanging:function(event,currentIndex,newIndex){
-  form.validate().settings.ignore = ":disabled,:hidden";
-    if(form.valid()) {
-      if(newIndex===1){
-        $('.steps ul').addClass('step-2');
-      }
-      else{
-        $('.steps ul').removeClass('step-2');
-      }
-      if(newIndex===2){
-        var url = $('#kt_stepper_example_basic_form').attr('action');
-        var method = $('#kt_stepper_example_basic_form').attr('method');
-        var formData = $('#kt_stepper_example_basic_form').serialize();
-        $.ajax({
-          type: "POST",
-          url: url,
-          data: formData,
-        }).done(function (data) {
-            $('#hsc_marks').html(data.user.state_12th.name);
-            $('#ssc_marks').html(data.user.state_10th.name);
-            $('#domicile_state').html(data.user.state_by_pincode);
-            $('#neet_category').html(data.user.neet_category);
-            $('#state_category').html(data.user.state_category);
-            $('#minority').html(data.user.minority);
-            $('#quota').html(data.user.eligible_quota);
-            // $('#ssc_marks').html(data.state_10th.name);
-            // $('#ssc_marks').html(data.state_10th.name);
-        });
-        $('.steps ul').addClass('step-3');
-      }else{
-        $('.steps ul').removeClass('step-3');
-      }
-      if(newIndex == @if(auth()->user()->user_neet_info == null) 3 @else 1 @endif ){
-        //kt_account_profile_details_form
-        var form2 = $("#kt_account_profile_details_form");
-        form2.validate({
-            rules: {
-              marks: {
-                max: 720,
-                required:true,
-                digits:true
-              }
-            }
-            // errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
-        });
-        if(form2.valid()) {
-          var url = $('#kt_account_profile_details_form').attr('action');
-          var method = $('#kt_account_profile_details_form').attr('method');
-          var formData = $('#kt_account_profile_details_form').serialize();
+$(function(){
+  $("#wizard").steps({
+    headerTag:"h4",bodyTag:"section",transitionEffect:"fade",enableAllSteps:false,transitionEffectSpeed:500,
+    onStepChanging:function(event,currentIndex,newIndex){
+      newIndex = currentIndex + 1; 
+      console.log(newIndex);
+      form.validate().settings.ignore = ":disabled,:hidden";
+        if(form.valid()) {
+          if(newIndex===1) { $('.steps ul').addClass('step-2'); }
+          else{ $('.steps ul').removeClass('step-2'); }
+          if(newIndex===2) {
+            var url = $('#kt_stepper_example_basic_form').attr('action');
+            var method = $('#kt_stepper_example_basic_form').attr('method');
+            var formData = $('#kt_stepper_example_basic_form').serialize();
             $.ajax({
               type: "POST",
               url: url,
               data: formData,
             }).done(function (data) {
-              if(data.states.length >0 ){
-                table = $('table.statelist tbody');
-                html = '';
-                $.each(data.states,function(index, value){
-                  html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
-                })
-              table.html(html);
-              $('.predicted-marks').html(data.marks);
-              $('#minimum_rank').html(data.min_rank);
-              $('#maximum_rank').html(data.max_rank);
-              }
+                $('#hsc_marks').html(data.user.state_12th.name);
+                $('#ssc_marks').html(data.user.state_10th.name);
+                $('#domicile_state').html(data.user.state_by_pincode);
+                $('#neet_category').html(data.user.neet_category);
+                $('#state_category').html(data.user.state_category);
+                $('#minority').html(data.user.minority);
+                $('#quota').html(data.user.eligible_quota);
             });
-            $('.steps ul').addClass('step-4');
-            $('.actions ul').addClass('step-last');
-            return true;
+            $('.steps ul').addClass('step-3');
+          } else {
+            $('.steps ul').removeClass('step-3');
+          }
+          if(newIndex === @if(auth()->user()->user_neet_info == null)3 @else 1 @endif){
+            //kt_account_profile_details_form
+            var form2 = $("#kt_account_profile_details_form");
+            form2.validate({
+                rules: {
+                  marks: {
+                    max: 720,
+                    required:true,
+                    digits:true
+                  }
+                }
+                // errorPlacement: function errorPlacement(error, element) { element.parent().append(error); }
+            });
+            if(form2.valid()) {
+              var url = $('#kt_account_profile_details_form').attr('action');
+              var method = $('#kt_account_profile_details_form').attr('method');
+              var formData = $('#kt_account_profile_details_form').serialize();
+                $.ajax({
+                  type: "POST",
+                  url: url,
+                  data: formData,
+                }).done(function (data) {
+                  if(data.states.length >0 ){
+                    table = $('table.statelist tbody');
+                    html = '';
+                    $.each(data.states,function(index, value){
+                      html += '<tr><td><input type="checkbox" value="'+value.id+'" name="state_id[]" class="all_state form-check-input" required></td>' +'<td>'+value.name+'</td><td>'+value.colleges_count+'</td></tr>'
+                    })
+                    table.html(html);
+                    $('.predicted-marks').html(data.marks);
+                    $('#minimum_rank').html(data.min_rank);
+                    $('#maximum_rank').html(data.max_rank);
+                  }
+                });
+                $('.steps ul').addClass('step-4');
+                $('.actions ul').addClass('step-last');
+                return true;
+            }
+          }
+          return true;
         }
-      } 
-      // else { 
-      //   $('.steps ul').removeClass('step-4');$('.actions ul').removeClass('step-last');
-      // }
-      return false;
-    }
-}, 
-onFinished: function (event, currentIndex){
-  $('#kt_stepper_checkout_form').submit();
-},
-labels:{finish:"Save",next:"Next",previous:"Previous"}});
-$('.wizard > .steps li a').click(function(){$(this).parent().addClass('checked');$(this).parent().prevAll().addClass('checked');$(this).parent().nextAll().removeClass('checked');});$('.forward').click(function(){$("#wizard").steps('next');})
-$('.backward').click(function(){$("#wizard").steps('previous');})
-$('.checkbox-circle label').click(function(){$('.checkbox-circle label').removeClass('active');$(this).addClass('active');})
-});
-</script>
-<script>
+        return false;
+    }, 
+    onFinished: function (event, currentIndex){
+      $('#kt_stepper_checkout_form').submit();
+    },
+    labels:{finish:"Save",next:"Next",previous:"Previous"}
+  });
+  $('.wizard > .steps li a').click(function(){$(this).parent().addClass('checked');$(this).parent().prevAll().addClass('checked');$(this).parent().nextAll().removeClass('checked');});$('.forward').click(function(){$("#wizard").steps('next');})
+  $('.backward').click(function(){$("#wizard").steps('previous');})
+  $('.checkbox-circle label').click(function(){$('.checkbox-circle label').removeClass('active');$(this).addClass('active');})
+})
 $(document).on('click', '#kt_stepper_example_basic_form_submit', function() {
-    $('#kt_stepper_example_basic_form').submit();
+  $('#kt_stepper_example_basic_form').submit();
 })
 $(document).on('blur', '#floatingPincode', function() {
     let pincode = $(this).val();
@@ -250,13 +245,6 @@ function cartSummaryRadioDisableOrNot(selectedState) {
     } else {
         $(".cart-radio").prop('disabled', true).closest('tr').hide();
     }
-
 }
 </script>
-{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> --}}
-{{-- <script defer
-src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816"
-integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw=="
-data-cf-beacon='{"rayId":"7c11ceb3ec25f46e","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.4.0","si":100}'
-crossorigin="anonymous"></script> --}}
 @endsection

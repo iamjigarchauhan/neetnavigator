@@ -8,6 +8,9 @@ use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
+use Storage;
+use DB;
+use App\Models\UserNeetInfo;
 
 class StudentsDataTable extends DataTable
 {
@@ -19,15 +22,21 @@ class StudentsDataTable extends DataTable
      */
     public function dataTable($query)
     {
-        $query->select('users.email', 'users.mobile_no','users.name','users.id','users.created_at','user_neet_info.state_id_10th','user_neet_info.state_id_12th','user_neet_info.pincode','user_neet_info.state_by_pincode','user_neet_info.city_id','user_neet_info.area','user_neet_info.neet_category','user_neet_info.state_category','user_neet_info.gender','user_neet_info.physical_handicap','user_neet_info.armed_force','user_neet_info.minority','user_neet_info.eligible_quota');
-
-        $query->leftjoin('user_neet_info', 'users.id', '=', 'user_neet_info.user_id');
         
-        return datatables()
-            ->eloquent($query)
+        $to = date('Y-m-d h:i:s', strtotime(Storage::disk('public')->get('sync.txt')));
+        $from = date('Y-m-d h:i:s'); 
+        UserNeetInfo::whereDate('created_at','>=',$to)->whereDate('created_at','<=',$from)->update(['is_viewed'=>0]);
+        $query->select('users.email', 'users.mobile_no','users.name','users.id','users.created_at','user_neet_info.state_id_10th','user_neet_info.state_id_12th','user_neet_info.pincode','user_neet_info.state_by_pincode','user_neet_info.city_id','user_neet_info.area','user_neet_info.neet_category','user_neet_info.state_category','user_neet_info.gender','user_neet_info.physical_handicap','user_neet_info.armed_force','user_neet_info.minority','user_neet_info.eligible_quota','user_neet_info.is_viewed');
+        $query->join('user_neet_info', 'users.id', '=', 'user_neet_info.user_id');
+        return datatables()->eloquent($query)
             ->editColumn('created_at',function($row){
                 return date('d-m-Y @ H:i:s A', strtotime($row->created_at));
-            });
+            })
+            ->setRowAttr([
+                'style' => function($user) {
+                    return ($user->is_viewed  == 0 ? '':'background-color:#dcdcdc');
+                },
+            ]);
     }
 
     /**

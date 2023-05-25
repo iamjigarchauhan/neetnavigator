@@ -58,7 +58,6 @@ h3 { font-size:20px}
 {{-- <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script> --}}
 <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-
 <script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"> </script>
@@ -68,28 +67,4 @@ h3 { font-size:20px}
 {{-- <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"> </script> --}}
 {{-- <script src="//cdn.datatables.net/buttons/2.3.6/css/buttons.semanticui.min.css"> </script> --}}
 {!! $dataTable->scripts() !!}
-
-{{-- <script>
-    initComplete: function () {
-        this.api()
-            .columns(4)
-            .every(function () {
-                var column = this;
-                var select = $('.statusFilter select')
-                    // .appendTo($(column.footer()).empty())
-                    .on('change', function () {
-                        var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                        column.search(val ? '^' + val + '$' : '', true, false).draw();
-                    });
-
-                column
-                    .data()
-                    .unique()
-                    .sort()
-                    .each(function (d, j) {
-                        select.append('<option value="' + d + '">' + d + '</option>');
-                    });
-            });
-    },
-</script> --}}
 @endsection
