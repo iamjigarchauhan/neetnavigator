@@ -22,6 +22,7 @@ class StudentsDataTable extends DataTable
      */
     public function dataTable($query)
     {
+        UserNeetInfo::query()->update(['is_viewed'=>0]);
         if (Storage::disk('public')->exists('sync.txt')) { 
             $to = date('Y-m-d h:i:s', strtotime(Storage::disk('public')->get('sync.txt')));
             $from = date('Y-m-d h:i:s'); 
