@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('title')
-    Event Categories
+    Blog Categories
 @endsection
 @section('page_css')
 <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -8,39 +8,39 @@
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 @endsection
 @section('content')
-    <div class="content-wrapper">
-        <div class="row">
-                <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Event Categories
-                            <a href="{{  route('admin.category.create') }}" class="btn btn-sm btn-primary float-right">Add Category</a>
-                        </h4>
-                        <hr>
-                        <div class="form-group d-inline-flex">
-                            <input class="deleteSelected btn btn-primary form-control" type="button" value="Delete Selected" /> 
-                        </div>
-                        <div class="table-responsive pt-3">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                    <th> # </th>    
-                                        <th> No </th>
-                                        <th> Name </th>
-                                        <th> Status </th>
-                                        <th> Created At </th>
-                                        <th> Action </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Blog Categories
+                        <a href="{{  route('admin.blog.category.create') }}" class="btn btn-sm btn-primary float-right">Add Blog Category</a>
+                    </h4>
+                    <hr>
+                    <div class="form-group d-inline-flex">
+                        <input class="deleteSelected btn btn-primary form-control" type="button" value="Delete Selected" /> 
+                    </div>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                <th> # </th>    
+                                    <th> No </th>
+                                    <th> Name </th>
+                                    <th> Status </th>
+                                    <th> Created At </th>
+                                    <th> Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+</div>    
 @endsection
 @section('page_js')
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -50,7 +50,7 @@
 $(function () {
 var table = $('.table-bordered').DataTable({
     processing: true, "ordering": false, serverSide: true,
-    ajax: "{{ route('admin.categories') }}",
+    ajax: "{{ route('admin.blog.categories') }}",
         columns: [
             {data: 'checkbox', name: 'checkbox'},
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
@@ -76,7 +76,7 @@ var table = $('.table-bordered').DataTable({
             if(id.length > 0)
             {
                 $.ajax({
-                    url:"{{ route('admin.category.massremove')}}",
+                    url:"{{ route('admin.blog.category.massremove')}}",
                     method:"post",
                     data:{
                         _token:"{{ csrf_token() }}",

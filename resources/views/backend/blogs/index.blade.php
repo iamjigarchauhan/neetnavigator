@@ -25,9 +25,9 @@
                                 <th> # </th>    
                                     <th> No </th>
                                     <th> Title </th>
-                                    {{-- <th> Category </th> --}}
+                                    <th> Category </th>
                                     <th> Featured Image </th>
-                                    <th> Author </th>
+                                    {{-- <th> Author </th> --}}
                                     <th> Status </th>
                                     <th> Created At </th>
                                     <th> Action </th>
@@ -57,9 +57,9 @@ var table = $('.table-bordered').DataTable({
             {data: 'checkbox', name: 'checkbox'},
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'title', name: 'title'},
-            // {data: 'category', name: 'category'},
+            {data: 'category', name: 'category'},
             {data: 'featured_image', name: 'featured_image'},
-            {data: 'author', name: 'author'},
+            // {data: 'author', name: 'author'},
             {data: 'status', name: 'status'},
             {data: 'created_at', name: 'created_at'},
             {

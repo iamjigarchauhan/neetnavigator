@@ -263,10 +263,10 @@ select:visited {
 
 .scrollup {
   width: 45px;
-  right: 15px;
+  right: 2rem;
   z-index: 5;
   height: 45px;
-  bottom: 20px;
+  bottom: 6rem;
   display: none;
   position: fixed;
   line-height: 45px;

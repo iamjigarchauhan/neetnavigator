@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\{DashboardController,CollegeController,RankingController,BlogController,EventController,CategoryController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
+use App\Http\Controllers\Admin\{DashboardController,CollegeController,RankingController,BlogController,BlogCategoryController,EventController,CategoryController, AdminController,Auth\LoginController,Auth\ConfirmPasswordController};
 use App\Http\Controllers\{UsersController,CustomerController,WalletController,TransactionsController,PartnersController};
 use App\DataTables\{StudentsDataTable};
 
@@ -33,14 +33,14 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::get('/event/delete/{id}', [EventController::class, 'destroy'])->name('admin.event.delete');
             Route::post('/event/massremove', [EventController::class, 'massremove'])->name('admin.event.massremove');
 
-            Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
-            Route::get('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
-            Route::post('/category/save', [CategoryController::class, 'store'])->name('admin.category.save');
-            Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
-            Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
-            Route::get('/category/view/{id}', [CategoryController::class, 'view'])->name('admin.category.view');
-            Route::get('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
-            Route::post('/category/massremove', [CategoryController::class, 'massremove'])->name('admin.category.massremove');
+            Route::get('event/categories', [CategoryController::class, 'index'])->name('admin.categories');
+            Route::get('event/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
+            Route::post('event/category/save', [CategoryController::class, 'store'])->name('admin.category.save');
+            Route::get('event/category/edit/{id}', [CategoryController::class, 'edit'])->name('admin.category.edit');
+            Route::post('event/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
+            Route::get('event/category/view/{id}', [CategoryController::class, 'view'])->name('admin.category.view');
+            Route::get('event/category/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.category.delete');
+            Route::post('event/category/massremove', [CategoryController::class, 'massremove'])->name('admin.category.massremove');
 
             Route::get('/colleges', [CollegeController::class, 'index'])->name('admin.colleges');
             Route::get('/collge/import', [CollegeController::class, 'import'])->name('admin.college.import');
@@ -61,14 +61,22 @@ Route::group(['prefix'=>'admin/'], function(){
             Route::post('/ranking/massremove', [RankingController::class, 'massremove'])->name('admin.ranking.massremove');
 
             Route::get('/blogs', [BlogController::class, 'index'])->name('admin.blogs');
-            Route::get('/event/create', [BlogController::class, 'create'])->name('admin.blog.create');
-            Route::post('/event/save', [BlogController::class, 'store'])->name('admin.blog.save');
-            Route::get('/event/edit/{id}', [BlogController::class, 'edit'])->name('admin.blog.edit');
-            Route::post('/event/update/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
-            Route::get('/event/view/{id}', [BlogController::class, 'view'])->name('admin.blog.view');
-            Route::get('/event/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blog.delete');
-            Route::post('/event/massremove', [BlogController::class, 'massremove'])->name('admin.blog.massremove');
+            Route::get('/blog/create', [BlogController::class, 'create'])->name('admin.blog.create');
+            Route::post('/blog/save', [BlogController::class, 'store'])->name('admin.blog.save');
+            Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('admin.blog.edit');
+            Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('admin.blog.update');
+            Route::get('/blog/view/{id}', [BlogController::class, 'view'])->name('admin.blog.view');
+            Route::get('/blog/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blog.delete');
+            Route::post('/blog/massremove', [BlogController::class, 'massremove'])->name('admin.blog.massremove');
 
+            Route::get('blog/category', [BlogCategoryController::class, 'index'])->name('admin.blog.categories');
+            Route::get('blog/category/create', [BlogCategoryController::class, 'create'])->name('admin.blog.category.create');
+            Route::post('blog/category/save', [BlogCategoryController::class, 'store'])->name('admin.blog.category.save');
+            Route::get('blog/category/edit/{id}', [BlogCategoryController::class, 'edit'])->name('admin.blog.category.edit');
+            Route::post('blog/category/update/{id}', [BlogCategoryController::class, 'update'])->name('admin.blog.category.update');
+            Route::get('blog/category/view/{id}', [BlogCategoryController::class, 'view'])->name('admin.blog.category.view');
+            Route::get('blog/category/delete/{id}', [BlogCategoryController::class, 'destroy'])->name('admin.blog.category.delete');
+            Route::post('blog/category/massremove', [BlogCategoryController::class, 'massremove'])->name('admin.blog.category.massremove');
         });
     });    
 });

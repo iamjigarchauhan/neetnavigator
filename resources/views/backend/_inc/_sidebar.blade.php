@@ -33,7 +33,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <i class="icon-layout menu-icon"></i>
+        <i class="icon-clock menu-icon"></i>
         <span class="menu-title">Events</span>
         <i class="menu-arrow"></i>
       </a>
@@ -45,11 +45,24 @@
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#uibasic" aria-expanded="false" aria-controls="uibasic">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">Blogs</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="uibasic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('admin.blogs')}}">Manage</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('admin.blog.categories')}}">Categories</a></li>
+         </ul>
+      </div>
+    </li>
+    {{-- <li class="nav-item">
       <a class="nav-link" href="{{ route('admin.blogs')}}">
         <i class="icon-clock menu-icon"></i>
         <span class="menu-title">Blogs</span>
       </a>
-    </li>
+    </li> --}}
     {{--
     <li class="nav-item">
       <a class="nav-link" href="">

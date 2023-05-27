@@ -42,7 +42,7 @@
                         @isset($blog)
                             {!! $blog->hasMedia('Featured') ? '<img width="300px" src="'.$blog->firstMedia('Featured')->getUrl().'">' : ''; !!}
                         @endisset
-                        {{-- @isset($categories)
+                        @isset($categories)
                         <div class="form-group">
                             <label for="file">Category</label>
                             <select class="form-control" id="file" name="category_id">
@@ -51,7 +51,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        @endisset --}}
+                        @endisset
                         <div class="form-group">
                             <label for="file">Status</label>
                             <select class="form-control" id="file" name="status">
