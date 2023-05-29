@@ -1,13 +1,17 @@
-@extends('layouts.app') @section('content')
-<section id="yl-breadcrumb" class="yl-breadcrumb-section position-relative" style="background:url('{{ asset('assets/img/georgia-fees-banner.jpg')}}')">
+@extends('layouts.app') 
+@section('seo')
+    
+@endsection
+@section('content')
+<section id="yl-breadcrumb" class="yl-breadcrumb-section position-relative" style="background:url('{{ asset('assets/img/blog-banner.jpg')}}')">
   <span class="breadcrumb-overlay position-absolute"></span>
   <div class="container">
      <div class="yl-breadcrumb-content text-center yl-headline"> 
-        <h2>Events</h2>
+        <h2>Blogs</h2>
         <div class="yl-breadcrumb-item ul-li">
            <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home')}}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Events</li>
+            <li class="breadcrumb-item active" aria-current="page">Blogs</li>
          </ul>
       </div>
    </div>
@@ -19,7 +23,7 @@
       <div class="col-lg-9">
           <div class="blog-feed-content-wrap">
               <div class="row justify-content-center">
-                @foreach ($events as $item)
+                @foreach ($blogs as $item)
                 <div class="col-lg-6 col-md-6">
                     <div class="yl-blog-img-text-2 yl-headline pera-content">
                       <div class="yl-blog-img-2 position-relative">
@@ -49,7 +53,7 @@
               </div>
           </div>
       </div>
-      @include('sections.blog_sidebar')
+      @include('blog.blog_sidebar')
 </div>
 </section>
 @endsection

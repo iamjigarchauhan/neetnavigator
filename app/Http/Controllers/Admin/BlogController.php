@@ -92,12 +92,18 @@ class BlogController extends Controller
         return redirect()->route('admin.blogs');
     }
     public function archive(Request $request){
-        $Blogs = Blog::latest()->paginate(12);
-        return view('archive',compact('Blogs'));
+        $blogs = Blog::latest()->paginate(12);
+        return view('blog.archive',compact('blogs'));
+    }
+    public function category(Request $request){ 
+        $category = BlogCategory::whereSlug($request->slug)->first();
+        $blogs = Blog::whereCategoryId($category->id)->latest()->paginate(12);
+        return view('blog.archive',compact('blogs'));
     }
     public function single(Request $request, $slug){
         $blog = Blog::whereSlug($slug)->first();
-        return view('single-blog',compact('blog'));
+        $pageTitle = $blog->title;
+        return view('blog.single-blog',compact('blog','pageTitle'));
     }
     public function massremove(Request $request){
         $sliders = $request->input('id');

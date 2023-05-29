@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\UserNeetCollegesController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,3 +59,9 @@ Route::prefix('neet-college')->name('neet-college.')->group(function () {
 Route::get('events', [EventController::class, 'archive'])->name('events');
 Route::get('events/category/{slug?}', [EventController::class, 'category'])->name('event.category');
 Route::get('event/{slug}', [EventController::class, 'single'])->name('single');
+
+
+
+Route::get('blogs', [BlogController::class, 'archive'])->name('blogs');
+Route::get('blogs/category/{slug?}', [BlogController::class, 'category'])->name('blog.category');
+Route::get('blog/{slug}', [BlogController::class, 'single'])->name('single');

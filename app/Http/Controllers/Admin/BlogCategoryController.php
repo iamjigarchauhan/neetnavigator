@@ -43,11 +43,11 @@ class BlogCategoryController extends Controller
     }
     public function store(Request $request){
         $inputs = $request->except('_token');
-        // do {
-        //     $slug = Str::slug($request->title);
-        // }while(BlogCategory::whereSlug($slug)->count() > 0);
+        do {
+            $slug = Str::slug($request->title);
+        }while(BlogCategory::whereSlug($slug)->count() > 0);
 
-        // $inputs['slug'] = $slug;
+        $inputs['slug'] = $slug;
         $blog = BlogCategory::create($inputs);
         // if($request->hasFile('featuredimage')) {
         //     $media = MediaUploader::fromSource($request->file('featuredimage'))->toDestination('public','blog/thumbs')->upload();
@@ -58,17 +58,14 @@ class BlogCategoryController extends Controller
     public function update(Request $request, $id){
         $inputs = $request->except('_token');
         $blog = BlogCategory::find($id);
-        $blog->title = $request->title;
-        $blog->author = $request->author;
-        $blog->description = $request->description;
-        $blog->content = $request->content;
-        $blog->publish_at = $request->publish_at;
-        $blog->is_featured = $request->is_featured ?? 0;
+        do {
+            $slug = Str::slug($request->name);
+        }while(BlogCategory::whereSlug($slug)->count() > 0);
+
+        $blog->slug = $slug;
+        $blog->name = $request->name;
         $blog->update();
-        // if($request->hasFile('featuredimage')) {
-        //     $media = MediaUploader::fromSource($request->file('featuredimage'))->toDestination('public','blog/thumbs')->upload();
-        //     $blog->syncMedia($media,'Featured');
-        // }
+
         return redirect()->route('admin.blog.categories');
     }
     public function destroy(Request $request, $id){

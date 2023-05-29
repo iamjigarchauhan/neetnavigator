@@ -19,6 +19,9 @@
               <a href="{{ route('events')}}">Events</a>
             </li>
             <li class="dropdown">
+              <a href="{{ route('blogs')}}">Blogs</a>
+            </li>
+            <li class="dropdown">
               <a href="{{ route('contact')}}">Contact</a>
             </li>
             @auth

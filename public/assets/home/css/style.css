@@ -4537,9 +4537,9 @@ span.relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-5
   margin-right: 10px;
 }
 .yl-blog-list-share a {
-  width: 42px;
+  /* width: 42px; */
   color: #fff;
-  height: 42px;
+  /* height: 42px; */
   line-height: 42px;
   margin-left: 8px;
   text-align: center;
@@ -4547,7 +4547,7 @@ span.relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-5
   display: inline-block;
   transition: 0.3s all ease-in-out;
 }
-.yl-blog-list-share a:hover {
+/* .yl-blog-list-share a:hover {
   transform: scale(1.1);
 }
 .yl-blog-list-share a:nth-child(2) {
@@ -4558,7 +4558,7 @@ span.relative.inline-flex.items-center.px-4.py-2.text-sm.font-medium.text-gray-5
 }
 .yl-blog-list-share a:nth-child(4) {
   background-color: #0077b5;
-}
+} */
 
 .yl-blog-widget-wrap {
   overflow: hidden;

@@ -62,20 +62,9 @@ class CategoryController extends Controller
         do {
             $slug = Str::slug($request->name);
         }while(EventCategory::whereSlug($slug)->count() > 0);
-
         $blog->slug = $slug;
         $blog->name = $request->name;
-        
-        // $blog->author = $request->author;
-        // $blog->description = $request->description;
-        // $blog->content = $request->content;
-        // $blog->publish_at = $request->publish_at;
-        // $blog->is_featured = $request->is_featured ?? 0;
         $blog->update();
-        // if($request->hasFile('featuredimage')) {
-        //     $media = MediaUploader::fromSource($request->file('featuredimage'))->toDestination('public','blog/thumbs')->upload();
-        //     $blog->syncMedia($media,'Featured');
-        // }
         return redirect()->route('admin.categories');
     }
     public function destroy(Request $request, $id){

@@ -75,7 +75,7 @@ class EventController extends Controller
         // $blog->content = $request->content;
         // $blog->is_featured = $request->is_featured ?? 0;
         $blog->update($inputs);
-        $blog->published_at = date('Y-m-d',strtotime($request->published_at));
+        // $blog->published_at = date('Y-m-d',strtotime($request->published_at));
         
         // if($request->hasFile('featuredimage')) {
         //     $media = MediaUploader::fromSource($request->file('featuredimage'))->toDestination('public','blog/thumbs')->upload();
