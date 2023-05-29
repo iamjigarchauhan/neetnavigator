@@ -92,6 +92,11 @@ class EventController extends Controller
         $events = Event::latest()->paginate(12);
         return view('archive',compact('events'));
     }
+    public function category(Request $request){ 
+        $category = EventCategory::whereSlug($request->slug)->first();
+        $events = Event::whereCategoryId($category->id)->latest()->paginate(12);
+        return view('archive',compact('events'));
+    }
     public function single(Request $request, $slug){
         $blog = Event::whereSlug($slug)->first();
         return view('single-blog',compact('blog'));

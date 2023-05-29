@@ -36,15 +36,14 @@
      <div class="yl-blog-widget-wrap">
         <div class="yl-category-widget yl-headline ul-li-block position-relative">
            <h3 class="widget-title">Category</h3>
-          @php
+           @php
             $blog_categories = \App\Models\EventCategory::take(4)->get();
-          @endphp
-
+           @endphp
            <ul>
-            @foreach ($blog_categories as $item)
-                <li><a href="#">{{ $item->name }}</a></li>
-            @endforeach
-              </ul>
+           @foreach ($blog_categories as $item)
+                <li><a href="{{ route('event.category',$item->slug)}}">{{ $item->name }}</a></li>
+           @endforeach
+           </ul>
         </div>
      </div>
      {{-- <div class="yl-blog-widget-wrap">
