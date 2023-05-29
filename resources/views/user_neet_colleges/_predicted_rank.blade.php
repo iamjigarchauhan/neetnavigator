@@ -1,6 +1,12 @@
-<div class="align_marks_container">
+<style>
+    .align_marks_container{padding-right: 20px !important;}
+    .align_markds {display: grid !important; gap: 0px !important;}
+    .table-responsive{}
+</style>
+
+<div class="align_marks_container text-center d-flex justify-content-between">
     <div class="align_markds">
-        <label class="fw-bold text-muted">{{ __('Marks:') }}</label>
+        <label class="fw-bold text-muted">{{ __('Marks') }}</label>
         <span class="fw-bolder fs-6 text-dark predicted-marks">
             @if(isset($marks))
             {{ $marks }}
@@ -10,7 +16,7 @@
         </span>
     </div>
     <div class="align_markds">
-        <label class="fw-bold text-muted">{{ __('Min. Rank:') }}</label>
+        <label class="fw-bold text-muted">{{ __('Min. Rank') }}</label>
         <span class="fw-bold fs-6" id="minimum_rank">
             @if(isset($markRank) && !is_null($markRank))
             {{ $markRank->min_rank }}
@@ -21,7 +27,7 @@
     </div>
     <div class="align_markds">
         <label class="fw-bold text-muted">
-            {{ __('Max. Rank:') }}
+            {{ __('Max. Rank') }}
         </label>
         <span class="fw-bolder fs-6 me-2" id="maximum_rank">
             @if(isset($markRank) && !is_null($markRank))

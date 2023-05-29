@@ -35,4 +35,5 @@
     @include('backend._inc._scripts')
     @yield('page_js')
 </body>
+
 </html>

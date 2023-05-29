@@ -1,4 +1,15 @@
-<div class="table-responsive" style="display: block; height:350px; overflow-y:scroll; overflow-x:hidden">
+<style>
+	.table-responsive{height:350px !important}
+	.table thead th {vertical-align: text-top !important;}
+	thead{position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: white;}
+</style>
+<div class="table-responsive border">
 	<table class="statelist table table-hover table-rounded border gy-7 gs-7">
 		<thead>
 			<tr>

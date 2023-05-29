@@ -1,3 +1,9 @@
+<style>
+    .select2-selection{padding: 0px 10px !important; border-radius: 0 !important;padding-top: 0.625rem !important;padding-bottom: 0.625rem !important;height: calc(3.5rem + 2px) !important;line-height: 1.25 !important;border: 1px solid #ced4da !important;display: flex !important;align-items: center !important;}
+    .select2-selection__arrow{top:15px !important;}
+    .select2-selection__clear{margin: 0 !important;}
+</style>
+
 <div class="row mb-6">
     <div class="col-lg-12 fv-row">
         <div class="form-floating">
@@ -34,7 +40,7 @@
     <div class="col-lg-12 fv-row">
     <div class="form-floating">
         <label for="floatingPincode">{{ __('Pincodes Based on Aadhaar *') }}</label>
-        <input name="pincode" type="number" minlength="6" maxlength="6" class="form-control" id="floatingPincode" placeholder="Enter Pincode" value="{{ old('pincode') }}" required />
+        <input name="pincode" type="number" onKeyPress="if(this.value.length==6) return false;" class="form-control" id="floatingPincode" placeholder="Enter Pincode" value="{{ old('pincode') }}" required />
         @if ($errors->has('pincode'))
         <span class="text-danger">{{ $errors->first('pincode') }}</span>
         @endif
@@ -79,4 +85,10 @@
         </div>
     </div>
 </div>
+<script>
+    $(".form-select").select2({
+        allowClear:true,
+        placeholder: 'Position'
+    });
+</script>
         
