@@ -11,6 +11,9 @@
 <style>
 .header-style-two .yl-main-navigation .dropdown:after {content: '';}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+<link href="{{ url('assets/css/custom-animation.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <body class="yl-home">
 <div id="yl-preloader"></div>

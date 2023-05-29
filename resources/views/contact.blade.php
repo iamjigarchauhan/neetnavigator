@@ -1,5 +1,5 @@
 @extends('layouts.app') @section('content')
-<div class="contact_banner">
+<div class="contact_banner animated fadeIn ">
     <h2>Contact Us</h2>
 </div>
 <section id="yl-popular-course" class="yl-popular-course-section contact">
@@ -7,26 +7,90 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="contect_wrapper">
-                    <h2>We are now in 9 states & 20 cities across India</h2>
-                    <div class="branchwrapper">
-                        <p class="font22">Our Branches: (INDIA)</p>
-                        <div class="branchlist">
-                            <ul>
-                                <li><span>Gujarat (GJ) :</span> Rajkot | Ahmedabad | Anand | Vadodara | Surat | Gandhidham</li>
-                                <li><span>Maharashtra (MH) :</span> Mumbai | Pune | Nagpur</li>
-                                <li><span>Rajasthan (RJ) :</span> Jaipur | Jodhpur</li>
-                                <li><span>West Bengal (WB) :</span> Kolkata</li>
-                                <li><span>Tamil Nadu (TN) :</span> Chennai | Kerala</li>
-                                <li><span>J&amp;K (JK) :</span> Jammu</li>
-                                <li><span>Madhya Pradesh (MP) :</span> Indore</li>
-                                <li><span>Delhi (DL) :</span> New Delhi</li>
-                                <li><span>Kerala (KL) :</span> Kerala</li>
+
+                    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative yl-testimonial-section-2 yl-testimonial-section-2-update fadeInUp animated">
+                        <p class="title-watermark about_section_text">CONTACT</p>
+                        <span>CALL US</span>
+                        <h2 style="color: #000 !important;">The largest selection of courses
+                            for learning for students
+                        </h2>
+                    </div>
+
+                    <div class="row justify-content-center fadeInUp animated">
+
+                     <div class="col-lg-4 col-md-6">
+                        <div class="yl-contact-content-inner text-center element506">
+                           <div class="yl-contact-content-icon">
+                              <img src="assets/img/cct-icon2.png" alt="">
+                           </div>
+                           <div class="yl-contact-content-text yl-headline">
+                              <h3>Email Us</h3>
+                               <span><a href="mailto:info@atmiaeducation.com">info@atmiaeducation.com</a></span>
+                              <span><a href="mailto:chiraghvaghela@gmail.com">chiraghvaghela@gmail.com</a></span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6">
+                        <div class="yl-contact-content-inner text-center element506">
+                           <div class="yl-contact-content-icon">
+                              <img src="assets/img/cct-icon1.png" alt="">
+                           </div>
+                           <div class="yl-contact-content-text yl-headline">
+                              <h3>Phone No</h3>
+                              <span><a href="talto:info@atmiaeducation.com">+91-69004-69004</a></span>
+                              <div style="color: #43aef0;">(Talk to one of our Expert Counsellor)</div>
+                            
+                           </div>
+                        </div>
+                     </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="yl-contact-content-inner text-center element506">
+                            <div class="yl-contact-content-icon">
+                                <img src="assets/img/cct-icon1.png" alt="">
+                            </div>
+                            <div class="yl-contact-content-text yl-headline">
+                                <h3>Phone No</h3>
+                                <span><a href="talto:info@atmiaeducation.com">+91-88668-04703</a></span>
+                                <span><a href="talto:info@atmiaeducation.com">+91-94279-41619</a></span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative yl-testimonial-section-2 yl-testimonial-section-2-update element502">
+                        <p class="title-watermark about_section_text">CONTACT</p>
+                        <span>OUR OFFICE</span>
+                        <h2 style="color: #000 !important;">Our Branches: (INDIA)</h2>
+                    </div>
+
+                    <h2 class="font_size_add element503" style="color: #000 !important;">We are now in 9 states & 20 cities across India</h2>
+                    <div class="branchwrapper element504">
+                        <!-- <p class="font22">Our Branches: (INDIA)</p> -->
+                        <div class="branchlist ">
+                            <ul class="branches_section">
+                                <li><b>Gujarat (GJ) :</b> Rajkot | Ahmedabad | Anand | Vadodara | Surat | Gandhidham</li>
+                                <li><b>Maharashtra (MH) :</b> Mumbai | Pune | Nagpur</li>
+                                <li><b>Rajasthan (RJ) :</b> Jaipur | Jodhpur</li>
+                                <li><b>West Bengal (WB) :</b> Kolkata</li>
+                                <li><b>Tamil Nadu (TN) :</b> Chennai | Kerala</li>
+                                <li><b>J&amp;K (JK) :</b> Jammu</li>
+                                <li><b>Madhya Pradesh (MP) :</b> Indore</li>
+                                <li><b>Delhi (DL) :</b> New Delhi</li>
+                                <li><b>Kerala (KL) :</b> Kerala</li>
                             </ul>
                         </div>
-                        <p>One of the Biggest Student Support and Admission Centers in India.</p>
+
+                        <h2 class="font_size_add mb-0 element505 mt-4" style="color: #000 !important; font-size: 32px !important;">One of the Biggest Student Support and Admission Centers in India.</h2>
+                        <!-- <p>One of the Biggest Student Support and Admission Centers in India.</p> -->
                     </div>
-                    <div class="contactitemblk">
-                        <div class="cityitemblk">
+                    <div class="contactitemblk grid_add element501 mb-5 mt-0" style="">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Ahmedabad</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -37,7 +101,10 @@
                                 Ahmedabad - 380 062, Gujarat.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content ">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Anand</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -47,7 +114,10 @@
                                 Anand, Gujarat - 388120
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Chhattisgarth</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -59,7 +129,10 @@
                             </div>
                         </div>
 
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Chennai</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -71,7 +144,10 @@
                                 Chennai - 600017.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Delhi</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -83,7 +159,10 @@
                                 Delhi - 110 034.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Gandhidham</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -92,7 +171,10 @@
                                 Gandhidham - 370201, Gujarat.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Indore</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -103,7 +185,10 @@
                                 Madhya Pradesh - 452011
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Jaipur</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -112,7 +197,10 @@
                                 Jaipur - 302 021 , Rajasthan.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Jalgaon</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -122,7 +210,10 @@
                                 Jalgaon, Maharashtra - 425001
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Jodhpur</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -130,7 +221,10 @@
                                 Jodhpur - 342003, Rajasthan.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">JAMMU &amp; KASHMIR</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -140,7 +234,10 @@
                                 Jammu - 180 012.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Kerala</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -152,7 +249,10 @@
                                 - Kerala
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Kerala</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -163,7 +263,10 @@
                                 Kerala.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Kerala</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -174,7 +277,10 @@
                                 Kerala - 673016
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Latur</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -184,7 +290,10 @@
                                 Maharashtra - 413512
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Mumbai</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -195,7 +304,10 @@
                                 Maharashtra - 400093
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Mumbai</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -206,7 +318,10 @@
                             </div>
                         </div>
 
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Nagpur</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -217,7 +332,10 @@
                                 Maharashtra - 440012
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Pune</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -227,7 +345,10 @@
                                 Pune - 411 001, Maharashtra.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Pondicherry</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -238,7 +359,10 @@
                                 Pondicherry – 605001.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Rajkot</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -249,7 +373,10 @@
                             </div>
                         </div>
 
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Surat</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -259,7 +386,10 @@
                                 Surat - 395 009, Gujarat.
                             </div>
                         </div>
-                        <div class="cityitemblk">
+                        <div class=" yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+                            <div class="yl-testimonial-icon-2">
+                                <i class="fas fa-map-marker-alt add_color_logo"></i>
+                            </div>
                             <div class="cityname">Salem</div>
                             <div class="cityaddress">
                                 <span>Atmia Education</span>
@@ -269,33 +399,6 @@
                                 Opp. Murugan Temple, <br />
                                 Fairlands, <br />
                                 Salem – 606106.
-                            </div>
-                        </div>
-
-                        <div class="cityitemblk bigcity">
-                            <div class="cityname">Call Us</div>
-                            <div class="cityaddress">
-                                <div class="conatctnumblk">
-                                    <div class="citynumblk"><span class="callicon"></span>+91-69004-69004</div>
-                                </div>
-                                <div class="hotlinenumblk">
-                                    <div class="hotlineitem">(Talk to one of our Expert Counsellor)</div>
-                                    <div class="hotlineitem">
-                                        <span>Additional Contact No’s for Support &amp; Help</span>
-                                    </div>
-                                    <div class="hotlineitem">
-                                        <div class="citynumblk"><span class="callicon"></span>+91-88668-04703</div>
-                                        <div class="citynumblk"><span class="callicon"></span>+91-94279-41619</div>
-                                    </div>
-                                    <div class="citynumblk disblk">
-                                        <span class="mailicon"></span>
-                                        <a href="mailto:info@atmiaeducation.com">info@atmiaeducation.com</a>
-                                    </div>
-                                    <div class="citynumblk disblk">
-                                        <span class="mailicon"></span>
-                                        <a href="mailto:chiraghvaghela@gmail.com">chiraghvaghela@gmail.com</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -331,4 +434,10 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/home/js/custom.animation.js') }}"></script>
 @endsection

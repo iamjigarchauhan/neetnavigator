@@ -86,23 +86,23 @@ return $num;
   <span class="banner-dot-square position-absolute dot-square3"></span>
   <span class="banner-dot-square position-absolute dot-square4"></span>
   <div class="yl-banner-content position-relative">
-    <div class="yl-banner-img">
-      <img src="{{ asset('assets/home/img/banner.png')}}" alt="">
+    <div class="yl-banner-img animated_img">
+      <img class="fadeIn animated_img" src="{{ asset('assets/home/img/banner.png')}}" alt="">
     </div>
     <div class="container">
-      <div class="yl-banner-text yl-headline pera-content position-relative">
-        <div class="yl-banner-tag">
-          <span>MBBS IN INDIA</span>
-          <p>NO DONATION REQUIRED</p>
+      <div class="yl-banner-text yl-headline pera-content position-relative active ">
+        <div class="yl-banner-tag MBBS fadeInUp animated">
+          <span class="animated  mainSlide">MBBS IN INDIA</span>
+          <p class="MBBS animated slideInLeft">NO DONATION REQUIRED</p>
         </div>
-        <h1 class="cd-headline letters scale">HELPING STUDENTS
+        <h1 class="cd-headline letters scale elementA fadeInUp animated">HELPING STUDENTS
           TO GET ADMISSION IN
           <span class="cd-words-wrapper">
             <b class="is-visible"> INDIA.</b>
             <b> ABROAD.</b>
           </span>
         </h1>
-        <p>Through the Atmia Neet College Predictor, students can predict their INDIAN Medical Colleges and get added to the admission, we help students through the Official Counseling form fill till Admission of the student.
+        <p class="fadeInUp animated elementA" >Through the Atmia Neet College Predictor, students can predict their INDIAN Medical Colleges and get added to the admission, we help students through the Official Counseling form fill till Admission of the student.
         </p>
         <div class="yl-banner-btn-wrap clearfix">
           <div class="yl-banner-btn text-center">
@@ -127,8 +127,8 @@ return $num;
 <div class="banner-search-select clearfix">
   <div class="container">
     <div class="banner-search-form position-relative">
-      <span class="banner-search-shape1 position-absolute" data-parallax='{"x" : 70}'><img src="{{asset('assets/home/img/cr-shape1.png')}}" alt=""></span>
-      <span class="banner-search-shape2 position-absolute" data-parallax='{"x" : -70}'><img src="{{asset('assets/home/img/cr-shape2.png')}}" alt=""></span>
+      <span class="banner-search-shape1 position-absolute fadeIn animated_img " data-parallax='{"x" : 70}'><img src="{{asset('assets/home/img/cr-shape1.png')}}" alt=""></span>
+      <span class="banner-search-shape2 position-absolute fadeIn animated_img " data-parallax='{"x" : -70}'><img src="{{asset('assets/home/img/cr-shape2.png')}}" alt=""></span>
       <form action="{{ route('register-user') }}" target="_blank">
         <div class="yl-select-option-wrap">
           <div class="banner-select-option">
@@ -166,114 +166,114 @@ return $num;
 ============================================= -->
 <section id="yl-category" class="yl-category-section">
   <div class="container">
-    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
+    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative element2 ">
       <p class="title-watermark">Colleges</p>
       <span>TYPES MEDICAL COLLEGES IN INDIA</span>
       <h2>There are different types of medical Colleges in India with Different Numbers of Seats.
       </h2>
     </div>
-    <div id="yl-category-slide" class="yl-category-slide-content owl-carousel">
-      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+    <div id="yl-category-slide" class="yl-category-slide-content owl-carousel element33">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp " style="background-color: #eee;" data-wow-delay="0ms" data-wow-duration="1500ms">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-atom"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">Government Medical</a></h3>
+            <h3><a href="#" style="color: #000;">Government Medical</a></h3>
             <span>324 Colleges</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct1.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
-      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" style="background-color: #eee;" data-wow-delay="200ms" data-wow-duration="1500ms">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-design"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">Private Medical</a></h3>
+            <h3><a href="#" style="color: #000;">Private Medical</a></h3>
             <span>49 Colleges</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct2.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
-      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" style="background-color: #eee;" data-wow-delay="400ms" data-wow-duration="1500ms">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-global-network"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">AIIMS</a></h3>
+            <h3><a href="#" style="color: #000;">AIIMS</a></h3>
             <span>20 Colleges</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct3.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
-      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" style="background-color: #eee;" data-wow-delay="600ms" data-wow-duration="1500ms">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-atom"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">JIPMER</a></h3>
+            <h3><a href="#" style="color: #000;">JIPMER</a></h3>
             <span>2 Colleges</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct1.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
-      <div class="yl-category-img-text yl-headline position-relative">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" style="background-color: #eee;">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-design"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">AFMC</a></h3>
+            <h3><a href="#" style="color: #000;">AFMC</a></h3>
             <span>1 College</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct2.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
-      <div class="yl-category-img-text yl-headline position-relative">
+      <div class="yl-category-img-text yl-headline position-relative wow fadeInUp" style="background-color: #eee;">
         <div class="yl-category-text-icon">
           <div class="yl-category-icon float-left">
             <i class="flaticon-global-network"></i>
           </div>
           <div class="yl-category-text">
-            <h3><a href="#">BHIU</a></h3>
+            <h3><a href="#" style="color: #000;">BHIU</a></h3>
             <span>1 College</span>
           </div>
         </div>
         <div class="yl-category-img text-center">
           <img src="assets/img/ct3.jpg" alt="">
         </div>
-        <div class="yl-category-hover-icon text-center">
+        <!-- <div class="yl-category-hover-icon text-center">
           <a href="#"><i class="fas fa-plus"></i></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -284,7 +284,7 @@ return $num;
 ============================================= -->
 <section id="yl-popular-course" class="yl-popular-course-section">
   <div class="container">
-    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
+    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative element3">
       <p class="title-watermark">COLLEGES</p>
       <span>MEDICAL COLLEGES OF INDIA </span>
       <h2>The largest selection of courses
@@ -292,7 +292,7 @@ return $num;
       </h2>
     </div>
     <div class="yl-popular-course-content">
-      <div class="row">
+      <div class="row element8">
         @php
         $colleges = \App\Models\College::all()->random(8);
         @endphp
@@ -355,7 +355,7 @@ return $num;
 <section id="yl-registration-2" class="yl-registration-section-2 position-relative">
   <div class="container">
     <div class="yl-registration-content-2 position-relative yl-headline pera-content">
-      <span class="registration-side-img position-absolute wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="{{ asset('assets/home/img/qr.png')}}" alt=""></span>
+      <span class="registration-side-img position-absolute  element4bf" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="{{ asset('assets/home/img/qr.png')}}" alt=""></span>
       <div class="registration-text-2">
         <h3>MBBS COUNSELING
           free for <span>INDIA & ABROAD</span>
@@ -372,7 +372,7 @@ return $num;
 ============================================= -->
 <section id="yl-testimonial-2" class="yl-testimonial-section-2">
   <div class="container">
-    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
+    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative element4">
       <p class="title-watermark">Testimonials</p>
       <span>Testimonials </span>
       <h2>We have many courses in our
@@ -381,7 +381,7 @@ return $num;
     </div>
     <div class="yl-testimonial-content-2">
       <div id="yl-testimonial-slide-2" class="yl-testimonial-wrap-2 owl-carousel">
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content fadeInUp element52" data-wow-delay="0ms" data-wow-duration="1500ms">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -399,7 +399,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content fadeInUp element52" data-wow-delay="200ms" data-wow-duration="1500ms">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -417,7 +417,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content  fadeInUp element52" data-wow-delay="400ms" data-wow-duration="1500ms">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -435,7 +435,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content  fadeInUp element52" data-wow-delay="600ms" data-wow-duration="1500ms">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -453,7 +453,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content element52">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -471,7 +471,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content element52">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -489,7 +489,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content element52">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -507,7 +507,7 @@ return $num;
             </div>
           </div>
         </div>
-        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content">
+        <div class="yl-testimonial-img-text-2 yl-headline position-relative pera-content element52">
           <div class="yl-testimonial-icon-2">
             <i class="fas fa-quote-right"></i>
           </div>
@@ -535,7 +535,7 @@ return $num;
 ============================================= -->
 <section id="yl-blog-2" class="yl-blog-section-2">
   <div class="container">
-    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative">
+    <div class="yl-section-title text-center yl-headline yl-title-style-two position-relative element5">
       <p class="title-watermark">Events</p>
       <span>Events </span>
       <h2>We have many courses in our
@@ -548,7 +548,7 @@ return $num;
     <div class="yl-blog-content-2 pt-5">
       @foreach ($events as $item)
       <div id="yl-blog-slider-2" class="yl-blog-slide-2 owl-carousel">
-        <div class="yl-blog-img-text-2 yl-headline pera-content wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+        <div class="yl-blog-img-text-2 yl-headline pera-content wow fadeInLeft element55" data-wow-delay="0ms" data-wow-duration="1500ms">
           <div class="yl-blog-img-2 position-relative">
             <div class="yl-blog-img-warap-2 position-relative">
               <img src="{{ asset("assets/home/img/blg-2.4.jpg")}}" alt="">
@@ -579,9 +579,9 @@ return $num;
 ============================================= -->
 <!-- Start of Newslatter section
 ============================================= -->
-<section id="yl-newslatter" class="yl-newslatter-section-2 position-relative">
+<section id="yl-newslatter" class="yl-newslatter-section-2 position-relative element40">
   <div class="container">
-    <div class="yl-newslatter-content">
+    <div class="yl-newslatter-content animated">
       <div class="row">
         <div class="col-md-6">
           <div class="yl-newslatter-text-icon">
@@ -610,4 +610,5 @@ return $num;
 @section('scripts')
     <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('assets/home/js/custom.js') }}"></script>
+    <script src="{{ asset('assets/home/js/custom.animation.js') }}"></script>
 @endsection
