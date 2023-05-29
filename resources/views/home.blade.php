@@ -523,7 +523,7 @@
       </h2>
     </div>
     @php
-      $events = \App\Models\Blog::take(4)->get();
+      $events = \App\Models\Event::take(4)->get();
     @endphp
     <div class="yl-blog-content-2 pt-5">
       @foreach ($events as $item)
