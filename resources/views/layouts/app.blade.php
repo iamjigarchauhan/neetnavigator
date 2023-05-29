@@ -5,7 +5,7 @@
 {{-- <title>MBBS IN INDIA Consultants | Atmia Education</title> --}}
 <link rel="shortcut icon" href="//www.atmiaeducation.com/images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="//www.atmiaeducation.com/images/favicon.ico" type="image/x-icon">
-<title>{{ (isset($pageTitle) ? __($pageTitle).' | '.env('APP_NAME') : env('APP_NAME')) }}</title>
+<title>{{ (isset($pageTitle) && !empty($pageTitle) ? __($pageTitle).' | '.env('APP_NAME') : env('APP_NAME')) }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="KeyTech.dev" />
 @yield('seo')
