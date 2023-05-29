@@ -1,5 +1,5 @@
 <!-- wpp-btn-mobile -->
-<div class="phone-call cbh-phone cbh-green cbh-show  cbh-static" id="clbh_phone_div" style=""><a id="WhatsApp-button" href="https://api.whatsapp.com/send?phone=918866652333" target="_blank" class="phoneJs" title="WhatsApp 360imagem"><div class="cbh-ph-circle"></div><div class="cbh-ph-circle-fill"></div><div class="cbh-ph-img-circle1"></div></a></div>
+<div class="phone-call cbh-phone cbh-green cbh-show  cbh-static" id="clbh_phone_div" style=""><a id="WhatsApp-button" href="https://api.whatsapp.com/send?phone=918866652333" target="_blank" class="phoneJs" title="WhatsApp 360imagem"><div class="cbh-ph-circle"></div><div class="cbh-ph-circle-fill"></div><div style="background-image:url({{ asset('assets/img/whatsapp.webp') }})" class="cbh-ph-img-circle1"></div></a></div>
 <!-- wpp-btn-mobile -->
 <footer id="yl-footer" class="yl-footer-section-2" data-background="assets/img/f-bg.jpg">
 	<div class="container">
@@ -77,6 +77,6 @@
 						</div> -->
 				</div>
 			</div>
-			<div class="yl-footer-copyright text-center"><span>Copyright 2023 Atima Education, All Rights Reserved.</span><br/><a href="{{ route('terms_and_conidtions')}}">Terms and Conditions</a></div>
+			<div class="yl-footer-copyright text-center"><span>Copyright {{ date('Y')}} Atima Education, All Rights Reserved.</span><br/><a href="{{ route('terms_and_conidtions')}}">Terms and Conditions</a></div>
 	</div>
 </footer>
