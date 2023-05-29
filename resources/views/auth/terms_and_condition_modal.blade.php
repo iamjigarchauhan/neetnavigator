@@ -25,7 +25,7 @@
                     </div>
                     <div class="card mb-0" style="max-height:50vh; overflow-y: scroll;overflow-x: hidden;">
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row px-2">
                                 <ul>
                                     <li>
                                         <span style="font-family: Roboto;">
@@ -35,7 +35,7 @@
                                     </li>
                                     <li>
                                         <span style="font-family: Roboto;">
-                                            ATMIA NEET College Predictor has NO liaison with any medical college or management of any medical college. ATMIA NEET College Predictor is NOT a government agency and doesn’t make any claim of influence on any counselling
+                                            ATMIA NEET College Predictor has NO liaison with any medical college or management of any medical college. ATMIA NEET College Predictor is NOT a government agency and doesn&rsquo;t make any claim of influence on any counselling
                                             process.
                                         </span>
                                     </li>
@@ -65,13 +65,13 @@
                                     </li>
                                     <li>
                                         <span style="font-family: Roboto;">
-                                            The user data is stored in the encrypted formats and no person or agency including NEET COLLEGE PREDICTOR has access to modify or delete the user’s data. The user data and credentials are stored on secured Google cloud
+                                            The user data is stored in the encrypted formats and no person or agency including NEET COLLEGE PREDICTOR has access to modify or delete the user&rsquo;s data. The user data and credentials are stored on secured Google cloud
                                             servers.
                                         </span>
                                     </li>
                                     <li>
                                         <span style="font-family: Roboto;">
-                                            MBBS COLLEGE PREDICTOR offers customized reports and analytics based on a specific user’s credentials such as domicile, category and NEET score. The reports and analytics are not generalized. Therefore, generated report
+                                            MBBS COLLEGE PREDICTOR offers customized reports and analytics based on a specific user&rsquo;s credentials such as domicile, category and NEET score. The reports and analytics are not generalized. Therefore, generated report
                                             content is not applicable to any other applicant.
                                         </span>
                                     </li>
