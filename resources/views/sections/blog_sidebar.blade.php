@@ -37,7 +37,7 @@
         <div class="yl-category-widget yl-headline ul-li-block position-relative">
            <h3 class="widget-title">Category</h3>
           @php
-            $blog_categories = \App\Models\BlogCategory::take(4)->get();
+            $blog_categories = \App\Models\EventCategory::take(4)->get();
           @endphp
 
            <ul>
