@@ -82,7 +82,7 @@
             <b> ABROAD.</b>
           </span>
         </h1>
-        <p class="fadeInUp animated elementA" >Through the Atmia Neet College Predictor, students can predict their INDIAN Medical Colleges and get added to the admission, we help students through the Official Counseling form fill till Admission of the student.
+        <p class="fadeInUp animated elementA">Through the Atmia Neet College Predictor, students can predict their INDIAN Medical Colleges and get added to the admission, we help students through the Official Counseling form fill till Admission of the student.
         </p>
         <div class="yl-banner-btn-wrap clearfix">
           <div class="yl-banner-btn text-center">
@@ -113,7 +113,7 @@
         <div class="yl-select-option-wrap">
           <div class="banner-select-option">
             <select>
-              <option data-display="Course Type">Type of Colleges </option>
+              <option data-display="Collage Type"></option>
               <option value="1">ALL INDIA QUOTA</option>
               <option value="2">AIIMS</option>
               <option value="4">JIPMER</option>
@@ -125,7 +125,7 @@
           </div>
           <div class="banner-select-option">
             <select>
-              <option data-display="Language ">Category </option>
+              <option data-display="Category "></option>
               <option value="1">OPEN</option>
               <option value="2">OBC</option>
               <option value="4">EWS</option>
@@ -523,7 +523,7 @@
       </h2>
     </div>
     @php
-      $events = \App\Models\Event::take(4)->get();
+    $events = \App\Models\Event::take(4)->get();
     @endphp
     <div class="yl-blog-content-2 pt-5">
       @foreach ($events as $item)
@@ -551,7 +551,7 @@
           </div>
         </div>
       </div>
-      @endforeach      
+      @endforeach
     </div>
   </div>
 </section>
@@ -588,7 +588,7 @@
 </section>
 @endsection
 @section('scripts')
-    <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/home/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/home/js/custom.animation.js') }}"></script>
+<script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('assets/home/js/custom.js') }}"></script>
+<script src="{{ asset('assets/home/js/custom.animation.js') }}"></script>
 @endsection
